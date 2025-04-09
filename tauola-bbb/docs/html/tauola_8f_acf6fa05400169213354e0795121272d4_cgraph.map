@@ -1,0 +1,34 @@
+<map id="dphsel" name="dphsel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,224,71,249"/>
+<area shape="rect" id="Node000002" href="$tauola_8f.html#aac582b895e05a83fa78434530be46089" title=" " alt="" coords="119,224,181,249"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,234,105,234,105,239,71,239"/>
+<area shape="rect" id="Node000003" href="$tauola_8f.html#a7944c24b28382377835cf192b861c17f" title=" " alt="" coords="232,113,299,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="160,222,189,187,228,148,232,145,235,149,231,152,193,191,164,225"/>
+<area shape="rect" id="Node000004" href="$tauola_8f.html#a4b9b430dffbb8bad73e3c6979d03d93c" title=" " alt="" coords="229,163,301,188"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="173,222,227,192,230,197,176,226"/>
+<area shape="rect" id="Node000010" href="$Tauface_8f.html#aaf61bb5f685e80d55b51e030872f2a4b" title=" " alt="" coords="370,275,439,300"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="182,239,302,261,357,273,356,278,301,266,181,244"/>
+<area shape="rect" id="Node000011" href="$tauola_8f.html#a094af786f217f540c5347dd07edb60df" title=" " alt="" coords="233,324,297,349"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="165,248,231,311,235,314,232,318,228,315,162,252"/>
+<area shape="rect" id="Node000014" href="$tauola_8f.html#ab93f988e6847b9c138693748a9672909" title=" " alt="" coords="232,275,299,300"/>
+<area shape="poly" id="edge17_Node000002_Node000014" title=" " alt="" coords="181,247,224,267,222,271,179,252"/>
+<area shape="rect" id="Node000005" href="$noC_8f.html#af437449bb3f663eac3bec9c8daf6b710" title=" " alt="" coords="349,5,460,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="286,161,299,148,315,120,321,94,328,68,347,40,352,36,356,40,351,44,333,70,326,95,320,122,303,152,290,164"/>
+<area shape="rect" id="Node000006" href="$tauola_8f.html#a1da887c00d97e547452fd876cbaf7054" title=" " alt="" coords="371,79,439,104"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="283,160,348,113,358,108,360,112,351,118,286,165"/>
+<area shape="rect" id="Node000007" href="$tauola_8f.html#a40b1381731440445b8317ffc17207e4d" title=" " alt="" coords="375,152,434,177"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="301,170,361,165,362,171,302,175"/>
+<area shape="rect" id="Node000008" href="$tauola_8f.html#a4c8274ad71b53c459740f949a25be873" title=" " alt="" coords="383,225,426,251"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="295,186,372,221,369,225,293,190"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="382,80,378,70,380,61,389,54,405,52,423,55,431,64,427,67,420,60,405,57,391,59,384,64,383,70,387,77"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="382,153,378,144,380,134,389,128,405,125,423,129,431,137,427,141,420,133,405,131,391,133,384,137,383,143,387,151"/>
+<area shape="poly" id="edge12_Node000008_Node000008" title=" " alt="" coords="382,226,378,217,380,207,389,201,405,199,423,202,431,210,427,214,420,207,405,204,391,206,384,210,383,216,387,224"/>
+<area shape="rect" id="Node000009" href="$tauola_8f.html#a383faa3d1bec104e7402db87471d4528" title=" " alt="" coords="508,225,567,251"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="426,235,494,235,494,241,426,241"/>
+<area shape="poly" id="edge11_Node000009_Node000009" title=" " alt="" coords="515,226,510,217,513,207,522,201,537,199,555,202,563,210,559,214,553,207,537,204,524,206,517,210,516,216,520,224"/>
+<area shape="rect" id="Node000012" href="$tauola_8f.html#a39aac5c9517d2066c1eac5de4320e4cb" title=" " alt="" coords="373,324,437,349"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="297,334,359,334,359,339,297,339"/>
+<area shape="rect" id="Node000013" href="$tauola_8f.html#afde8b5e0796be425a5376b20d87cdbc3" title=" " alt="" coords="373,373,437,399"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="298,345,360,368,359,373,296,350"/>
+<area shape="poly" id="edge18_Node000014_Node000010" title=" " alt="" coords="299,285,356,285,356,290,299,290"/>
+</map>

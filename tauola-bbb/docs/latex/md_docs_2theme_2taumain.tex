@@ -1,0 +1,63 @@
+\chapter{taumain}
+\hypertarget{md_docs_2theme_2taumain}{}\label{md_docs_2theme_2taumain}\index{taumain@{taumain}}
+\label{md_docs_2theme_2taumain_autotoc_md3}%
+\Hypertarget{md_docs_2theme_2taumain_autotoc_md3}%
+ \href{https://github.com/jothepro/doxygen-awesome-css/releases/latest}{\texttt{ }} \mbox{[}\hypertarget{md_docs_2theme_2taumain_autotoc_md4}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md_docs_2theme_2taumain_autotoc_md4}
+For {\ttfamily Tauola} installation, you need the {\ttfamily Hep\+MC2}, {\ttfamily Hep\+MC3}, {\ttfamily PYTHIA8}, {\ttfamily LHAPDF} and {\ttfamily MC-\/\+TESTER}.
+
+For {\ttfamily Hep\+MC2} and {\ttfamily Hep\+MC3} package, you download the source code and create a build directory. Then run the following command from the build directory.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/DCMAKE\_INSTALL\_PREFIX=<path>/HepMC2/HepMC-\/2.06.11/\ <path>/HepMC2/HepMC-\/2.06.11/\ \(\backslash\)}
+\DoxyCodeLine{-\/Dmomentum:STRING=GEV\ -\/Dlength:STRING=MM}
+\DoxyCodeLine{make\ }
+\DoxyCodeLine{make\ install}
+
+\end{DoxyCode}
+
+
+For {\ttfamily Hep\+MC3}, we have to just change the folder and the version of {\ttfamily Hep\+MC3}
+
+For {\ttfamily MC-\/\+TESTER} installation, go to the the unzipped location and run following command
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure\ -\/-\/prefix=<path>/MC-\/TESTER/mc-\/tester/\ \(\backslash\)}
+\DoxyCodeLine{-\/-\/with-\/HepMC=<path>/HepMC2/HepMC-\/2.06.11/\ \(\backslash\)}
+\DoxyCodeLine{-\/-\/with-\/HepMC3=<path>/HepMC3/HepMC3-\/3.3.0}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make\ install}
+
+\end{DoxyCode}
+
+
+For the installation of {\ttfamily Tauola}, you can do
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure\ -\/-\/prefix=<path>/Tauola\ -\/-\/with-\/hepmc=<path>/HepMC2/HepMC-\/2.06.11/\ \(\backslash\)}
+\DoxyCodeLine{-\/-\/with-\/hepmc3=<path>/HepMC3/HepMC3-\/3.3.0\ -\/-\/with-\/lhapdf=<path>/LHAPDF/LHAPDF-\/6.5.5\ \(\backslash\)}
+\DoxyCodeLine{-\/-\/with-\/pythia8=<path>/Pythia8/pythia8313\ -\/-\/with-\/mc-\/tester=<path>/MC-\/TESTER/mc-\/tester}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+
+The examples are given in the folder {\ttfamily demo-\/babar} , {\ttfamily demo-\/lfv} , {\ttfamily demo-\/redifine} folders. You can got to the particular directory and execute the make command and run the program. The makefile links the {\ttfamily glibk} library for plotting, {\ttfamily photos} library for the radiative corrections and the {\ttfamily jetset} library for printing the event records in pythia format.\hypertarget{md_docs_2theme_2taumain_autotoc_md5}{}\doxysection{\texorpdfstring{Written by}{Written by}}\label{md_docs_2theme_2taumain_autotoc_md5}
+Zbigniew Was,
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\href{mailto:zbigniew.was@ifj.edu.pl}{\texttt{ zbigniew.\+was@ifj.\+edu.\+pl}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Read Next    }\\\cline{1-1}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Read Next    }\\\cline{1-1}
+\endhead
+\PBS\raggedleft Extensions   \\\cline{1-1}
+\end{longtabu}

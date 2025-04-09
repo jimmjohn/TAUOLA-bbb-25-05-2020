@@ -1,0 +1,10 @@
+<map id="dm" name="dm">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,67,48,92"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="9,67,6,58,7,49,15,42,27,40,41,44,47,52,43,55,38,48,27,45,17,47,12,52,11,58,14,66"/>
+<area shape="rect" id="Node000002" href="$binp_8f.html#a0f08a0f560a97549cac1f6c67bec32c0" title=" " alt="" coords="96,29,155,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,69,82,55,84,60,49,74"/>
+<area shape="rect" id="Node000003" href="$binp_8f.html#aacb6278ade249e31d8ee30657e1219af" title=" " alt="" coords="100,103,151,128"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="49,84,88,99,86,104,47,89"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="108,30,104,21,106,12,113,5,125,3,139,6,146,15,141,18,136,11,125,8,116,10,111,14,110,20,113,28"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="108,103,104,94,106,85,113,78,125,76,139,80,146,88,141,91,136,84,125,81,116,83,111,88,110,94,113,102"/>
+</map>

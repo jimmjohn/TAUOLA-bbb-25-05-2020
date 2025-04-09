@@ -1,0 +1,26 @@
+<map id="tauolaredef_" name="tauolaredef_">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,121,109,146"/>
+<area shape="rect" id="Node000002" href="$demo-lfv_2iniofc_8c.html#af88ffe0e75c57ab57e1c0b24c34aa4ff" title=" " alt="" coords="234,95,305,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,125,220,111,220,116,110,130"/>
+<area shape="rect" id="Node000012" href="$namespaceTauolapp.html#aeedcd42588a8e22f689205f36b6efe23" title="Set tauola channel redefinition function pointer." alt="" coords="157,145,381,170"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="110,136,144,140,144,146,109,142"/>
+<area shape="rect" id="Node000003" href="$classTauolapp_1_1ChannelForTauola.html#a27796816ad4e1b91a27ba9038b70d7e0" title="Get channel position on Tauola channel list." alt="" coords="429,5,632,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,94,453,47,454,52,306,100"/>
+<area shape="rect" id="Node000004" href="$demo-redefine_2lfv_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089" title=" " alt="" coords="483,70,578,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="305,102,469,86,469,91,305,107"/>
+<area shape="rect" id="Node000007" href="$namespaceTauolapp.html#a890e36abff2f46110a4c8f3acd89a4be" title="Print current definition of a channel." alt="" coords="433,119,629,145"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="305,109,419,119,418,124,305,114"/>
+<area shape="rect" id="Node000010" href="$namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61" title="Register channel." alt="" coords="433,170,628,195"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="305,111,382,129,407,141,430,154,462,164,460,169,428,158,404,146,380,135,304,116"/>
+<area shape="rect" id="Node000005" href="$demo-lfv_2lfv_8c.html#ae320d4fa3eff0c94e202e54c99ad5b92" title=" " alt="" coords="738,21,838,46"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="578,71,724,43,725,48,579,76"/>
+<area shape="rect" id="Node000006" href="$demo-lfv_2lfv_8c.html#a3579865d8a6b2e28998be9941ee316fe" title=" " alt="" coords="749,70,827,95"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="578,80,735,80,735,85,578,85"/>
+<area shape="rect" id="Node000008" href="$namespaceTauolapp.html#a20ebb02c6f72c7a853b41a6d968c459d" title="Get channel information." alt="" coords="706,119,870,145"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="629,129,692,129,692,135,629,135"/>
+<area shape="rect" id="Node000009" href="$namespaceTauolapp.html#a2e0df853a2fc6ac150b3b86d091202fa" title=" " alt="" coords="944,137,1196,177"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="870,137,931,142,930,147,870,142"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="628,175,930,161,930,167,629,181"/>
+<area shape="rect" id="Node000011" href="$namespaceTauolapp.html#a644d4222e801d829e9f870f7f6a590e0" title=" " alt="" coords="680,221,896,246"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="597,193,710,215,709,221,596,198"/>
+</map>

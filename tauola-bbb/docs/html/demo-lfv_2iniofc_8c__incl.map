@@ -1,0 +1,26 @@
+<map id="/home/john/products/Tauola/tauola&#45;bbb/TAUOLA&#45;FORTRAN/tauola&#45;bbb/demo&#45;lfv/iniofc.c" name="/home/john/products/Tauola/tauola&#45;bbb/TAUOLA&#45;FORTRAN/tauola&#45;bbb/demo&#45;lfv/iniofc.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="57,5,261,75"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,130,71,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,77,64,123,61,119,117,73"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="49,284,110,309"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,76,90,272,85,270,146,74"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="135,284,213,309"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,75,175,270,170,270,159,75"/>
+<area shape="rect" id="Node000005" href="$ChannelForTauolaInterface_8h.html" title=" " alt="" coords="280,123,487,163"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="236,72,330,115,328,119,233,77"/>
+<area shape="rect" id="Node000006" href="$ChannelForTauola_8h.html" title="Definition and implementation of class ChannelForTauola." alt="" coords="197,211,346,236"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="182,73,259,198,255,201,178,76"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="358,165,301,205,298,200,355,161"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="329,284,392,309"/>
+<area shape="poly" id="edge12_Node000005_Node000007" title=" " alt="" coords="383,164,367,271,362,270,378,163"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="417,284,475,309"/>
+<area shape="poly" id="edge13_Node000005_Node000008" title=" " alt="" coords="394,162,438,270,434,272,389,164"/>
+<area shape="rect" id="Node000010" href="$TauolaStructs_8h.html" title=" " alt="" coords="472,211,593,236"/>
+<area shape="poly" id="edge11_Node000005_Node000010" title=" " alt="" coords="420,160,500,202,497,206,418,165"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="241,239,124,282,122,277,240,234"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="257,238,203,278,200,273,254,234"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="287,234,337,273,334,277,284,238"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="300,234,406,276,404,281,298,238"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="238,284,305,309"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="274,236,274,270,269,270,269,236"/>
+</map>

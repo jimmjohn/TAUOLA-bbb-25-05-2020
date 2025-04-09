@@ -1,0 +1,33 @@
+<map id="TestCommunication" name="TestCommunication">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,301,156,327"/>
+<area shape="rect" id="Node000002" href="$namespaceTauolapp.html#a3b942919cb68a81644bac57f6bb4f59a" title="Modify leptonic channel." alt="" coords="208,5,395,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,300,91,252,112,182,128,144,148,106,173,71,202,41,211,35,214,39,206,45,177,75,153,109,133,146,117,183,96,253,86,301"/>
+<area shape="rect" id="Node000003" href="$namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61" title="Register channel." alt="" coords="204,55,399,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,300,95,260,119,203,154,142,176,115,202,91,212,84,215,88,206,95,180,118,158,145,123,205,100,261,88,302"/>
+<area shape="rect" id="Node000006" href="$TestCommunication_8c.html#a85fc9b9b8e119f57ba4f0e23689b36fe" title=" " alt="" coords="258,104,345,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="85,300,100,268,125,224,160,179,202,140,222,129,244,122,245,127,224,134,206,144,164,182,130,227,105,270,90,302"/>
+<area shape="rect" id="Node000007" href="$TestCommunication_8c.html#a9f47dfbd8581191cd6906eb94aa3da56" title=" " alt="" coords="252,153,351,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="89,299,134,246,166,215,203,189,237,175,239,180,205,194,169,219,137,249,93,303"/>
+<area shape="rect" id="Node000008" href="$TestCommunication_8c.html#a9e4d32ee23e5278c3f929774eb7cbadc" title=" " alt="" coords="258,203,345,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="98,299,144,269,203,238,244,225,245,230,205,243,147,273,101,303"/>
+<area shape="rect" id="Node000009" href="$TestCommunication_8c.html#a965b018f290dfc29c27c3a7068293054" title=" " alt="" coords="258,252,345,277"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="138,299,244,275,245,280,139,304"/>
+<area shape="rect" id="Node000010" href="$TestCommunication_8c.html#a59c29f0b0218a44d3fb9a1c8cea5965a" title=" " alt="" coords="250,301,353,327"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="156,311,236,311,236,317,156,317"/>
+<area shape="rect" id="Node000011" href="$TestCommunication_8c.html#a2efd7a516ad4e587253476122de57867" title=" " alt="" coords="250,351,353,376"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="139,324,237,346,236,352,138,329"/>
+<area shape="rect" id="Node000012" href="$TestCommunication_8c.html#a0aeb8755588d437ad8742379b8db5a38" title=" " alt="" coords="250,400,353,425"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="101,325,147,355,205,386,238,397,236,402,203,391,144,360,98,329"/>
+<area shape="rect" id="Node000013" href="$TestCommunication_8c.html#a4176ee2baf3d775e65d16ec85636ab6b" title=" " alt="" coords="250,449,353,475"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="93,325,137,379,169,410,205,436,238,449,236,454,203,440,166,414,133,383,89,328"/>
+<area shape="rect" id="Node000014" href="$TestCommunication_8c.html#a9500032c21664830e92c7fda5354013e" title=" " alt="" coords="250,499,353,524"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="90,326,105,358,130,402,163,447,205,485,238,500,236,505,203,490,159,451,125,405,100,361,85,328"/>
+<area shape="rect" id="Node000015" href="$TestCommunication_8c.html#aa064bd5b2ee0fd71affd554df67ff6fb" title=" " alt="" coords="249,548,353,573"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="88,326,100,367,123,424,158,484,180,511,206,534,237,550,235,555,202,539,176,515,154,487,118,426,95,369,83,328"/>
+<area shape="rect" id="Node000016" href="$TestCommunication_8c.html#aab9c0e753d1c578397882e9442afd809" title=" " alt="" coords="257,597,346,623"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="86,327,96,376,117,445,133,483,152,520,177,554,206,584,224,595,244,602,242,607,221,600,202,588,173,558,148,523,128,485,112,447,91,377,81,328"/>
+<area shape="rect" id="Node000004" href="$namespaceTauolapp.html#a644d4222e801d829e9f870f7f6a590e0" title=" " alt="" coords="465,27,681,52"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,55,451,49,451,55,399,60"/>
+<area shape="rect" id="Node000005" href="$namespaceTauolapp.html#a2e0df853a2fc6ac150b3b86d091202fa" title=" " alt="" coords="447,77,699,117"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="399,75,433,79,433,84,399,80"/>
+</map>

@@ -1,0 +1,11 @@
+Drafted by Jakub Zaremba 4/12/2019
+Demo of tauola-BBB presenting channel adding and redefinition
+
+NOTE:
+This example is based on demo-redefine with only small differences:
+- Several .c and .h files are added or expanded presenting the new functionality.
+
+Through edition of iniofc.c file user can select new channels to be selected for use.
+We assume here that user is familiar with examples from demo-redefine.
+Two examples are commented out. They are prepared for testing purposes,
+but may serve as good baseline to build own models.

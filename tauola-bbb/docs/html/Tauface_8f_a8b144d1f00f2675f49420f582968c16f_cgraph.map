@@ -1,0 +1,11 @@
+<map id="inisampl" name="inisampl">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,84,105"/>
+<area shape="rect" id="Node000002" href="$Tauface_8f.html#a16530523f6f1c54ae0398abb893048f6" title=" " alt="" coords="132,5,219,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,78,131,40,138,36,141,40,133,44,69,82"/>
+<area shape="rect" id="Node000003" href="$Tauface_8f.html#a992ca85609dceef7f52a7df007f68d7d" title=" " alt="" coords="132,55,219,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,83,118,76,119,81,85,88"/>
+<area shape="rect" id="Node000004" href="$Tauface_8f.html#a1530b43c72060bd04f30427ae79324f1" title=" " alt="" coords="132,104,219,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,97,119,104,118,109,84,102"/>
+<area shape="rect" id="Node000005" href="$Tauface_8f.html#ae13973c566a69c235fbf73d18bd18161" title=" " alt="" coords="132,153,219,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="70,103,141,144,138,149,67,108"/>
+</map>
