@@ -1,0 +1,9 @@
+<map id="test_sigee" name="test_sigee">
+<area shape="rect" id="Node000001" title=" " alt="" coords="356,31,445,56"/>
+<area shape="rect" id="Node000002" href="$demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="174,5,291,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="342,37,291,29,292,24,343,32"/>
+<area shape="rect" id="Node000004" href="$TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc" title=" " alt="" coords="157,55,308,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="343,54,309,59,308,54,342,49"/>
+<area shape="rect" id="Node000003" href="$demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,5,109,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="160,21,110,21,110,15,160,15"/>
+</map>

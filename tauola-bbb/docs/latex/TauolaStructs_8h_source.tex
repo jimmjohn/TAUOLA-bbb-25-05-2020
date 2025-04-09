@@ -1,0 +1,80 @@
+\doxysection{Tauola\+Structs.\+h}
+\hypertarget{TauolaStructs_8h_source}{}\label{TauolaStructs_8h_source}\index{/home/john/products/Tauola/tauola-\/bbb/TAUOLA-\/FORTRAN/tauola-\/bbb/tauola-\/c/TauolaStructs.h@{/home/john/products/Tauola/tauola-\/bbb/TAUOLA-\/FORTRAN/tauola-\/bbb/tauola-\/c/TauolaStructs.h}}
+\mbox{\hyperlink{TauolaStructs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TAUOLA\_STRUCTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TAUOLA\_STRUCTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ NOTE:\ these\ variables\ do\ not\ belong\ to\ any\ common\ in\ FORTRAN}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ (they\ cannot,\ as\ they\ are\ used\ as\ constants\ in\ FORTRAN\ code)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ \ \ \ \ \ We\ have\ to\ explicitly\ repeat\ them\ here.\ This\ is\ a\ problem.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ WARNING:\ These\ values\ must\ match\ definitions\ in\ ../TAUDCDsize.inc}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TauolaStructs_8h_a5728fb3d77710f0c292978ee3c03072d}{NLT}}=2,\ \mbox{\hyperlink{TauolaStructs_8h_a715d6f7e37bbc0b825669481d7a3a1e3}{NMODE}}=196,\mbox{\hyperlink{TauolaStructs_8h_a132cef160100800ea7265ac4a90200ea}{NM1}}=40,\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}=71,\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}=19,\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}=32,\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}=21,\mbox{\hyperlink{TauolaStructs_8h_a705a4b796e588652c2abc0699a8a9bbb}{NM6}}=13;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ COMMON\ /\ TAUDCD\ /IDFFIN(9,NMODE),MULPIK(NMODE)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,NAMES}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN}}[\mbox{\hyperlink{TauolaStructs_8h_a715d6f7e37bbc0b825669481d7a3a1e3}{NMODE}}][9];}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a5daa31db246aa78c12524e414073c326}{MULPIK}}[\mbox{\hyperlink{TauolaStructs_8h_a715d6f7e37bbc0b825669481d7a3a1e3}{NMODE}}];}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{TauolaStructs_8h_a680731fccba94adf0d8cbc8d08395493}{NAMES}}[\mbox{\hyperlink{TauolaStructs_8h_a715d6f7e37bbc0b825669481d7a3a1e3}{NMODE}}][31];}
+\DoxyCodeLine{00017\ \}\ \mbox{\hyperlink{TauolaStructs_8h_a195c0cd9d86a6e8c864c5b50986657ed}{taudcd\_}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a444cd1450399bd3f8904888933a30e7d}{KEY0}}[2];}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_af2b702664c887211e038ec990d372dbe}{KEY1}}[\mbox{\hyperlink{TauolaStructs_8h_a132cef160100800ea7265ac4a90200ea}{NM1}}];}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a87f2a16f343f07b0f41b08c7bfbb3b3c}{KEY2}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a12aa84ac41e5048b280a3d9c3a9d8cb7}{KEY3}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_ab9542a2a156da684f2ad60170a9cbf7d}{KEY4}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a7ebefc2b54e54e12c267991d2b9abdae}{KEY5}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{TauolaStructs_8h_a2aaaa0c76be4fafdae1ee2439633290a}{KEY6}}[\mbox{\hyperlink{TauolaStructs_8h_a705a4b796e588652c2abc0699a8a9bbb}{NM6}}];}
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{TauolaStructs_8h_a5dc8da2cf27c992c79faf1d6b4346762}{metyp\_}};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a6e0b1eae19d5e30239e82c49c536f86d}{GAMPRT}}[500];}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TauolaStructs_8h_abcc804708c34dda340e881dbd4599a03}{JLIST}}[500];}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TauolaStructs_8h_aa9256cf3e6180f89ff2781b57beb0de8}{NCHAN}};}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ for\ the\ C\ use\ only,\ this\ struct\ is\ \ supplemented\ with}}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ list\ of\ pointers\ defined\ in\ ChannelForTauolaInterface.h:}}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ ChannelForTauola*\ taubra\_userChannels[500];}}
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{TauolaStructs_8h_a8657f29475c929772dc8f8c6341bbc59}{taubra\_}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_ab79f3f7964e3e0f6e76d6e7c7365e211}{PROB1}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a8f52760d2f4cf8ef214d1ddba97e5f04}{PROB2}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_acea7651590c38d428ab6a1d713199b86}{AM2}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a95a2bb18f0b7fb01f205f75139f20460}{GAM2}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a523f1dfdecce17c5188c663d6f323bd0}{AM3}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_af85a8cae04e11e9611493d9257ad6070}{GAM3}}[\mbox{\hyperlink{TauolaStructs_8h_a551203ae4ed359049dc660e976763f65}{NM2}}];}
+\DoxyCodeLine{00043\ \}\ \mbox{\hyperlink{TauolaStructs_8h_ac053b2d6c2acaa8a16265409ad716373}{sampl2\_}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_ab79f3f7964e3e0f6e76d6e7c7365e211}{PROB1}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a8f52760d2f4cf8ef214d1ddba97e5f04}{PROB2}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_aa2335a8ee9e1a54cb53fa27cf2943b37}{AMRX}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a0c9c718053cede1a13517e23193df236}{GAMRX}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a31c06025cfd1a63528535379a872f4cb}{AMRA}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_afcca5a33f37e4c24d7828fc44c9ccd90}{GAMRA}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_aceaf569a7e232d1cf64d77cba400b8f4}{AMRB}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_ad2680dd38fd713753e477daa8f6a071f}{GAMRB}}[\mbox{\hyperlink{TauolaStructs_8h_a4e58e087269b116ee6ecbf26ea48c5de}{NM3}}];}
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{TauolaStructs_8h_a543c855c48bd110b7994c8479eddda23}{sampl3\_}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_ab79f3f7964e3e0f6e76d6e7c7365e211}{PROB1}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a8f52760d2f4cf8ef214d1ddba97e5f04}{PROB2}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_aa2335a8ee9e1a54cb53fa27cf2943b37}{AMRX}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a0c9c718053cede1a13517e23193df236}{GAMRX}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a31c06025cfd1a63528535379a872f4cb}{AMRA}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_afcca5a33f37e4c24d7828fc44c9ccd90}{GAMRA}}[\mbox{\hyperlink{TauolaStructs_8h_a3878a62fb3a5da100c74c52974577e49}{NM4}}];}
+\DoxyCodeLine{00063\ \}\ \mbox{\hyperlink{TauolaStructs_8h_a2eaaee4bb128ab668665c78f2d558abf}{sampl4\_}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{float}\ \ \mbox{\hyperlink{TauolaStructs_8h_ad853e41c3338854d1aae000e687edae3}{PROBa2}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{float}\ \ \mbox{\hyperlink{TauolaStructs_8h_a1e43fc353c3306829e67baf13419b119}{PROBOM}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{float}\ \ \mbox{\hyperlink{TauolaStructs_8h_ab22d332f08cf9bee2d39fe59c4b6bffb}{ama2}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{float}\ \ \mbox{\hyperlink{TauolaStructs_8h_a0361eca34a8e4d3351e46e0756e916ef}{gama2}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{TauolaStructs_8h_a32abfc20f9ef0d71335a531842f5786b}{AMOM}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{TauolaStructs_8h_ac1a605d7fa9823323157a011dc645721}{GAMOM}}[\mbox{\hyperlink{TauolaStructs_8h_a34c8864387ff883baf6e29c98a95a1d5}{NM5}}];}
+\DoxyCodeLine{00072\ \}\ \mbox{\hyperlink{TauolaStructs_8h_a31064ef7db1e353f6bfef5375ee2f293}{sampl5\_}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,54 @@
+\doxysection{Channel\+For\+Tauola\+Interface.\+h}
+\hypertarget{ChannelForTauolaInterface_8h_source}{}\label{ChannelForTauolaInterface_8h_source}\index{/home/john/products/Tauola/tauola-\/bbb/TAUOLA-\/FORTRAN/tauola-\/bbb/tauola-\/c/ChannelForTauolaInterface.h@{/home/john/products/Tauola/tauola-\/bbb/TAUOLA-\/FORTRAN/tauola-\/bbb/tauola-\/c/ChannelForTauolaInterface.h}}
+\mbox{\hyperlink{ChannelForTauolaInterface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TAUOLAPP\_CHANNELFORTAUOLAINTERFACE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TAUOLAPP\_CHANNELFORTAUOLAINTERFACE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ChannelForTauola_8h}{ChannelForTauola.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TauolaStructs_8h}{TauolaStructs.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceTauolapp}{Tauolapp}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ ChannelForTauola*\ \mbox{\hyperlink{namespaceTauolapp_ac278a3700094fa97365a9a89269d0ef5}{taubra\_userChannels}}[500];}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceTauolapp_aa403e8fb57b65e66ea99e411a4c3d23f}{leptonChannelsMEpointers}}[2];}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{void}}\ \ \ \ \ \ \ \ \ \ \ \ (*\mbox{\hyperlink{namespaceTauolapp_a91b5b7d867c3f850d5bd6dd962ad5336}{channelRedefinitionFunction}})();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceTauolapp_a890e36abff2f46110a4c8f3acd89a4be}{PrintChannelInfo}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{channel}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceTauolapp_aeedcd42588a8e22f689205f36b6efe23}{SetUserRedefinitions}}(\textcolor{keywordtype}{void}\ (*\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{function}})());}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_ab28cb0b8d7d6d32ddc855f2dfe3e055f}{OverwriteChannel}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{channel}},\ ChannelForTauola\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pointer}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_a359f3692892cd9c8dc0449ce49040a61}{RegisterChannel}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{channel}},\ ChannelForTauola\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pointer}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_a3b942919cb68a81644bac57f6bb4f59a}{ModifyLeptonic}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{channel}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{me}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{br}},\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{xsec}}\ =\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{NULL}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00081\ ChannelForTauola*\ \mbox{\hyperlink{namespaceTauolapp_a20ebb02c6f72c7a853b41a6d968c459d}{GetChannel}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{channel}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_a4317ec48113dacf970539aa64675c017}{SetPresampler2}}(ChannelForTauola\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pointer}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{prob1}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{prob2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{am2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gam2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{am3}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gam3}});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_a1d0cd12a9008d6595c161f2b0633186c}{SetPresampler3}}(ChannelForTauola\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pointer}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{prob1}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{prob2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amrx}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gamrx}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amra}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gamra}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amrb}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gamrb}});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_abb7a65b6568c696875ebba98cc60b1f0}{SetPresampler4}}(ChannelForTauola\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pointer}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{prob1}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{prob2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amrx}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gamrx}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amra}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gamra}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceTauolapp_a9312fd4cfc7bb84273c0c3b841a1c017}{SetPresampler5}}(ChannelForTauola\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pointer}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{proba2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{probom}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_ab22d332f08cf9bee2d39fe59c4b6bffb}{ama2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TauolaStructs_8h_a0361eca34a8e4d3351e46e0756e916ef}{gama2}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amom}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{gamom}});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \}\ \textcolor{comment}{//\ namespace\ Tauolapp}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

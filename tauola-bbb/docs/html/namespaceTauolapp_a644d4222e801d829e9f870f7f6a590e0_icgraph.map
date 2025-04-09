@@ -1,0 +1,17 @@
+<map id="Tauolapp::GetChannelNumber" name="Tauolapp::GetChannelNumber">
+<area shape="rect" id="Node000001" title=" " alt="" coords="653,80,869,105"/>
+<area shape="rect" id="Node000002" href="$namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61" title="Register channel." alt="" coords="411,80,605,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="640,95,606,95,606,90,640,90"/>
+<area shape="rect" id="Node000003" href="$demo-lfv_2iniofc_8c.html#af88ffe0e75c57ab57e1c0b24c34aa4ff" title=" " alt="" coords="225,5,295,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="460,78,362,45,295,28,296,23,363,39,462,73"/>
+<area shape="rect" id="Node000005" href="$namespaceTauolapp.html#ab28cb0b8d7d6d32ddc855f2dfe3e055f" title="Overwrite channel." alt="" coords="157,55,363,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="397,84,363,80,363,75,397,79"/>
+<area shape="rect" id="Node000006" href="$demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="201,104,319,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="397,106,319,114,318,108,397,101"/>
+<area shape="rect" id="Node000008" href="$TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc" title=" " alt="" coords="185,153,335,179"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="459,113,363,143,316,156,315,151,362,138,457,107"/>
+<area shape="rect" id="Node000004" href="$demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,5,109,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="211,21,109,21,109,15,211,15"/>
+<area shape="rect" id="Node000007" href="$demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,104,109,129"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="187,119,110,119,110,114,187,114"/>
+</map>

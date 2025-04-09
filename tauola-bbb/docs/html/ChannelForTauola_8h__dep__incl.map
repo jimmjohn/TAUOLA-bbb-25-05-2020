@@ -1,0 +1,20 @@
+<map id="/home/john/products/Tauola/tauola&#45;bbb/TAUOLA&#45;FORTRAN/tauola&#45;bbb/tauola&#45;c/ChannelForTauola.h" name="/home/john/products/Tauola/tauola&#45;bbb/TAUOLA&#45;FORTRAN/tauola&#45;bbb/tauola&#45;c/ChannelForTauola.h">
+<area shape="rect" id="Node000001" title="Definition and implementation of class ChannelForTauola." alt="" coords="275,5,483,75"/>
+<area shape="rect" id="Node000002" href="$demo-lfv_2iniofc_8c.html" title=" " alt="" coords="38,240,242,309"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="336,87,177,242,173,238,333,83"/>
+<area shape="rect" id="Node000003" href="$TestCommunication_8c.html" title=" " alt="" coords="267,240,491,309"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="382,89,382,240,376,240,376,89"/>
+<area shape="rect" id="Node000004" href="$demo-redefine_2iniofc_8c.html" title=" " alt="" coords="277,357,481,427"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="263,79,159,119,109,145,65,173,32,204,12,237,8,254,10,271,16,289,28,308,43,321,66,333,129,353,203,368,277,378,277,384,203,373,128,358,64,338,40,325,24,311,11,291,4,272,3,253,7,235,27,200,62,169,106,140,157,115,261,74"/>
+<area shape="rect" id="Node000005" href="$ChannelForTauolaInterface_8h.html" title=" " alt="" coords="416,123,638,192"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="435,81,485,120,482,124,431,85"/>
+<area shape="rect" id="Node000007" href="$channels__wrappers_8c.html" title=" " alt="" coords="812,240,1020,309"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="497,68,574,91,651,120,768,179,866,237,864,242,766,184,649,125,572,96,496,73"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,323,382,357,376,357,376,323"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="403,198,244,246,242,240,402,193"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="475,203,424,242,421,238,472,198"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="532,207,526,259,518,286,505,311,482,338,454,359,450,355,478,334,501,308,513,284,521,258,527,206"/>
+<area shape="rect" id="Node000006" href="$ChannelForTauolaInterface_8c.html" title=" " alt="" coords="565,240,788,309"/>
+<area shape="poly" id="edge9_Node000005_Node000006" title=" " alt="" coords="583,198,634,238,631,242,580,203"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="652,193,813,240,811,245,651,198"/>
+</map>

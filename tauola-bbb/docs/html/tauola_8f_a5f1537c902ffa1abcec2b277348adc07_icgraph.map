@@ -1,0 +1,52 @@
+<map id="rotor3" name="rotor3">
+<area shape="rect" id="Node000001" title=" " alt="" coords="821,204,883,229"/>
+<area shape="rect" id="Node000002" href="$tauola_8f.html#a53a3147a76540190b4a44e8ad97e389d" title=" " alt="" coords="361,229,431,254"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="824,239,800,253,774,263,727,273,678,277,582,276,496,266,431,253,432,248,497,260,582,271,678,272,726,267,773,258,798,248,821,235"/>
+<area shape="rect" id="Node000009" href="$tauola_8f.html#a6967771f631b2e1acce0b6adfcbf6c03" title=" " alt="" coords="356,28,436,53"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="832,194,805,158,766,115,719,75,692,58,664,44,604,29,542,25,484,28,437,35,436,30,484,23,542,19,605,24,666,39,695,53,722,70,770,111,809,154,837,191"/>
+<area shape="rect" id="Node000011" href="$tauola_8f.html#a7acbfe86f5238a9e95ca8ff84b87e92a" title=" " alt="" coords="359,153,433,178"/>
+<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="807,222,711,225,598,219,508,202,432,180,434,175,509,196,599,214,711,220,807,217"/>
+<area shape="rect" id="Node000013" href="$tauola_8f.html#a6651dabbdbb21fe4e1acae16eebd85f8" title=" " alt="" coords="713,153,773,178"/>
+<area shape="poly" id="edge25_Node000001_Node000013" title=" " alt="" coords="810,200,770,181,773,176,813,195"/>
+<area shape="rect" id="Node000003" href="$tauola_8f.html#a1bd9d027028b23a352820f167d8eb28e" title=" " alt="" coords="121,129,182,154"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,244,291,237,262,230,233,219,211,205,191,189,161,157,165,153,194,185,214,201,236,214,263,225,292,232,347,239"/>
+<area shape="rect" id="Node000004" href="$tauola_8f.html#a97f94912ecc6baa05661c25587404aac" title=" " alt="" coords="237,178,306,204"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="350,226,302,206,304,201,352,221"/>
+<area shape="rect" id="Node000005" href="$tauola_8f.html#acfce9d17ba5e1a3f2f89a6e63437d609" title=" " alt="" coords="237,129,306,154"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="368,222,306,169,290,157,293,153,310,165,372,218"/>
+<area shape="rect" id="Node000006" href="$tauola_8f.html#ae1f8ee3ed25e296df337208e98632640" title=" " alt="" coords="243,329,300,354"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="373,266,310,320,294,331,291,327,306,316,369,262"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="226,176,181,157,183,152,228,171"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="222,144,182,144,182,139,222,139"/>
+<area shape="rect" id="Node000007" href="$tauola_8f.html#a246ed5240765b0502533347480e3e5d9" title=" " alt="" coords="5,253,68,278"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="228,342,174,335,115,319,80,301,52,281,55,277,83,296,117,314,175,330,229,337"/>
+<area shape="rect" id="Node000008" href="$tauola_8f.html#a12e494ef2cc9d621f1341f6c13c66fda" title=" " alt="" coords="116,278,187,304"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="229,327,181,306,183,302,231,322"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="102,283,68,275,69,270,103,278"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="356,25,328,15,297,9,266,9,236,19,207,42,184,73,169,104,159,130,154,128,164,102,180,70,203,39,233,14,265,4,298,4,330,10,358,20"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="384,67,353,116,310,169,296,180,293,176,306,165,348,113,379,64"/>
+<area shape="poly" id="edge14_Node000009_Node000005" title=" " alt="" coords="371,64,290,131,286,127,367,60"/>
+<area shape="rect" id="Node000010" href="$tauola_8f.html#a1414fed9784e0c24b3093402d7a8700b" title=" " alt="" coords="238,28,305,53"/>
+<area shape="poly" id="edge15_Node000009_Node000010" title=" " alt="" coords="342,43,305,43,305,38,342,38"/>
+<area shape="poly" id="edge16_Node000010_Node000007" title=" " alt="" coords="226,57,171,82,143,99,118,120,90,154,69,191,44,254,39,252,64,189,86,151,114,116,140,95,168,77,224,52"/>
+<area shape="poly" id="edge17_Node000010_Node000008" title=" " alt="" coords="261,67,161,279,156,277,256,65"/>
+<area shape="poly" id="edge19_Node000011_Node000003" title=" " alt="" coords="365,148,338,132,307,120,275,116,241,118,183,133,182,128,240,113,275,111,309,115,340,127,368,143"/>
+<area shape="poly" id="edge20_Node000011_Node000004" title=" " alt="" coords="346,179,307,187,306,182,345,173"/>
+<area shape="poly" id="edge21_Node000011_Node000005" title=" " alt="" coords="345,159,306,151,307,146,346,154"/>
+<area shape="rect" id="Node000012" href="$tauola_8f.html#a393b00bc29f6cb97cdd3c24b46178e6f" title=" " alt="" coords="235,280,308,305"/>
+<area shape="poly" id="edge22_Node000011_Node000012" title=" " alt="" coords="375,190,287,282,283,278,371,187"/>
+<area shape="poly" id="edge23_Node000012_Node000007" title=" " alt="" coords="223,278,186,270,124,265,68,266,68,261,124,260,187,265,224,273"/>
+<area shape="poly" id="edge24_Node000012_Node000008" title=" " alt="" coords="221,295,187,294,187,289,221,289"/>
+<area shape="rect" id="Node000014" href="$tauola_8f.html#ae59e0b98ffac0e48cad8ad252a680e03" title=" " alt="" coords="484,128,551,153"/>
+<area shape="poly" id="edge26_Node000013_Node000014" title=" " alt="" coords="699,164,551,147,551,141,700,158"/>
+<area shape="rect" id="Node000015" href="$tauola_8f.html#a27f833323559a76aa26375e820773d98" title=" " alt="" coords="599,178,665,204"/>
+<area shape="poly" id="edge28_Node000013_Node000015" title=" " alt="" coords="700,178,666,186,665,181,699,173"/>
+<area shape="rect" id="Node000016" href="$tauola_8f.html#ae4200e6c5bef8e41ad665a0fa68dfce4" title=" " alt="" coords="600,77,664,102"/>
+<area shape="poly" id="edge30_Node000013_Node000016" title=" " alt="" coords="711,147,650,105,653,100,714,143"/>
+<area shape="poly" id="edge27_Node000014_Node000011" title=" " alt="" coords="471,153,434,161,433,156,470,148"/>
+<area shape="poly" id="edge29_Node000015_Node000011" title=" " alt="" coords="584,189,433,172,433,167,585,184"/>
+<area shape="poly" id="edge33_Node000016_Node000016" title=" " alt="" coords="650,66,645,58,632,56,621,58,615,62,614,68,618,76,613,78,609,69,611,59,619,53,632,50,647,54,654,62"/>
+<area shape="rect" id="Node000017" href="$tauola_8f.html#a5982c5fd91a6b4673201c0516ac5c221" title=" " alt="" coords="484,77,551,102"/>
+<area shape="poly" id="edge31_Node000016_Node000017" title=" " alt="" coords="586,92,551,92,551,87,586,87"/>
+<area shape="poly" id="edge32_Node000017_Node000011" title=" " alt="" coords="486,112,419,155,416,151,483,108"/>
+</map>

@@ -1,0 +1,40 @@
+\doxysection{MEutils.\+h}
+\hypertarget{MEutils_8h_source}{}\label{MEutils_8h_source}\index{/home/john/products/Tauola/tauola-\/bbb/TAUOLA-\/FORTRAN/tauola-\/bbb/demo-\/redefine/MEutils.h@{/home/john/products/Tauola/tauola-\/bbb/TAUOLA-\/FORTRAN/tauola-\/bbb/demo-\/redefine/MEutils.h}}
+\mbox{\hyperlink{MEutils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ These\ are\ C++\ versions\ of\ functions\ from\ tauola.f}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ Needed\ for\ BaBar\ pi-\/\ pi0\ current}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ }std::complex;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{comment}{//\ determines\ whether\ actual\ decay\ is\ of\ tau+\ or\ tau-\/}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{comment}{//\ for\ the\ calculation\ of\ "{}AXIAL\ TYPE"{}\ \ PI-\/VECTOR\ \ PIA\ in\ tau\ decay\ matrix\ element,}}
+\DoxyCodeLine{00012\ \ \ \textcolor{comment}{//\ we\ must\ know\ whether\ the\ actual\ decay\ is\ of\ tau+\ or\ of\ tau-\/}}
+\DoxyCodeLine{00013\ \ \ \textcolor{comment}{//\ for\ that\ purpose\ information\ \ from\ Tauola\ common\ blocks\ must\ be\ used.}}
+\DoxyCodeLine{00014\ \ \ \textcolor{comment}{//\ The\ signtau(int\ SIGN)\ should\ migrate\ from\ pipi0.c\ file\ it\ does\ not\ depend\ on\ the\ }}
+\DoxyCodeLine{00015\ \ \ \textcolor{comment}{//\ Tau\ decay\ mode.\ }}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MEutils_8h_abf8682df7c0eba686ed3b2c1e24a8bf3}{taugetsign\_}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{SIGN1}});}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ clvec\ will\ be\ shifted\ to\ private(?)\ section\ of\ utilities\ class}}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MEutils_8h_a4201a81bace9da73af2acb7f9b3e76fb}{clvec}}(\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{HJ}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{PN}},\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{PIV}});}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ claxi\ will\ be\ shifted\ to\ private(?)\ section\ of\ utilities\ class}}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MEutils_8h_a8c8757084fcdc4cfbe4f3e18f7e2694e}{claxi}}(\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{HJ}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{PN}},\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{PIA}});}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ clnut\ will\ be\ shifted\ to\ private(?)\ section\ of\ utilities\ class}}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MEutils_8h_a9ff14bdee67288c09782035a1204be8a}{clnut}}(\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{HJ}},\ \textcolor{keywordtype}{float}\ \&\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{B}},\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{HV}});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ tauDecay\_ME\ will\ be\ shifted\ to\ public(?)\ section\ of\ utilities\ class}}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MEutils_8h_ad279b97d8b075b3dfaa5a754fb14487d}{tauDecay\_ME}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{ifcosCabibo}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pt}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{pn}},\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{hadcur}},\ \textcolor{keywordtype}{float}\ \&\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{amplit}},\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{hv}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ bwig\ will\ be\ shifted\ to\ current\ specific\ utilities\ class}}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{MEutils_8h_a3a1c8bfb4416e87f72c52135c7377504}{bwig}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{s}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{m}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{g}});}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ fpik\ will\ be\ shifted\ to\ current\ specific\ utilities\ class}}
+\DoxyCodeLine{00034\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{MEutils_8h_a3d3abe0e82a55530e7f43ffc2843bf9d}{fpik}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{W}});}
+
+\end{DoxyCode}
