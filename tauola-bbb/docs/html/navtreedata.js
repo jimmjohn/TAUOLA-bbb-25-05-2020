@@ -26,10 +26,7 @@ var NAVTREE =
 [
   [ "Tauola", "index.html", [
     [ "Tauola-bbb", "index.html", "index" ],
-    [ "taumain", "md__2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2docs_2theme_2taumain.html", [
-      [ "Installation", "md__2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2docs_2theme_2taumain.html#autotoc_md4", null ],
-      [ "Written by", "md__2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2docs_2theme_2taumain.html#autotoc_md5", null ]
-    ] ],
+    [ "taumain", "md_docs_2theme_2taumain.html", null ],
     [ "Modules", "namespaces.html", [
       [ "Modules List", "namespaces.html", "namespaces_dup" ],
       [ "Module Members", "namespacemembers.html", [
@@ -62,8 +59,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ChannelForTauolaInterface_8c.html",
-"curr__karl_8f.html#a39494d8e57635380b07f3cefe7109357",
-"namespaceTauolapp.html#abb7a65b6568c696875ebba98cc60b1f0"
+"demo-lfv_2lfv_8c.html#a0cfcaa644441867b7b4139557db437fc",
+"gaus__integr_8f.html#a2f2248ffb396f31d8b4bcf450963d49c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

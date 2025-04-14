@@ -1,6 +1,23 @@
 var searchData=
 [
-  ['value_5fparameter_2ef_0',['value_parameter.f',['../value__parameter_8f.html',1,'']]],
-  ['variables_1',['variables',['../md_docs_2theme_2doxygen-awesome-css_2docs_2customization.html#autotoc_md3',1,'Available variables'],['../md_docs_2theme_2doxygen-awesome-css_2docs_2customization.html#autotoc_md1',1,'CSS-Variables']]],
-  ['virtualfunc_2',['virtualfunc',['../classMyLibrary_1_1Example.html#a8431ef1c10c4e2a36302b8e8556514f6',1,'MyLibrary::Example::virtualfunc()'],['../classMyLibrary_1_1SubclassExample.html#a08668a9f16511ad37fb547c985d62764',1,'MyLibrary::SubclassExample::virtualfunc()']]]
+  ['parameter_2einc_0',['parameter.inc',['../parameter_8inc.html',1,'']]],
+  ['particle_20id_20convention_20in_20tauola_20dcdmas_20inimas_1',['Mass &amp; Particle ID convention in Tauola(DCDMAS/INIMAS)',['../md_docs_2theme_2taumain.html#autotoc_md7',1,'']]],
+  ['patches_20for_20other_20projects_2',['Patches for other projects',['../index.html#autotoc_md4',1,'']]],
+  ['pipi0_2ec_3',['pipi0.c',['../demo-redefine_2pipi0_8c.html',1,'(Global Namespace)'],['../demo-pairs_2pipi0_8c.html',1,'(Global Namespace)']]],
+  ['pipi0_2eh_4',['pipi0.h',['../demo-redefine_2pipi0_8h.html',1,'(Global Namespace)'],['../demo-pairs_2pipi0_8h.html',1,'(Global Namespace)']]],
+  ['pipi0_5fcurr_5',['pipi0_curr',['../demo-pairs_2pipi0_8c.html#a6bdd948f82fb81ea07f33cf0b001758d',1,'pipi0_curr(const float *pc, const float *pn, complex&lt; float &gt; *hadcur):&#160;pipi0.c'],['../demo-pairs_2pipi0_8h.html#a6bdd948f82fb81ea07f33cf0b001758d',1,'pipi0_curr(const float *pc, const float *pn, complex&lt; float &gt; *hadcur):&#160;pipi0.c'],['../demo-redefine_2pipi0_8c.html#a6bdd948f82fb81ea07f33cf0b001758d',1,'pipi0_curr(const float *pc, const float *pn, complex&lt; float &gt; *hadcur):&#160;pipi0.c'],['../demo-redefine_2pipi0_8h.html#a6bdd948f82fb81ea07f33cf0b001758d',1,'pipi0_curr(const float *pc, const float *pn, complex&lt; float &gt; *hadcur):&#160;pipi0.c']]],
+  ['pipi0_5fme_6',['pipi0_me',['../demo-pairs_2pipi0_8c.html#a0426846101e0aa72b6023bdaa87e1cc4',1,'pipi0_ME(const float *pt, const float *pn, const float *pim1, const float *pim2, float &amp;amplit, float *hv):&#160;pipi0.c'],['../demo-pairs_2pipi0_8h.html#a0426846101e0aa72b6023bdaa87e1cc4',1,'pipi0_ME(const float *pt, const float *pn, const float *pim1, const float *pim2, float &amp;amplit, float *hv):&#160;pipi0.c'],['../demo-redefine_2pipi0_8c.html#a0426846101e0aa72b6023bdaa87e1cc4',1,'pipi0_ME(const float *pt, const float *pn, const float *pim1, const float *pim2, float &amp;amplit, float *hv):&#160;pipi0.c'],['../demo-redefine_2pipi0_8h.html#a0426846101e0aa72b6023bdaa87e1cc4',1,'pipi0_ME(const float *pt, const float *pn, const float *pim1, const float *pim2, float &amp;amplit, float *hv):&#160;pipi0.c']]],
+  ['pkorb_7',['pkorb',['../pkorb_8f.html#a97a308b602bc1f74646875dbe502ef54',1,'pkorb.f']]],
+  ['pkorb_2ef_8',['pkorb.f',['../pkorb_8f.html',1,'']]],
+  ['print_9',['print',['../classTauolapp_1_1ChannelForTauola.html#a5a7e14f63726adea963ddc6d5e9aaa93',1,'Tauolapp::ChannelForTauola']]],
+  ['print_5f4vector_10',['print_4vector',['../channels__wrappers_8c.html#a0a57a0f058993e1c21b7a2a94142d5bf',1,'channels_wrappers.c']]],
+  ['print_5f4vector_5fdouble_11',['print_4vector_double',['../channels__wrappers_8c.html#add09f3ccc1c93e89a548efeefc163842',1,'channels_wrappers.c']]],
+  ['print_5f4vectorc_12',['print_4vectorC',['../channels__wrappers_8c.html#aaa7b9a3ffb1d0ae031c064a99119c4e5',1,'channels_wrappers.c']]],
+  ['printchannelinfo_13',['PrintChannelInfo',['../namespaceTauolapp.html#a890e36abff2f46110a4c8f3acd89a4be',1,'Tauolapp']]],
+  ['prob1_14',['PROB1',['../TauolaStructs_8h.html#ab79f3f7964e3e0f6e76d6e7c7365e211',1,'TauolaStructs.h']]],
+  ['prob2_15',['PROB2',['../TauolaStructs_8h.html#a8f52760d2f4cf8ef214d1ddba97e5f04',1,'TauolaStructs.h']]],
+  ['proba2_16',['PROBa2',['../TauolaStructs_8h.html#ad853e41c3338854d1aae000e687edae3',1,'TauolaStructs.h']]],
+  ['probom_17',['PROBOM',['../TauolaStructs_8h.html#a1e43fc353c3306829e67baf13419b119',1,'TauolaStructs.h']]],
+  ['prod5_18',['prod5',['../demo-pairs_2MEutils_8c.html#a4864acc0e0e1483e437555779cd0293c',1,'prod5(const float *p1, const float *p2, const float *p3, float *result):&#160;MEutils.c'],['../demo-pairs_2MEutils_8h.html#a4864acc0e0e1483e437555779cd0293c',1,'prod5(const float *p1, const float *p2, const float *p3, float *result):&#160;MEutils.c'],['../tauola_8f.html#a31959f84e9f6ad47e86ad59817a73efa',1,'prod5(p1, p2, p3, pia):&#160;tauola.f']]],
+  ['projects_19',['Patches for other projects',['../index.html#autotoc_md4',1,'']]]
 ];

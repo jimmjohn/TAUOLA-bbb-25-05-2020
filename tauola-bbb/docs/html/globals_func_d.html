@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -127,6 +130,7 @@ $(document).ready(function(){initNavTree('globals_func_d.html',''); initResizabl
 <li>dekay()&#160;:&#160;<a class="el" href="tauola_8f.html#a1bd9d027028b23a352820f167d8eb28e">tauola.f</a></li>
 <li>dekay1()&#160;:&#160;<a class="el" href="tauola_8f.html#a97f94912ecc6baa05661c25587404aac">tauola.f</a></li>
 <li>dekay2()&#160;:&#160;<a class="el" href="tauola_8f.html#acfce9d17ba5e1a3f2f89a6e63437d609">tauola.f</a></li>
+<li>demo_mu()&#160;:&#160;<a class="el" href="demo-pair_8h.html#a50be71e853158af1b1e238a806ebaa85">demo-pair.h</a>, <a class="el" href="demo-pair_8c.html#a15548d52f8e08b0cda3f191139033d68">demo-pair.c</a></li>
 <li>dexay()&#160;:&#160;<a class="el" href="tauola_8f.html#a246ed5240765b0502533347480e3e5d9">tauola.f</a></li>
 <li>dexay1()&#160;:&#160;<a class="el" href="tauola_8f.html#a12e494ef2cc9d621f1341f6c13c66fda">tauola.f</a></li>
 <li>dexel()&#160;:&#160;<a class="el" href="tauola_8f.html#ae1f8ee3ed25e296df337208e98632640">tauola.f</a></li>
@@ -136,16 +140,17 @@ $(document).ready(function(){initNavTree('globals_func_d.html',''); initResizabl
 <li>dgamqqs1()&#160;:&#160;<a class="el" href="gfact_8f.html#ac8673209f063faae71c3a0ac178c9485">gfact.f</a></li>
 <li>dgamqqs1s3()&#160;:&#160;<a class="el" href="gfact_8f.html#aaa20caf9f29a61cc56e14e20f2854278">gfact.f</a></li>
 <li>dhrho()&#160;:&#160;<a class="el" href="binp_8f.html#a0f08a0f560a97549cac1f6c67bec32c0">binp.f</a></li>
+<li>dilog()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a2d720977b9d2a9d8e179e48a4b4f62b7">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a2d720977b9d2a9d8e179e48a4b4f62b7">MEutils.h</a></li>
 <li>dilogt()&#160;:&#160;<a class="el" href="tauola_8f.html#a383faa3d1bec104e7402db87471d4528">tauola.f</a></li>
 <li>dm()&#160;:&#160;<a class="el" href="binp_8f.html#ab92c1b6470fc3210acf039bcfea5f872">binp.f</a></li>
 <li>dph1pi()&#160;:&#160;<a class="el" href="tauola_8f.html#a8c268aa993c7cb4a9ef254796b20480e">tauola.f</a></li>
-<li>dph2pi()&#160;:&#160;<a class="el" href="tauola_8f.html#ad0773dd5dabdeaf7513ec5a8ba0c1fa0">tauola.f</a></li>
+<li>dph2pi()&#160;:&#160;<a class="el" href="tauola_8f.html#a8b925b0cf88bd441e5fa4c4d7e1467e5">tauola.f</a></li>
 <li>dph3pi()&#160;:&#160;<a class="el" href="tauola_8f.html#a5982c5fd91a6b4673201c0516ac5c221">tauola.f</a></li>
-<li>dph4pi()&#160;:&#160;<a class="el" href="tauola_8f.html#ae59e0b98ffac0e48cad8ad252a680e03">tauola.f</a></li>
-<li>dph5pi()&#160;:&#160;<a class="el" href="tauola_8f.html#a27f833323559a76aa26375e820773d98">tauola.f</a></li>
+<li>dph4pi()&#160;:&#160;<a class="el" href="tauola_8f.html#aec7fb87a3fb376098c80a80002666368">tauola.f</a></li>
+<li>dph5pi()&#160;:&#160;<a class="el" href="tauola_8f.html#a8386b687012a1ccfa1ed6938930dbbe9">tauola.f</a></li>
 <li>dphsel()&#160;:&#160;<a class="el" href="tauola_8f.html#acf6fa05400169213354e0795121272d4">tauola.f</a></li>
 <li>dphsmu()&#160;:&#160;<a class="el" href="tauola_8f.html#a5f60c15564bfbc8628903ac0a263b036">tauola.f</a></li>
-<li>dphtre()&#160;:&#160;<a class="el" href="tauola_8f.html#ae4200e6c5bef8e41ad665a0fa68dfce4">tauola.f</a></li>
+<li>dphtre()&#160;:&#160;<a class="el" href="tauola_8f.html#af8985f4674dcd556899afd7a22bce7e6">tauola.f</a></li>
 <li>drcmu()&#160;:&#160;<a class="el" href="tauola_8f.html#aac582b895e05a83fa78434530be46089">tauola.f</a></li>
 <li>dwlnew()&#160;:&#160;<a class="el" href="tauola_8f.html#a4c5533b78f4545bef7bbaa57c7c7c3ba">tauola.f</a></li>
 <li>dwluel()&#160;:&#160;<a class="el" href="tauola_8f.html#a6957049718ea543f79a1bcaf35c9c016">tauola.f</a></li>

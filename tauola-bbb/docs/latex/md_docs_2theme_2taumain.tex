@@ -1,53 +1,316 @@
 \chapter{taumain}
 \hypertarget{md_docs_2theme_2taumain}{}\label{md_docs_2theme_2taumain}\index{taumain@{taumain}}
-\label{md_docs_2theme_2taumain_autotoc_md3}%
-\Hypertarget{md_docs_2theme_2taumain_autotoc_md3}%
- \href{https://github.com/jothepro/doxygen-awesome-css/releases/latest}{\texttt{ }} \mbox{[}\hypertarget{md_docs_2theme_2taumain_autotoc_md4}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md_docs_2theme_2taumain_autotoc_md4}
-For {\ttfamily Tauola} installation, you need the {\ttfamily Hep\+MC2}, {\ttfamily Hep\+MC3}, {\ttfamily PYTHIA8}, {\ttfamily LHAPDF} and {\ttfamily MC-\/\+TESTER}.
-
-For {\ttfamily Hep\+MC2} and {\ttfamily Hep\+MC3} package, you download the source code and create a build directory. Then run the following command from the build directory.
+\label{md_docs_2theme_2taumain_autotoc_md6}%
+\Hypertarget{md_docs_2theme_2taumain_autotoc_md6}%
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{cmake\ -\/DCMAKE\_INSTALL\_PREFIX=<path>/HepMC2/HepMC-\/2.06.11/\ <path>/HepMC2/HepMC-\/2.06.11/\ \(\backslash\)}
-\DoxyCodeLine{-\/Dmomentum:STRING=GEV\ -\/Dlength:STRING=MM}
-\DoxyCodeLine{make\ }
-\DoxyCodeLine{make\ install}
+In this section, we\textquotesingle{}ll explain how to call the main Tauola subroutines and use them to simulate tau decays. To use the Tauola library, certain COMMON blocks must be initialized to specify necessary parameters.
 
-\end{DoxyCode}
+{\itshape {\bfseries{We need to move these constants and decay initialization to a separate file, as the code that the user modifies should typically contain only the information relevant to their specific application.}}}
+
+The following initialization\textquotesingle{}s has to be done before calling the {\ttfamily DEXAY}/{\ttfamily DEKAY} function from the {\ttfamily Tauola} library.
+
+The {\ttfamily IDFF} in {\ttfamily IDFC} common block should be initiated to 15, if we want to run the decay for $\tau^+$ decay and and -\/15 for the $\tau^-$ decay.\hypertarget{md_docs_2theme_2taumain_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Mass \& Particle ID convention in Tauola(\+DCDMAS/\+INIMAS)}{Mass \& Particle ID convention in Tauola(DCDMAS/INIMAS)}}\label{md_docs_2theme_2taumain_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mass   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ID   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Variable    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mass   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ID   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Variable    }\\\cline{1-4}
+\endhead
+\PBS\centering $m_\tau$   &\PBS\centering 1.\+777   &\PBS\centering &\PBS\centering AMTAU    \\\cline{1-4}
+\PBS\centering $m_{\nu_\tau}$   &\PBS\centering 0.\+0   &\PBS\centering &\PBS\centering AMNUTA    \\\cline{1-4}
+\PBS\centering $m_e$   &\PBS\centering 0.\+000511   &\PBS\centering 11   &\PBS\centering AMEL    \\\cline{1-4}
+\PBS\centering $m_{\nu_e}$   &\PBS\centering 0.\+0   &\PBS\centering 12   &\PBS\centering AMNUE    \\\cline{1-4}
+\PBS\centering $m_\mu$   &\PBS\centering 0.\+105659   &\PBS\centering 13   &\PBS\centering AMMU    \\\cline{1-4}
+\PBS\centering $m_{\pi^0}$   &\PBS\centering 0.\+134976   &\PBS\centering 2, 111   &\PBS\centering AMPIZ    \\\cline{1-4}
+\PBS\centering $m_{\pi}$   &\PBS\centering 0.\+139570   &\PBS\centering 1   &\PBS\centering AMPI    \\\cline{1-4}
+\PBS\centering $m_\rho$   &\PBS\centering 0.\+77590   &\PBS\centering &\PBS\centering AMRO    \\\cline{1-4}
+\PBS\centering $m_{a_1}$   &\PBS\centering 1.\+251   &\PBS\centering &\PBS\centering AMA1    \\\cline{1-4}
+\PBS\centering $m_K$   &\PBS\centering 0.\+493677   &\PBS\centering 3   &\PBS\centering AMK    \\\cline{1-4}
+\PBS\centering $m_{K^0}$   &\PBS\centering 0.\+497672   &\PBS\centering 4   &\PBS\centering AMKZ    \\\cline{1-4}
+\PBS\centering $m_{K^*}$   &\PBS\centering 0.\+89166   &\PBS\centering 313   &\PBS\centering AMKST    \\\cline{1-4}
+\PBS\centering $m_{GM}$   &\PBS\centering 0.\+0001   &\PBS\centering 8   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_\eta$   &\PBS\centering 0.\+5488   &\PBS\centering 9, 221   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{\nu_\mu}$   &\PBS\centering 0.\+0   &\PBS\centering 14   &\PBS\centering AMNUMU    \\\cline{1-4}
+\PBS\centering $m_{\gamma}$   &\PBS\centering 0.\+0   &\PBS\centering 22   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_\omega$   &\PBS\centering 0.\+7826   &\PBS\centering 223   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_\phi$   &\PBS\centering 1.\+019   &\PBS\centering 333   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{\rho^0}$   &\PBS\centering 0.\+7755   &\PBS\centering 113   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{\eta_p}$   &\PBS\centering 0.\+958   &\PBS\centering 331   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_p$   &\PBS\centering 0.\+938272046   &\PBS\centering 2212   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{A^0}$   &\PBS\centering 1.\+45   &\PBS\centering 10211   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{B_1}$   &\PBS\centering 1.\+235   &\PBS\centering 10213   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{K_s}$   &\PBS\centering 0.\+497614   &\PBS\centering 310   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_\lambda$   &\PBS\centering 1.\+15683   &\PBS\centering 3122   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{a_0}$   &\PBS\centering 0.\+98   &\PBS\centering 10111   &\PBS\centering \\\cline{1-4}
+\PBS\centering $m_{f_0}$   &\PBS\centering 0.\+98   &\PBS\centering 10221   &\PBS\centering \\\cline{1-4}
+\end{longtabu}
 
 
-For {\ttfamily Hep\+MC3}, we have to just change the folder and the version of {\ttfamily Hep\+MC3}
-
-For {\ttfamily MC-\/\+TESTER} installation, go to the the unzipped location and run following command
+{\itshape {\bfseries{Doubt -\/}}}
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{./configure\ -\/-\/prefix=<path>/MC-\/TESTER/mc-\/tester/\ \(\backslash\)}
-\DoxyCodeLine{-\/-\/with-\/HepMC=<path>/HepMC2/HepMC-\/2.06.11/\ \(\backslash\)}
-\DoxyCodeLine{-\/-\/with-\/HepMC3=<path>/HepMC3/HepMC3-\/3.3.0}
-\DoxyCodeLine{make}
-\DoxyCodeLine{make\ install}
+\begin{DoxyEnumerate}
+\item ​ The PDG ID of $K^0$ is 311 and in the code its assigned a mass of $\pi^0$(line number 1388 in taumain).
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{TAUDCDsize.\+in}{TAUDCDsize.in}}\label{md_docs_2theme_2taumain_autotoc_md8}
+Following values in the TAUDCDsize.\+in file is used to define the number of different channels in different modes.
 
-\end{DoxyCode}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Variable   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Variable   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\PBS\centering {\ttfamily NMODE}   &\PBS\centering 196   &Maximum possible number of decay channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NLT}   &\PBS\centering 2   &Number of leptonic decay channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NM1}   &\PBS\centering 40   &Maximum number of 1 scalar or {\itshape anomalous} channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NM2}   &\PBS\centering 71   &Maximum number of 2 scalar or {\itshape anomalous} channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NM3}   &\PBS\centering 19   &Maximum number of 3 scalar channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NM4}   &\PBS\centering 32   &Maximum number of 4 scalar channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NM5}   &\PBS\centering 21   &Maximum number of 5 scalar channels    \\\cline{1-3}
+\PBS\centering {\ttfamily NM6}   &\PBS\centering 13   &Maximum number of multiple scalar channels   \\\cline{1-3}
+\end{longtabu}
 
 
-For the installation of {\ttfamily Tauola}, you can do
+The definition of different channels follows the following order
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{./configure\ -\/-\/prefix=<path>/Tauola\ -\/-\/with-\/hepmc=<path>/HepMC2/HepMC-\/2.06.11/\ \(\backslash\)}
-\DoxyCodeLine{-\/-\/with-\/hepmc3=<path>/HepMC3/HepMC3-\/3.3.0\ -\/-\/with-\/lhapdf=<path>/LHAPDF/LHAPDF-\/6.5.5\ \(\backslash\)}
-\DoxyCodeLine{-\/-\/with-\/pythia8=<path>/Pythia8/pythia8313\ -\/-\/with-\/mc-\/tester=<path>/MC-\/TESTER/mc-\/tester}
-\DoxyCodeLine{make}
+\begin{DoxyEnumerate}
+\item Leptonic
+\item 4 -\/ scalar channels
+\item 5 -\/ scalar channels
+\item multiple scalar channels
+\item 3 -\/ scalar channels
+\item 2 -\/ scalar channels
+\item 1 -\/ scalar or {\itshape anomalous} channels
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{INITDK}{INITDK}}\label{md_docs_2theme_2taumain_autotoc_md9}
+This routine initializes the decay channels and the branching ratios.
 
-\end{DoxyCode}
+\doxysubparagraph*{The channel number is saved to {\ttfamily JLIST} and the corresponding branching ratio is saved to {\ttfamily GAMPRT} array. Also the \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(\+J, JNPI)} is saved with the particle ID\textquotesingle{}s for the channel (nchannel-\/2) from J=0 to J=JMAX. The maximum particles in a channel is set to 9.}\hypertarget{md_docs_2theme_2taumain_autotoc_md10}{}\doxyparagraph{\texorpdfstring{The leptonic channel Branching ratio\textquotesingle{}s}{The leptonic channel Branching ratio's}}\label{md_docs_2theme_2taumain_autotoc_md10}
+
+\begin{DoxyEnumerate}
+\item $\tau \to e^-$ , GAMPRT = 0.\+1800(CLEO default) , GAMPRT = 0.\+178651(Ba\+Bar)
+\item $\tau \to \mu^-$ , GAMPRT = 0.\+1751(CLEO default) , GAMPRT = 0.\+173551(Ba\+Bar)
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md11}{}\doxyparagraph{\texorpdfstring{Four Scalar Channels}{Four Scalar Channels}}\label{md_docs_2theme_2taumain_autotoc_md11}
+
+\begin{DoxyEnumerate}
+\item $\tau^- \to  2\pi^- + \pi^+ + \pi^0$ , GAMPRT = 0.\+0450, GAMPRT = 0.\+043654(Ba\+Bar)
+\item $\tau^- \to  3\pi^0 + \pi^-$ , GAMPRT = 0.\+0100, GAMPRT = 0.\+012619(Ba\+Bar)
+\item $\tau^- \to  \nu_e + 2e^- + e^+$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \nu_\mu + 2\mu^- + \mu^+$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \nu_e + e^- + \mu^- + \mu^+$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \nu_\mu + \mu^- + e^- + e^+$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^- + 3\pi^0$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  2\pi^0 + \eta + K^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  2\pi^0 + K^0 + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \pi^0 + K^0 + \eta + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \pi^0 + \pi^- + \pi^+ + K^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^0 + \pi^- + \pi^+ + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  2\pi^0 + \eta + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^0 + \bar{K^0} + \eta + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^0 + \bar{K^0} + \pi^0 + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^0 + \bar{K^0} + K^0 + \pi^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^0 + 2\pi^0 + K^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^0 + \bar{K^0} + \pi^0 + K^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \pi^0 + K^0 + \eta + K^-$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \pi^- + \pi^+ + \pi^- + \eta$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \pi^- + K^+ + K^- + \pi^0$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^- + K^+ + K^- + \pi^0$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^- + K^+ + K^- + K^0$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^- + \pi^+ + \pi^- + K^0$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  K^- + K^+ + \pi^- + K^0$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\item $\tau^- \to  \pi^- + \pi^+ + \pi^- + \omega$ , GAMPRT = 0.\+0100 \texorpdfstring{$\ast$}{*} 0
+\end{DoxyEnumerate}
+
+There are another 6 more placeholder for including 6 more decay channels so total will be 32 (NM4=32)\textbackslash{}
+
+The ID of the particle decayed will be saved in {\ttfamily IDFFIN}(particle\+Number, Channel)
+
+$ \tau^- \to  2\pi^- + \pi^+ + \pi^0$
 
 
-The examples are given in the folder {\ttfamily demo-\/babar} , {\ttfamily demo-\/lfv} , {\ttfamily demo-\/redifine} folders. You can got to the particular directory and execute the make command and run the program. The makefile links the {\ttfamily glibk} library for plotting, {\ttfamily photos} library for the radiative corrections and the {\ttfamily jetset} library for printing the event records in pythia format.\hypertarget{md_docs_2theme_2taumain_autotoc_md5}{}\doxysection{\texorpdfstring{Written by}{Written by}}\label{md_docs_2theme_2taumain_autotoc_md5}
-Zbigniew Was,
+\begin{DoxyItemize}
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(1,1)} = -\/1
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(2,1)} = -\/1
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(3,1)} = 1
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(4,1)} = 2
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(5,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(6,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(7,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(8,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(9,1)} = 0
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\href{mailto:zbigniew.was@ifj.edu.pl}{\texttt{ zbigniew.\+was@ifj.\+edu.\+pl}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+$\tau^- \to  3\pi^0 + \pi^-$
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(1,1)} = 2
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(2,1)} = 2
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(3,1)} = 2
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(4,1)} = -\/1
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(5,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(6,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(7,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(8,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(9,1)} = 0
+
+$\tau^- \to  \nu_e + 2e^- + e^+$
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(1,1)} = 12
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(2,1)} = -\/11
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(3,1)} = -\/11
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(4,1)} = 11
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(5,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(6,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(7,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(8,1)} = 0
+\item \doxylink{TauolaStructs_8h_a772711e02160fac527ef745b2e43e9ea}{IDFFIN(9,1)} = 0
+\end{DoxyItemize}\hypertarget{md_docs_2theme_2taumain_autotoc_md12}{}\doxyparagraph{\texorpdfstring{Five scalar channels}{Five scalar channels}}\label{md_docs_2theme_2taumain_autotoc_md12}
+
+\begin{DoxyEnumerate}
+\item $\tau^- \to 2\pi^- + \pi^+ + 2\pi^0 \;old$ , GAMPRT=0.\+0009, GAMPRT = 0.\+005011(Ba\+Bar)
+\item $\tau^- \to a_1 \to \rho + \omega$, GAMPRT=0.\+00
+\item $\tau^- \to benchmark \;current$, GAMPRT=0.\+0
+\item $\tau^- \to 2\pi^- + \pi^+ + 2\pi^0  \;app08$ , GAMPRT=0.\+00
+\item $\tau^- \to \pi^- + 4\pi^0 \;app08$ ,GAMPRT=0.\+00
+\item $\tau^- \to 3\pi^- + 2\pi^+ \;app08$ ,GAMPRT=0.\+00
+\item $\tau^- \to 2\pi^- + 2\pi^+ + K^-$ ,GAMPRT=0.\+001\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to 2\pi^- + \pi^+ + \pi^0 + K^0$
+\item $\tau^- \to \pi^- +  4\pi^0 \;old$
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md13}{}\doxyparagraph{\texorpdfstring{Multiple scalar channels}{Multiple scalar channels}}\label{md_docs_2theme_2taumain_autotoc_md13}
+
+\begin{DoxyEnumerate}
+\item $\tau^- \to 3 \pi^- + 2\pi^+$, GAMPRT=0.\+0004, GAMPRT = 0.\+000789(Ba\+Bar)
+\item $\tau^- \to 3 \pi^- + 2\pi^+ + \pi^0$, GAMPRT=0.\+0003, GAMPRT = 0.\+000183(Ba\+Bar)
+\item $\tau^- \to 2 \pi^- + \pi^+ + 3\pi^0$, GAMPRT=0.\+0005, GAMPRT = 0.\+000251(Ba\+Bar)
+\item $\tau^- \to 3 \pi^- + 2\pi^+ + 2\pi^0$, GAMPRT=0.\+0005\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to 4 \pi^- + 3\pi^+$, GAMPRT=0.\+0005\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to 4 \pi^- + 3\pi^+ + \pi^0$, GAMPRT=0.\+0005\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to 2 \pi^- + 2\pi^+ + K^- + \pi^0$, GAMPRT=0.\+0005\texorpdfstring{$\ast$}{*}0
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md14}{}\doxyparagraph{\texorpdfstring{3 -\/ scalar channels}{3 - scalar channels}}\label{md_docs_2theme_2taumain_autotoc_md14}
+
+\begin{DoxyEnumerate}
+\item $\tau^- \to K^- + \pi^- + K^+$, GAMPRT=0.\+0015, GAMPRT =0.\+00159 (Ba\+Bar)
+\item $\tau^- \to K^0 + \pi^- + K^0_B$, GAMPRT=0.\+0015, GAMPRT = 0.\+001672(Ba\+Bar)
+\item $\tau^- \to K^- + \pi^0 + K^0$, GAMPRT=0.\+0015, GAMPRT = 0.\+001536(Ba\+Bar)
+\item $\tau^- \to \pi^0 + \pi^0 + K^-$, GAMPRT=0.\+0005, GAMPRT = 0.\+00068(Ba\+Bar)
+\item $\tau^- \to K^- + \pi^- + \pi^+$, GAMPRT=0.\+0050, GAMPRT = 0.\+003009(Ba\+Bar)
+\item $\tau^- \to \pi^- + K^0_B + \pi^0$, GAMPRT=0.\+0055, GAMPRT = 0.\+003767(Ba\+Bar)
+\item $\tau^- \to \eta + \pi^- + \pi^0$, GAMPRT=0.\+0017, GAMPRT = 0.\+00183(Ba\+Bar)
+\item $\tau^- \to \pi^0 + \pi^0 + \gamma $, GAMPRT=0.\+0013, GAMPRT = 0.\+000802(Ba\+Bar)
+\item $\tau^- \to \pi^0 + \pi^0 + \pi^-$, GAMPRT=0.\+1790/2, GAMPRT = 0.\+091783(Ba\+Bar)
+\item $\tau^- \to \pi^- + \pi^- + \pi^+$, GAMPRT=0.\+1790/2, GAMPRT = 0.\+091783(Ba\+Bar)
+\item $\tau^- \to K^- + K^- + K^+$, GAMPRT=0.\+0010 \texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to K^- + K^0 + K^0$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to K^- + \eta + \pi^0$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to K^0 + \eta + \pi^-$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to K^- + K^0 + \rho^0$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to \pi^- + \phi + \pi^0$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to K^- + \phi + \pi^0$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\item $\tau^- \to K^0 + \eta + K^-$, GAMPRT=0.\+0010\texorpdfstring{$\ast$}{*}0
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md15}{}\doxyparagraph{\texorpdfstring{2 -\/ scalar channels}{2 - scalar channels}}\label{md_docs_2theme_2taumain_autotoc_md15}
+
+\begin{DoxyEnumerate}
+\item $\tau^- \to \pi^- + \pi^0$, GAMPRT=0.\+2515, GAMPRT = 0.\+253754(Ba\+Bar)
+\item $\tau^- \to \pi^- + K^0$, GAMPRT=0.\+0134\texorpdfstring{$\ast$}{*}0.6666, GAMPRT = 0.\+013641\texorpdfstring{$\ast$}{*}0.6666(Ba\+Bar)
+\item $\tau^- \to K^- + \pi^0$, GAMPRT=0.\+0134\texorpdfstring{$\ast$}{*}0.3334, GAMPRT = 0.\+013641\texorpdfstring{$\ast$}{*}0.3334(Ba\+Bar)
+\item $\tau^- \to K^- + K^0$, GAMPRT=0.\+0010, GAMPRT = 0.\+001651(Ba\+Bar)
+\end{DoxyEnumerate}\hypertarget{md_docs_2theme_2taumain_autotoc_md16}{}\doxyparagraph{\texorpdfstring{1 -\/ scalar channels}{1 - scalar channels}}\label{md_docs_2theme_2taumain_autotoc_md16}
+
+\begin{DoxyEnumerate}
+\item $\tau^- \to \pi^- $, GAMPRT=0.\+1110, GAMPRT = 0.\+110841(Ba\+Bar)
+\item $\tau^- \to K^- $, GAMPRT=0.\+0071, GAMPRT = 0.\+006946(Ba\+Bar)
+\end{DoxyEnumerate}
+
+The $K^0$ swapped between $K_{L}$ and $K_{S}$ 50 \% of the time, with $K_L$ particle ID 130 and $K_S$ particle ID 310.\hypertarget{md_docs_2theme_2taumain_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{INIPHY}{INIPHY}}\label{md_docs_2theme_2taumain_autotoc_md17}
+It defines certain constants like ALFINV=1/ $\alpha$, ALFPI = $\pi \alpha$ and it sets the minimum threshold of the energy \doxylink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{scale(\+XK0)}, in this case we set it at {\ttfamily XK0}= 0.\+001\hypertarget{md_docs_2theme_2taumain_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{INISAMPL}{INISAMPL}}\label{md_docs_2theme_2taumain_autotoc_md18}
+Initialize various parameters used in optimization of phase space generation. The probabilities for different resonances is passed through the {\ttfamily SAMPL2}, {\ttfamily SAMPL3}, {\ttfamily SAMPL4}, and {\ttfamily SAMPL5} common block for different scalar modes.
+
+
+\begin{DoxyItemize}
+\item PROB1 -\/ ?
+\item PROB2 -\/ ?
+\item PROB3 -\/ ?
+\end{DoxyItemize}\hypertarget{md_docs_2theme_2taumain_autotoc_md19}{}\doxyparagraph{\texorpdfstring{INSAMPL2 is the initialization for 2 scalar, there are 71 modes with 2 scalar}{INSAMPL2 is the initialization for 2 scalar, there are 71 modes with 2 scalar}}\label{md_docs_2theme_2taumain_autotoc_md19}
+\doxylink{TauolaStructs_8h_acea7651590c38d428ab6a1d713199b86}{AM2(1)}, \doxylink{TauolaStructs_8h_acea7651590c38d428ab6a1d713199b86}{AM2(2)}....., \doxylink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{AM(71)} = $m_{K^*}$
+
+\doxylink{TauolaStructs_8h_a523f1dfdecce17c5188c663d6f323bd0}{AM3(1)}, \doxylink{TauolaStructs_8h_a523f1dfdecce17c5188c663d6f323bd0}{AM3(2)}....., \doxylink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{AM(71)} = $m_\rho$
+
+\doxylink{TauolaStructs_8h_a95a2bb18f0b7fb01f205f75139f20460}{GAM2(1)}, \doxylink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{GAM(2)},...., \doxylink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{GAM(71)} = $\Gamma_{K^*}$
+
+\doxylink{TauolaStructs_8h_af85a8cae04e11e9611493d9257ad6070}{GAM3(1)}, \doxylink{TauolaStructs_8h_af85a8cae04e11e9611493d9257ad6070}{GAM3(2)},...., \doxylink{TauolaStructs_8h_af85a8cae04e11e9611493d9257ad6070}{GAM3(71)} = $\Gamma_{\rho}$
+
+
+\begin{DoxyItemize}
+\item For first channel PROB1=0, PROB2=0.
+\item For second and third channels PROB1=0, PROB2=1.
+\item For other channels PROB1=1, PROB2=0.
+\end{DoxyItemize}
+
+Note\+: This PROB1, PROB2 is in SAMPL2\hypertarget{md_docs_2theme_2taumain_autotoc_md20}{}\doxyparagraph{\texorpdfstring{INSAMPL3 is the  initialization for 3 scalar, there are 19 modes with 3 scalar}{INSAMPL3 is the  initialization for 3 scalar, there are 19 modes with 3 scalar}}\label{md_docs_2theme_2taumain_autotoc_md20}
+$m_{\rho_p}$ = 1.\+1
+
+$\Gamma_{\rho_p}$ = 0.\+36
+
+$m_\omega$ = 0.\+782
+
+$\Gamma_\omega$ = 0.\+0084
+
+Probabilities of different channels
+
+
+\begin{DoxyEnumerate}
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX=1.\+57, GMRX=0.\+9, AMRA= $m_{K^*}$, AMRB= $m_\rho$
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX=1.\+57, GMRX=0.\+9, AMRA= $m_{K^*}$, AMRB= $m_\rho$
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX=1.\+27, GMRX=0.\+3, AMRA= $m_{K^*}$, AMRB= $m_{K^*}$
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX=1.\+27, GMRX=0.\+3, AMRA= $m_{K^*}$, AMRB= $m_{K^*}$
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX=1.\+27, GMRX=0.\+3, AMRA= $m_{K^*}$, AMRB= $m_\rho$
+\item PROB1=0.\+4, PROB2=0.\+4, AMRX=1.\+27, GMRX=0.\+3, AMRA= $m_\rho$, AMRB= $m_{K^*}$
+\item PROB1=0., PROB2=1., AMRX=1.\+27, GMRX=0.\+9, AMRA= $m_\rho$, AMRB= $m_\rho$
+\item PROB1=0., PROB2=1., AMRX= $m_{\rho_p}$, AMRA= $m_\omega$, AMRB= $m_\rho$
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX= $m_{a1}$, AMRA= $m_\rho$, AMRB= $m_\rho$ ~\newline
+
+\item PROB1=0.\+5, PROB2=0.\+5, AMRX= $m_{a1}$, AMRA= $m_\rho$, AMRB= $m_\rho$
+\end{DoxyEnumerate}
+
+For all others
+
+​ PROB1=0.\+0, PROB2=0.\+0, AMRX= $m_{a1}$, AMRA= $m_\rho$, AMRB= $m_\rho$\hypertarget{md_docs_2theme_2taumain_autotoc_md21}{}\doxyparagraph{\texorpdfstring{INSAMPL4 is the  initialization for 4 scalar, there are 32 modes with 4 scalar}{INSAMPL4 is the  initialization for 4 scalar, there are 32 modes with 4 scalar}}\label{md_docs_2theme_2taumain_autotoc_md21}
+Probabilities of different modes
+
+1-\/ PROB1=0.\+35, PROB2=0.\+35, AMRX=1.\+2, GAMRX=0.\+46, AMRA= $m_\omega$
+
+2 -\/ PROB1=0.\+0, PROB2=0.\+0, AMRX=1.\+4, GAMRX=0.\+6, AMRA= $m_\omega$
+
+3 -- 12. PROB1=0.\+0, PROB2=0.\+0, AMRX=1.\+4, GAMRX=0.\+6, AMRA= $m_\omega$
+
+For all others
+
+​ PROB1=0.\+0, PROB2=0.\+0, AMRX= $m_{a1}$, AMRA= $m_\rho$\hypertarget{md_docs_2theme_2taumain_autotoc_md22}{}\doxyparagraph{\texorpdfstring{INSAMPL5 is the  initialization for 5 scalar, there are 21 modes with 5 scalar}{INSAMPL5 is the  initialization for 5 scalar, there are 21 modes with 5 scalar}}\label{md_docs_2theme_2taumain_autotoc_md22}
+Probabilities of all modes
+
+PROBa2 = 0.\+7
+
+PROBOM = 0.\+7
+
+ama2 = 1.\+260
+
+gama2 = 0.\+4
+
+$m_\omega$ = 0.\+78257
+
+$\Gamma_\omega$ = 0.\+7
+
+For 1 $^{st}$ and 2 $^{nd}$ modes, $\Gamma_\omega$ = 0.\+00844\hypertarget{md_docs_2theme_2taumain_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{TAUFIL}{TAUFIL}}\label{md_docs_2theme_2taumain_autotoc_md23}
+This subroutine is responsible for simulating tau lepton production and storing its momentum and identity in a LUND common block.
+
+XPB1, XPB2 -\/ Beam momenta. AQF1, AQF2 -\/ $\tau^+$ and $\tau^-$ four momenta.
+
+\doxysubparagraph*{Some of the variables like nhep is not initialized. This will lead to uncertain results when we call FILHEP}
 
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}

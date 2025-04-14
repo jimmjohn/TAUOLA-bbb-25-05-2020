@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -105,7 +108,8 @@ $(document).ready(function(){initNavTree('globals_w.html',''); initResizable(); 
 <li>wga1n()&#160;:&#160;<a class="el" href="f3pi_8f.html#ae659708555382f4c1815df76abcc011d">f3pi.f</a></li>
 <li>wid_a1_fit()&#160;:&#160;<a class="el" href="wid__a1__fit_8f.html#ab165ccb592adf4a927de9cb7238015ec">wid_a1_fit.f</a></li>
 <li>wid_a1_fitkkpi()&#160;:&#160;<a class="el" href="wid__a1__fitKKpi_8f.html#a6576984bd5bcbeaa8c643cfb410f6644">wid_a1_fitKKpi.f</a></li>
-<li>wigfor()&#160;:&#160;<a class="el" href="formf_8f.html#a0891ec830a4268fc0d293b185dd48946">formf.f</a></li>
+<li>wigfor()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#ae022d19d2d3314181ed81438a10d1df1">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#ae022d19d2d3314181ed81438a10d1df1">MEutils.h</a>, <a class="el" href="formf_8f.html#a0891ec830a4268fc0d293b185dd48946">formf.f</a></li>
+<li>wigner()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a772c9bd4b394bdcc4fb3e9ab5f314ae1">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a772c9bd4b394bdcc4fb3e9ab5f314ae1">MEutils.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

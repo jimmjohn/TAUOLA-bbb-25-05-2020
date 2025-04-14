@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -102,8 +105,8 @@ $(document).ready(function(){initNavTree('globals_func_r.html',''); initResizabl
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>r0scal_3pi()&#160;:&#160;<a class="el" href="funct__rpt_8f.html#a88a3b6ed93a6b6a345055014b0ebcf8e">funct_rpt.f</a></li>
 <li>r2scal_3pi()&#160;:&#160;<a class="el" href="funct__rpt_8f.html#a5b249a7f1737a389b31ce1767548e083">funct_rpt.f</a></li>
-<li>RANMAR()&#160;:&#160;<a class="el" href="tauola-random_8h.html#a049617d303a25a5a3d3fd98537a674a3">tauola-random.h</a></li>
 <li>ranmar()&#160;:&#160;<a class="el" href="Tauface_8f.html#aaf61bb5f685e80d55b51e030872f2a4b">Tauface.f</a></li>
+<li>RANMAR()&#160;:&#160;<a class="el" href="demo-pairs_2tauola-random_8h.html#a049617d303a25a5a3d3fd98537a674a3">tauola-random.h</a></li>
 <li>rchl_parameters()&#160;:&#160;<a class="el" href="value__parameter_8f.html#a668f3b73cbf27b420dddf777f1b05efe">value_parameter.f</a></li>
 <li>rchl_reparam()&#160;:&#160;<a class="el" href="value__parameter_8f.html#a6bfa6d4103786be8ecc1143f5da24b86">value_parameter.f</a></li>
 <li>rchlwida1pi()&#160;:&#160;<a class="el" href="ffwid3pi_8f.html#ada14d153712c452a267bd94179fdcc20">ffwid3pi.f</a></li>

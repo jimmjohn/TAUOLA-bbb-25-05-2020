@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -122,8 +125,8 @@ $(document).ready(function(){initNavTree('globals_f.html',''); initResizable(); 
 <li>form5()&#160;:&#160;<a class="el" href="formf_8f.html#a4d654b55c0f52df42a76a1d36a40a7ff">formf.f</a></li>
 <li>formom()&#160;:&#160;<a class="el" href="formf_8f.html#ab41cc4877a487feed72ea53e0342a314">formf.f</a></li>
 <li>fpibel()&#160;:&#160;<a class="el" href="frho__pi__belle_8f.html#a625f22b922e15cd5415a6bf61cbedeaf">frho_pi_belle.f</a></li>
-<li>fpik()&#160;:&#160;<a class="el" href="MEutils_8c.html#a3d3abe0e82a55530e7f43ffc2843bf9d">MEutils.c</a>, <a class="el" href="MEutils_8h.html#a3d3abe0e82a55530e7f43ffc2843bf9d">MEutils.h</a>, <a class="el" href="tauola_8f.html#af3f65c3bbe640334478bc8e4bf3f8068">tauola.f</a></li>
-<li>fpikm()&#160;:&#160;<a class="el" href="formf_8f.html#ad1d53569d2792f73f42dfb02d581a868">formf.f</a></li>
+<li>fpik()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a3d3abe0e82a55530e7f43ffc2843bf9d">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a3d3abe0e82a55530e7f43ffc2843bf9d">MEutils.h</a>, <a class="el" href="demo-redefine_2MEutils_8c.html#a3d3abe0e82a55530e7f43ffc2843bf9d">MEutils.c</a>, <a class="el" href="demo-redefine_2MEutils_8h.html#a3d3abe0e82a55530e7f43ffc2843bf9d">MEutils.h</a>, <a class="el" href="tauola_8f.html#af3f65c3bbe640334478bc8e4bf3f8068">tauola.f</a></li>
+<li>fpikm()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#ada99d402d7899995c1092c0fd07a08fb">MEutils.c</a>, <a class="el" href="formf_8f.html#ad1d53569d2792f73f42dfb02d581a868">formf.f</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#ada99d402d7899995c1092c0fd07a08fb">MEutils.h</a></li>
 <li>fpikmd()&#160;:&#160;<a class="el" href="formf_8f.html#a3384bd960f1166706f7295c600cd535e">formf.f</a></li>
 <li>fpikmk()&#160;:&#160;<a class="el" href="tauola_8f.html#a2b56dbc11cbc72d650f47aa87d536d15">tauola.f</a></li>
 <li>fpirho()&#160;:&#160;<a class="el" href="tauola_8f.html#a5a8a661cd53cd4106111063923ebf430">tauola.f</a></li>

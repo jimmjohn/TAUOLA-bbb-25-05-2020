@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tauola: /home/john/products/Tauola/tauola-bbb/TAUOLA-FORTRAN/tauola-bbb/tauola-c/ChannelForTauolaInterface.h File Reference</title>
+<title>Tauola: tauola-c/ChannelForTauolaInterface.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -110,44 +113,46 @@ $(document).ready(function(){initNavTree('ChannelForTauolaInterface_8h.html','')
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ChannelForTauolaInterface.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="ChannelForTauolaInterface_8h__incl.png" border="0" usemap="#a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2ChannelForTauolaInterface_8h" alt=""/></div>
-<map name="a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2ChannelForTauolaInterface_8h" id="a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2ChannelForTauolaInterface_8h">
-<area shape="rect" title=" " alt="" coords="39,5,261,75"/>
-<area shape="rect" href="ChannelForTauola_8h.html" title="Definition and implementation of class ChannelForTauola." alt="" coords="131,123,281,148"/>
-<area shape="poly" title=" " alt="" coords="172,73,194,109,190,112,168,76"/>
-<area shape="rect" title=" " alt="" coords="5,196,68,221"/>
-<area shape="poly" title=" " alt="" coords="129,76,54,186,50,183,125,73"/>
-<area shape="rect" title=" " alt="" coords="93,196,151,221"/>
-<area shape="poly" title=" " alt="" coords="137,76,122,123,122,148,123,182,118,183,117,148,117,122,132,74"/>
-<area shape="rect" href="TauolaStructs_8h.html" title=" " alt="" coords="305,123,427,148"/>
-<area shape="poly" title=" " alt="" coords="229,72,328,115,326,120,227,77"/>
-<area shape="poly" title=" " alt="" coords="180,150,78,193,76,188,178,146"/>
-<area shape="poly" title=" " alt="" coords="194,150,148,189,145,185,191,146"/>
-<area shape="rect" title=" " alt="" coords="175,196,237,221"/>
-<area shape="poly" title=" " alt="" coords="209,148,209,182,203,182,203,148"/>
-<area shape="rect" title=" " alt="" coords="261,196,327,221"/>
-<area shape="poly" title=" " alt="" coords="222,146,271,185,267,189,218,150"/>
-<area shape="rect" title=" " alt="" coords="352,196,431,221"/>
-<area shape="poly" title=" " alt="" coords="237,146,349,189,348,193,235,151"/>
+<div class="center"><img src="ChannelForTauolaInterface_8h__incl.png" border="0" usemap="#atauola-c_2ChannelForTauolaInterface_8h" alt=""/></div>
+<map name="atauola-c_2ChannelForTauolaInterface_8h" id="atauola-c_2ChannelForTauolaInterface_8h">
+<area shape="rect" title=" " alt="" coords="53,5,247,45"/>
+<area shape="rect" href="ChannelForTauola_8h.html" title="Definition and implementation of class ChannelForTauola." alt="" coords="131,93,281,119"/>
+<area shape="poly" title=" " alt="" coords="166,44,192,80,188,84,161,47"/>
+<area shape="rect" title=" " alt="" coords="5,167,68,192"/>
+<area shape="poly" title=" " alt="" coords="138,47,56,157,51,154,134,44"/>
+<area shape="rect" title=" " alt="" coords="93,167,151,192"/>
+<area shape="poly" title=" " alt="" coords="141,47,130,69,122,94,119,124,121,152,115,153,114,124,117,93,125,67,136,45"/>
+<area shape="rect" href="TauolaStructs_8h.html" title=" " alt="" coords="305,93,427,119"/>
+<area shape="poly" title=" " alt="" coords="203,43,322,86,321,91,201,48"/>
+<area shape="poly" title=" " alt="" coords="180,121,78,164,76,159,178,116"/>
+<area shape="poly" title=" " alt="" coords="194,121,148,160,145,155,191,117"/>
+<area shape="rect" title=" " alt="" coords="175,167,237,192"/>
+<area shape="poly" title=" " alt="" coords="209,119,209,153,203,153,203,119"/>
+<area shape="rect" title=" " alt="" coords="261,167,327,192"/>
+<area shape="poly" title=" " alt="" coords="222,117,271,156,267,160,218,121"/>
+<area shape="rect" title=" " alt="" coords="352,167,431,192"/>
+<area shape="poly" title=" " alt="" coords="237,116,349,159,348,164,235,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="ChannelForTauolaInterface_8h__dep__incl.png" border="0" usemap="#a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2ChannelForTauolaInterface_8hdep" alt=""/></div>
-<map name="a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2ChannelForTauolaInterface_8hdep" id="a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2ChannelForTauolaInterface_8hdep">
-<area shape="rect" title=" " alt="" coords="384,5,607,75"/>
-<area shape="rect" href="demo-lfv_2iniofc_8c.html" title=" " alt="" coords="5,123,209,192"/>
-<area shape="poly" title=" " alt="" coords="371,81,210,128,209,123,370,76"/>
-<area shape="rect" href="TestCommunication_8c.html" title=" " alt="" coords="234,123,458,192"/>
-<area shape="poly" title=" " alt="" coords="443,85,392,124,388,120,439,81"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html" title=" " alt="" coords="319,240,523,309"/>
-<area shape="poly" title=" " alt="" coords="495,89,487,140,472,193,447,241,442,239,468,191,482,139,489,88"/>
-<area shape="rect" href="ChannelForTauolaInterface_8c.html" title=" " alt="" coords="532,123,755,192"/>
-<area shape="poly" title=" " alt="" coords="551,81,601,120,598,124,548,85"/>
-<area shape="rect" href="channels__wrappers_8c.html" title=" " alt="" coords="779,123,987,192"/>
-<area shape="poly" title=" " alt="" coords="621,76,780,123,778,128,619,81"/>
-<area shape="poly" title=" " alt="" coords="378,202,401,238,397,241,373,205"/>
+<div class="center"><img src="ChannelForTauolaInterface_8h__dep__incl.png" border="0" usemap="#atauola-c_2ChannelForTauolaInterface_8hdep" alt=""/></div>
+<map name="atauola-c_2ChannelForTauolaInterface_8hdep" id="atauola-c_2ChannelForTauolaInterface_8hdep">
+<area shape="rect" title=" " alt="" coords="450,5,645,45"/>
+<area shape="rect" href="demo-lfv_2iniofc_8c.html" title=" " alt="" coords="5,101,137,126"/>
+<area shape="poly" title=" " alt="" coords="437,46,151,96,118,103,116,98,149,91,436,41"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html" title=" " alt="" coords="162,101,309,126"/>
+<area shape="poly" title=" " alt="" coords="467,52,278,103,276,98,465,46"/>
+<area shape="rect" href="TestCommunication_8c.html" title=" " alt="" coords="333,101,594,126"/>
+<area shape="poly" title=" " alt="" coords="521,57,477,102,473,98,517,53"/>
+<area shape="rect" href="demo-redefine_2iniofc_8c.html" title=" " alt="" coords="463,181,631,207"/>
+<area shape="poly" title=" " alt="" coords="583,54,597,72,608,92,614,113,608,134,589,163,566,183,563,179,585,159,604,132,608,113,604,94,593,75,579,57"/>
+<area shape="rect" href="ChannelForTauolaInterface_8c.html" title=" " alt="" coords="669,93,863,133"/>
+<area shape="poly" title=" " alt="" coords="609,48,719,91,717,96,607,53"/>
+<area shape="rect" href="channels__wrappers_8c.html" title=" " alt="" coords="888,101,1103,126"/>
+<area shape="poly" title=" " alt="" coords="659,45,936,98,935,103,658,50"/>
+<area shape="poly" title=" " alt="" coords="488,134,537,179,533,183,484,137"/>
 </map>
 </div>
 </div>
@@ -196,7 +201,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9eb47b306265ab2bb64782abbe5df750.html">tauola-bbb</a></li><li class="navelem"><a class="el" href="dir_b2983a91c9d071a973ef147ca9d3b39f.html">TAUOLA-FORTRAN</a></li><li class="navelem"><a class="el" href="dir_201586126007e031e83264afe2445605.html">tauola-bbb</a></li><li class="navelem"><a class="el" href="dir_ecd98c8c53ce067dfee4a384fd33a6cc.html">tauola-c</a></li><li class="navelem"><a class="el" href="ChannelForTauolaInterface_8h.html">ChannelForTauolaInterface.h</a></li>
+    <li class="navelem"><a class="el" href="dir_9466af8144be7b21de4396cfe9e50e2a.html">tauola-c</a></li><li class="navelem"><a class="el" href="ChannelForTauolaInterface_8h.html">ChannelForTauolaInterface.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

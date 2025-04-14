@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tauola: /home/john/products/Tauola/tauola-bbb/TAUOLA-FORTRAN/tauola-bbb/tauola-c/TauolaStructs.h File Reference</title>
+<title>Tauola: tauola-c/TauolaStructs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -105,22 +108,24 @@ $(document).ready(function(){initNavTree('TauolaStructs_8h.html',''); initResiza
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="TauolaStructs_8h__dep__incl.png" border="0" usemap="#a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2TauolaStructs_8hdep" alt=""/></div>
-<map name="a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2TauolaStructs_8hdep" id="a_2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2tauola-c_2TauolaStructs_8hdep">
-<area shape="rect" title=" " alt="" coords="391,5,599,75"/>
-<area shape="rect" href="ChannelForTauolaInterface_8h.html" title=" " alt="" coords="384,123,607,192"/>
-<area shape="poly" title=" " alt="" coords="498,89,498,122,493,122,493,89"/>
-<area shape="rect" href="demo-lfv_2iniofc_8c.html" title=" " alt="" coords="5,240,209,309"/>
-<area shape="poly" title=" " alt="" coords="371,198,210,246,209,241,370,193"/>
-<area shape="rect" href="TestCommunication_8c.html" title=" " alt="" coords="234,240,458,309"/>
-<area shape="poly" title=" " alt="" coords="443,203,392,242,388,238,439,198"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html" title=" " alt="" coords="319,357,523,427"/>
-<area shape="poly" title=" " alt="" coords="495,207,487,257,472,310,447,359,442,356,468,308,482,256,489,206"/>
-<area shape="rect" href="ChannelForTauolaInterface_8c.html" title=" " alt="" coords="532,240,755,309"/>
-<area shape="poly" title=" " alt="" coords="551,198,601,238,598,242,548,203"/>
-<area shape="rect" href="channels__wrappers_8c.html" title=" " alt="" coords="779,240,987,309"/>
-<area shape="poly" title=" " alt="" coords="621,193,780,240,778,245,619,198"/>
-<area shape="poly" title=" " alt="" coords="378,320,401,356,397,359,373,322"/>
+<div class="center"><img src="TauolaStructs_8h__dep__incl.png" border="0" usemap="#atauola-c_2TauolaStructs_8hdep" alt=""/></div>
+<map name="atauola-c_2TauolaStructs_8hdep" id="atauola-c_2TauolaStructs_8hdep">
+<area shape="rect" title=" " alt="" coords="458,5,637,31"/>
+<area shape="rect" href="ChannelForTauolaInterface_8h.html" title=" " alt="" coords="450,79,645,119"/>
+<area shape="poly" title=" " alt="" coords="550,44,550,79,545,79,545,44"/>
+<area shape="rect" href="demo-lfv_2iniofc_8c.html" title=" " alt="" coords="5,174,137,199"/>
+<area shape="poly" title=" " alt="" coords="437,119,151,169,118,177,116,171,149,164,436,114"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html" title=" " alt="" coords="162,174,309,199"/>
+<area shape="poly" title=" " alt="" coords="467,125,278,177,276,171,465,120"/>
+<area shape="rect" href="TestCommunication_8c.html" title=" " alt="" coords="333,174,594,199"/>
+<area shape="poly" title=" " alt="" coords="521,130,477,175,473,172,517,127"/>
+<area shape="rect" href="demo-redefine_2iniofc_8c.html" title=" " alt="" coords="463,255,631,280"/>
+<area shape="poly" title=" " alt="" coords="583,127,597,145,608,166,614,187,608,208,589,236,566,257,563,253,585,233,604,206,608,187,604,168,593,148,579,131"/>
+<area shape="rect" href="ChannelForTauolaInterface_8c.html" title=" " alt="" coords="669,167,863,207"/>
+<area shape="poly" title=" " alt="" coords="609,121,719,164,717,169,607,126"/>
+<area shape="rect" href="channels__wrappers_8c.html" title=" " alt="" coords="888,174,1103,199"/>
+<area shape="poly" title=" " alt="" coords="659,119,936,171,935,177,658,124"/>
+<area shape="poly" title=" " alt="" coords="488,207,537,252,533,256,484,211"/>
 </map>
 </div>
 </div>
@@ -901,7 +906,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9eb47b306265ab2bb64782abbe5df750.html">tauola-bbb</a></li><li class="navelem"><a class="el" href="dir_b2983a91c9d071a973ef147ca9d3b39f.html">TAUOLA-FORTRAN</a></li><li class="navelem"><a class="el" href="dir_201586126007e031e83264afe2445605.html">tauola-bbb</a></li><li class="navelem"><a class="el" href="dir_ecd98c8c53ce067dfee4a384fd33a6cc.html">tauola-c</a></li><li class="navelem"><a class="el" href="TauolaStructs_8h.html">TauolaStructs.h</a></li>
+    <li class="navelem"><a class="el" href="dir_9466af8144be7b21de4396cfe9e50e2a.html">tauola-c</a></li><li class="navelem"><a class="el" href="TauolaStructs_8h.html">TauolaStructs.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

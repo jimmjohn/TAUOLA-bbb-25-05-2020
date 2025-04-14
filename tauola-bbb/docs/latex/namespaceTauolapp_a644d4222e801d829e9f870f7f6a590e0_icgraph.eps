@@ -1,0 +1,541 @@
+%!PS-Adobe-3.0
+%%Creator: graphviz version 2.43.0 (0)
+%%Title: Tauolapp::GetChannelNumber
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+/tapered { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 692 174
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 656 138 boxprim clip newpath
+1 1 set_scale 0 rotate 40 40 translate
+% Node1
+gsave
+0 0 0.6 nodecolor
+newpath 648 74 moveto
+486 74 lineto
+486 55 lineto
+648 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 648 74 moveto
+486 74 lineto
+486 55 lineto
+648 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+494 62 moveto 146 (Tauolapp::GetChannelNumber) alignedtext
+grestore
+% Node2
+gsave
+[ /Rect [ 304 55 450 74 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 450 74 moveto
+304 74 lineto
+304 55 lineto
+450 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 450 74 moveto
+304 74 lineto
+304 55 lineto
+450 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+312 62 moveto 130 (Tauolapp::RegisterChannel) alignedtext
+grestore
+% Node1->Node2
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 475.9088 64.5 moveto
+467.2819 64.5 458.611 64.5 450.1874 64.5 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 475.9985 68.0001 moveto
+485.9985 64.5 lineto
+475.9984 61.0001 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 475.9985 68.0001 moveto
+485.9985 64.5 lineto
+475.9984 61.0001 lineto
+closepath stroke
+grestore
+% Node3
+gsave
+[ /Rect [ 164.5 111 217.5 130 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($demo-lfv_2iniofc_8c.html#af88ffe0e75c57ab57e1c0b24c34aa4ff) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 217.5 130 moveto
+164.5 130 lineto
+164.5 111 lineto
+217.5 111 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 217.5 130 moveto
+164.5 130 lineto
+164.5 111 lineto
+217.5 111 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+172.5 118 moveto 37 (AddLFV) alignedtext
+grestore
+% Node2->Node3
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 341.8743 77.5489 moveto
+320.7724 85.3567 293.0267 95.1558 268 102.5 curveto
+251.3462 107.3871 232.3462 111.8871 217.5096 115.1653 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 343.2186 80.7831 moveto
+351.3631 74.0068 lineto
+340.7705 74.2251 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 343.2186 80.7831 moveto
+351.3631 74.0068 lineto
+340.7705 74.2251 lineto
+closepath stroke
+grestore
+% Node5
+gsave
+[ /Rect [ 114 74 268 93 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($namespaceTauolapp.html#ab28cb0b8d7d6d32ddc855f2dfe3e055f) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 268 93 moveto
+114 93 lineto
+114 74 lineto
+268 74 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 268 93 moveto
+114 93 lineto
+114 74 lineto
+268 74 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+122 81 moveto 138 (Tauolapp::OverwriteChannel) alignedtext
+grestore
+% Node2->Node5
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 293.5859 73.0102 moveto
+285.1467 73.8816 276.5988 74.7642 268.2304 75.6284 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 294.2189 76.4635 moveto
+303.8064 71.9548 lineto
+293.4998 69.5005 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 294.2189 76.4635 moveto
+303.8064 71.9548 lineto
+293.4998 69.5005 lineto
+closepath stroke
+grestore
+% Node6
+gsave
+[ /Rect [ 147 37 235 56 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($demo-pairs_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 235 56 moveto
+147 56 lineto
+147 37 lineto
+235 37 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 235 56 moveto
+147 56 lineto
+147 37 lineto
+235 37 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+155 44 moveto 72 (RedefExample) alignedtext
+grestore
+% Node2->Node6
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 293.6302 56.4421 moveto
+273.4091 54.4639 252.5606 52.4244 235.05 50.7114 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 293.5131 59.9473 moveto
+303.8064 57.4376 lineto
+294.1947 52.9805 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 293.5131 59.9473 moveto
+303.8064 57.4376 lineto
+294.1947 52.9805 lineto
+closepath stroke
+grestore
+% Node8
+gsave
+[ /Rect [ 134.5 0 247.5 19 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 247.5 19 moveto
+134.5 19 lineto
+134.5 0 lineto
+247.5 0 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 247.5 19 moveto
+134.5 19 lineto
+134.5 0 lineto
+247.5 0 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+142.5 7 moveto 97 (TestCommunication) alignedtext
+grestore
+% Node2->Node8
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 339.3939 51.5205 moveto
+318.5845 44.3383 291.9721 35.4807 268 28.5 curveto
+256.6394 25.1918 244.223 21.9377 232.7804 19.0831 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 338.5114 54.9191 moveto
+349.1062 54.8962 lineto
+340.8096 48.3071 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 338.5114 54.9191 moveto
+349.1062 54.8962 lineto
+340.8096 48.3071 lineto
+closepath stroke
+grestore
+% Node4
+gsave
+[ /Rect [ 0 111 78 130 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 78 130 moveto
+0 130 lineto
+0 111 lineto
+78 111 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 78 130 moveto
+0 130 lineto
+0 111 lineto
+78 111 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+8 118 moveto 62 (tauolaredef_) alignedtext
+grestore
+% Node3->Node4
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 154.1949 120.5 moveto
+131.2423 120.5 101.478 120.5 78.0915 120.5 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 154.2141 124.0001 moveto
+164.2141 120.5 lineto
+154.214 117.0001 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 154.2141 124.0001 moveto
+164.2141 120.5 lineto
+154.214 117.0001 lineto
+closepath stroke
+grestore
+% Node7
+gsave
+[ /Rect [ 0 37 78 56 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($demo-pairs_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 78 56 moveto
+0 56 lineto
+0 37 lineto
+78 37 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0.4 nodecolor
+newpath 78 56 moveto
+0 56 lineto
+0 37 lineto
+78 37 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+8 44 moveto 62 (tauolaredef_) alignedtext
+grestore
+% Node6->Node7
+gsave
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 136.4617 46.5 moveto
+117.2007 46.5 95.8776 46.5 78.1878 46.5 curveto
+stroke
+0.57255 0.61176 1 edgecolor
+newpath 136.6138 50.0001 moveto
+146.6138 46.5 lineto
+136.6138 43.0001 lineto
+closepath fill
+1 setlinewidth
+solid
+0.57255 0.61176 1 edgecolor
+newpath 136.6138 50.0001 moveto
+146.6138 46.5 lineto
+136.6138 43.0001 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 692 174
+end
+restore
+%%EOF

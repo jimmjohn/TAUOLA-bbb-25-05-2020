@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -111,7 +114,7 @@ $(document).ready(function(){initNavTree('globals_func_g.html',''); initResizabl
 <li>gammaVLLLL_mumueOS()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#aaee830474e0ee6fae28898e2fcc46bc8">lfv.c</a></li>
 <li>gammaVLLLL_mumueSS()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#aea0f7eea60b8704bc948bb5aba8beab5">lfv.c</a></li>
 <li>gammaVLLRR()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#a0d61d564babc1403d7efecf13ae9b8f3">lfv.c</a></li>
-<li>gammaVLLRR_3e()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#aa274b413db4c16106fa2dee367372edb">lfv.c</a></li>
+<li>gammaVLLRR_3e()&#160;:&#160;<a class="el" href="demo-redefine_2lfv_8c.html#aa274b413db4c16106fa2dee367372edb">lfv.c</a></li>
 <li>gammaVLLRR_mueeOS()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#a98d4bde2542e55f65053ea8f088b6ad4">lfv.c</a></li>
 <li>gammaVLLRR_mueeSS()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#ab1244b844b8b64c806098c5fcaa9001c">lfv.c</a></li>
 <li>gammaVLLRR_mumueOS()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#a757ed3717bead7d63f0f7dc35c484a8b">lfv.c</a></li>
@@ -119,11 +122,10 @@ $(document).ready(function(){initNavTree('globals_func_g.html',''); initResizabl
 <li>gaus()&#160;:&#160;<a class="el" href="gaus__integr_8f.html#a349e7c1b35a5b5e7fd3d769531fbe712">gaus_integr.f</a></li>
 <li>gaus2()&#160;:&#160;<a class="el" href="gaus__integr_8f.html#abcd2ab7058509451326b6808ff200280">gaus_integr.f</a></li>
 <li>gaus3()&#160;:&#160;<a class="el" href="gaus__integr_8f.html#a8c4f322ce807a1eb5913372d3a40dea9">gaus_integr.f</a></li>
-<li>generateBreitWigner()&#160;:&#160;<a class="el" href="plot__bw_8c.html#a074c10bdc0bebbe5b3390eb12a714d8e">plot_bw.c</a></li>
 <li>getff2pirho()&#160;:&#160;<a class="el" href="value__parameter_8f.html#a40d60430dd8b0d5f91ce94b9315d675d">value_parameter.f</a></li>
 <li>getfpirpt()&#160;:&#160;<a class="el" href="ffwid3pi_8f.html#af4ea8c44bfc76da85b3e144ff5af58e1">ffwid3pi.f</a></li>
 <li>gfact()&#160;:&#160;<a class="el" href="gfact_8f.html#ac3ed0d7377fd36918244b1dfc07ec7b5">gfact.f</a></li>
-<li>gfun()&#160;:&#160;<a class="el" href="tauola_8f.html#a3bbc41c06cfd0b9d7b49fc5f7778999a">tauola.f</a></li>
+<li>gfun()&#160;:&#160;<a class="el" href="demo3h_8c.html#ae81e19ef24e044e1cceb9c842650ffca">demo3h.c</a>, <a class="el" href="demo3h_8h.html#ae81e19ef24e044e1cceb9c842650ffca">demo3h.h</a>, <a class="el" href="tauola_8f.html#a3bbc41c06cfd0b9d7b49fc5f7778999a">tauola.f</a></li>
 <li>gfun8()&#160;:&#160;<a class="el" href="curr__karl_8f.html#a5137247f3e151dab70787f1c727c57d7">curr_karl.f</a></li>
 <li>gma1v()&#160;:&#160;<a class="el" href="binp_8f.html#abfa772d546b07ce2cfd681b7b9ab1320">binp.f</a></li>
 <li>gomega()&#160;:&#160;<a class="el" href="binp_8f.html#af9cb1e73c2810e330f4a9e68d6d2bb90">binp.f</a></li>

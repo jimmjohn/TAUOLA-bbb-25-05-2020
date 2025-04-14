@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -448,13 +451,13 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="460,78,362,45,295,28,296,23,363,39,462,73"/>
 <area shape="rect" href="namespaceTauolapp.html#ab28cb0b8d7d6d32ddc855f2dfe3e055f" title="Overwrite channel." alt="" coords="157,55,363,80"/>
 <area shape="poly" title=" " alt="" coords="397,84,363,80,363,75,397,79"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="201,104,319,129"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="201,104,319,129"/>
 <area shape="poly" title=" " alt="" coords="397,106,319,114,318,108,397,101"/>
 <area shape="rect" href="TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc" title=" " alt="" coords="185,153,335,179"/>
 <area shape="poly" title=" " alt="" coords="459,113,363,143,316,156,315,151,362,138,457,107"/>
 <area shape="rect" href="demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,5,109,31"/>
 <area shape="poly" title=" " alt="" coords="211,21,109,21,109,15,211,15"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,104,109,129"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,104,109,129"/>
 <area shape="poly" title=" " alt="" coords="187,119,110,119,110,114,187,114"/>
 </map>
 </div>
@@ -503,28 +506,31 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceTauolapp_a2e0df853a2fc6ac150b3b86d091202fa_icgraph.png" border="0" usemap="#anamespaceTauolapp_a2e0df853a2fc6ac150b3b86d091202fa_icgraph" alt=""/></div>
 <map name="anamespaceTauolapp_a2e0df853a2fc6ac150b3b86d091202fa_icgraph" id="anamespaceTauolapp_a2e0df853a2fc6ac150b3b86d091202fa_icgraph">
-<area shape="rect" title=" " alt="" coords="867,71,1119,111"/>
-<area shape="rect" href="namespaceTauolapp.html#a20ebb02c6f72c7a853b41a6d968c459d" title="Get channel information." alt="" coords="655,53,819,79"/>
-<area shape="poly" title=" " alt="" coords="853,80,818,77,819,71,853,75"/>
-<area shape="rect" href="namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61" title="Register channel." alt="" coords="411,104,606,129"/>
-<area shape="poly" title=" " alt="" coords="853,101,606,114,606,109,852,96"/>
-<area shape="rect" href="namespaceTauolapp.html#a890e36abff2f46110a4c8f3acd89a4be" title="Print current definition of a channel." alt="" coords="411,55,607,80"/>
-<area shape="poly" title=" " alt="" coords="641,69,607,69,607,64,641,64"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="201,5,319,31"/>
-<area shape="poly" title=" " alt="" coords="657,54,606,46,451,31,319,23,319,18,451,26,607,41,658,48"/>
-<area shape="rect" href="demo-lfv_2iniofc_8c.html#af88ffe0e75c57ab57e1c0b24c34aa4ff" title=" " alt="" coords="225,55,295,80"/>
-<area shape="poly" title=" " alt="" coords="397,70,296,70,296,65,397,65"/>
-<area shape="poly" title=" " alt="" coords="430,55,318,32,320,27,431,49"/>
-<area shape="rect" href="demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,55,109,80"/>
-<area shape="poly" title=" " alt="" coords="211,70,109,70,109,65,211,65"/>
+<area shape="rect" title=" " alt="" coords="819,74,1071,114"/>
+<area shape="rect" href="namespaceTauolapp.html#a20ebb02c6f72c7a853b41a6d968c459d" title="Get channel information." alt="" coords="591,31,755,56"/>
+<area shape="poly" title=" " alt="" coords="823,74,741,59,742,53,824,69"/>
+<area shape="rect" href="namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61" title="Register channel." alt="" coords="576,132,771,157"/>
+<area shape="poly" title=" " alt="" coords="824,119,742,135,741,129,823,114"/>
+<area shape="rect" href="namespaceTauolapp.html#a890e36abff2f46110a4c8f3acd89a4be" title="Print current definition of a channel." alt="" coords="327,31,523,56"/>
+<area shape="poly" title=" " alt="" coords="578,46,524,46,524,41,578,41"/>
+<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="600,31,528,21,392,15,275,18,275,12,392,10,528,15,601,26"/>
+<area shape="rect" href="demo-lfv_2iniofc_8c.html#af88ffe0e75c57ab57e1c0b24c34aa4ff" title=" " alt="" coords="181,81,251,107"/>
+<area shape="poly" title=" " alt="" coords="359,62,253,88,251,83,358,57"/>
+<area shape="poly" title=" " alt="" coords="314,32,275,28,275,22,314,27"/>
+<area shape="rect" href="demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,81,109,107"/>
+<area shape="poly" title=" " alt="" coords="167,97,109,97,109,91,167,91"/>
 <area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,5,109,31"/>
-<area shape="poly" title=" " alt="" coords="187,21,110,21,110,15,187,15"/>
-<area shape="poly" title=" " alt="" coords="430,104,295,77,296,72,431,99"/>
-<area shape="poly" title=" " alt="" coords="422,101,409,95,394,83,384,70,376,57,361,46,318,29,320,24,364,41,380,54,389,66,398,79,412,90,425,97"/>
-<area shape="rect" href="namespaceTauolapp.html#ab28cb0b8d7d6d32ddc855f2dfe3e055f" title="Overwrite channel." alt="" coords="157,104,363,129"/>
-<area shape="poly" title=" " alt="" coords="398,119,363,119,363,114,398,114"/>
-<area shape="rect" href="TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc" title=" " alt="" coords="185,153,335,179"/>
-<area shape="poly" title=" " alt="" coords="431,135,325,156,324,151,430,129"/>
+<area shape="poly" title=" " alt="" coords="144,21,109,21,109,15,144,15"/>
+<area shape="poly" title=" " alt="" coords="589,132,528,123,373,108,251,99,252,93,374,102,528,118,589,127"/>
+<area shape="rect" href="namespaceTauolapp.html#ab28cb0b8d7d6d32ddc855f2dfe3e055f" title="Overwrite channel." alt="" coords="323,231,528,256"/>
+<area shape="poly" title=" " alt="" coords="641,167,589,195,529,222,492,233,490,228,527,217,587,190,638,162"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="367,181,484,207"/>
+<area shape="poly" title=" " alt="" coords="596,163,485,185,484,180,595,157"/>
+<area shape="rect" href="TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc" title=" " alt="" coords="350,132,501,157"/>
+<area shape="poly" title=" " alt="" coords="562,147,501,147,501,142,562,142"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="164,181,268,207"/>
+<area shape="poly" title=" " alt="" coords="353,197,268,197,268,191,353,191"/>
 </map>
 </div>
 
@@ -746,13 +752,13 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="460,78,362,45,295,28,296,23,363,39,462,73"/>
 <area shape="rect" href="namespaceTauolapp.html#ab28cb0b8d7d6d32ddc855f2dfe3e055f" title="Overwrite channel." alt="" coords="157,55,363,80"/>
 <area shape="poly" title=" " alt="" coords="397,84,363,80,363,75,397,79"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="201,104,319,129"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="201,104,319,129"/>
 <area shape="poly" title=" " alt="" coords="397,106,319,114,318,108,397,101"/>
 <area shape="rect" href="TestCommunication_8c.html#a18c279d02ef7b5754db95f1c6b02bbdc" title=" " alt="" coords="185,153,335,179"/>
 <area shape="poly" title=" " alt="" coords="459,113,363,143,316,156,315,151,362,138,457,107"/>
 <area shape="rect" href="demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,5,109,31"/>
 <area shape="poly" title=" " alt="" coords="211,21,109,21,109,15,211,15"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,104,109,129"/>
+<area shape="rect" href="demo-pairs_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,104,109,129"/>
 <area shape="poly" title=" " alt="" coords="187,119,110,119,110,114,187,114"/>
 </map>
 </div>

@@ -16,7 +16,7 @@ C           *** PREPRINT CERN-TH-6195 OCTOBER   1991 ****              *
 C           *** PREPRINT CERN-TH-6793 NOVEMBER  1992 ****              *
 C           ********** IFJ-PAN-IV-2016-24 ***************              *
 C **********************************************************************
-C 
+C
 C ----------------------------------------------------------------------
 c SUBROUTINE JAKER,
 C CHOOSES DECAY MODE ACCORDING TO LIST OF BRANCHING RATIOS
@@ -43,7 +43,8 @@ C
       DO 25 I=NCHAN,1,-1
       IF(RRR(1).LT.CUMUL(I)/CUMUL(NCHAN)) JI=I
   25  CONTINUE
-      JAK=JLIST(JI)
+C      JAK=JLIST(JI)
+      JAK=79
       RETURN
  902  PRINT 9020
  9020 FORMAT(' ----- JAKER: WRONG NCHAN')
@@ -74,7 +75,7 @@ C JAK=0 INCLUSIVE:  JAK=1,2,3,4,5,6,7,8,...
 
       COMMON / IDFC  / IDF
 
-      COMMON /TAUPOS/ NP1,NP2                
+      COMMON /TAUPOS/ NP1,NP2
       COMMON / TAUBMC / GAMPMC(500),GAMPER(500),NEVDEC(500)
       REAL*4            GAMPMC    ,GAMPER
       include 'TAUDCDsize.inc'
@@ -152,9 +153,9 @@ C     =======================
           CALL DADNEW( 1,IDUM,HDUM,PDUM1,PDUM2,PDUMX,JDUM)
           WRITE(IOUT,7010) NEV1,NEV2,NEVTOT
           WRITE(IOUT,7011) (I,NEVDEC(I),GAMPMC(I),GAMPER(I),I= 1,NLT)
-          WRITE(IOUT,7012) 
+          WRITE(IOUT,7012)
      $         (I,NEVDEC(I),GAMPMC(I),GAMPER(I),NAMES(I-NLT),I=NLT+1,NLT+NMODE)
-          WRITE(IOUT,7013) 
+          WRITE(IOUT,7013)
         ENDIF
       ELSE
 C     ====
@@ -223,7 +224,7 @@ C THIS ROUTINE  SIMULATES TAU+  DECAY
       COMMON / JAKI   /  JAK1,JAK2,JAKP,JAKM,KTOM
       COMMON / TAUBMC / GAMPMC(500),GAMPER(500),NEVDEC(500)
       REAL*4            GAMPMC    ,GAMPER
-      
+
       REAL  HH(4)
       REAL  HV(4),PNU(4),PPI(4)
       REAL  PWB(4),PMU(4),PNM(4)
@@ -251,7 +252,7 @@ C     =================
       DO 33 I=1,3
  33   HH(I)=HV(I)
       HH(4)=1.0
- 
+
       ELSEIF(IMD.EQ.1) THEN
 C     =====================
       NEV=NEV+1
@@ -265,20 +266,20 @@ C     =====================
         CALL DWRPH(KTOM,PHOT)
         DO 10 I=1,4
  10     PP1(I)=PMU(I)
- 
+
       ELSEIF(JAK.EQ.2) THEN
         CALL DWLUMU(1,ISGN,PNU,PWB,PMU,PNM)
         CALL DWRPH(KTOM,PHOT)
         DO 20 I=1,4
  20     PP1(I)=PMU(I)
- 
+
       ELSE
 CAM     MULTIPION DECAY
         CALL DWLNEW(1,ISGN,PNU,PWB,PNPI,JAK)
         DO 80 I=1,4
  80     PP1(I)=PWB(I)
       ENDIF
- 
+
       ENDIF
 C     =====
       END
@@ -331,20 +332,20 @@ C     =====================
         CALL DWRPH(KTOM,PHOT)
         DO 10 I=1,4
  10     PP2(I)=PMU(I)
- 
+
       ELSEIF(JAK.EQ.2) THEN
         CALL DWLUMU(2,ISGN,PNU,PWB,PMU,PNM)
         CALL DWRPH(KTOM,PHOT)
         DO 20 I=1,4
  20     PP2(I)=PMU(I)
- 
+
       ELSE
 CAM     MULTIPION DECAY
         CALL DWLNEW(2,ISGN,PNU,PWB,PNPI,JAK)
         DO 80 I=1,4
  80     PP1(I)=PWB(I)
       ENDIF
-C 
+C
       ENDIF
 C     =====
       END
@@ -366,7 +367,7 @@ C ----------------------------------------------------------------------
       REAL*4            GAMPMC    ,GAMPER
       COMMON / JAKI   /  JAK1,JAK2,JAKP,JAKM,KTOM
       COMMON / IDFC  / IDFF
-      COMMON /TAUPOS/ NP1,NP2                
+      COMMON /TAUPOS/ NP1,NP2
       include 'TAUDCDsize.inc'
 
       COMMON / TAUDCD /IDFFIN(9,NMODE),MULPIK(NMODE)
@@ -428,9 +429,9 @@ C     =======================
           CALL DEXNEW( 1,IDUM,PDUM,PDUM1,PDUM2,PDUMI,IDUM)
           WRITE(IOUT,7010) NEV1,NEV2,NEVTOT
           WRITE(IOUT,7011) (I,NEVDEC(I),GAMPMC(I),GAMPER(I),I= 1,NLT)
-          WRITE(IOUT,7012) 
+          WRITE(IOUT,7012)
      $         (I,NEVDEC(I),GAMPMC(I),GAMPER(I),NAMES(I-NLT),I=1+NLT,NLT+NMODE)
-          WRITE(IOUT,7013) 
+          WRITE(IOUT,7013)
         ENDIF
       ELSE
         GOTO 910
@@ -1080,13 +1081,13 @@ C
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT= GFERMI**2       
+        AMPLIT= GFERMI**2
 
-      ELSE 
+      ELSE
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT= GFERMI**2       
+        AMPLIT= GFERMI**2
 
       ENDIF
       RETURN
@@ -1288,7 +1289,7 @@ C ----------------------------------------------------------------------
 C ----------------------------------------------------------------------
 C ----------------------------------------------------------------------
 
-      
+
       SUBROUTINE DAM2PI(MNUM,PT,PN,PIM1,PIM2,AMPLIT,HV)
 C ----------------------------------------------------------------------
 * CALCULATES DIFFERENTIAL CROSS SECTION AND POLARIMETER VECTOR
@@ -1313,7 +1314,7 @@ C
       COMPLEX HADCUR(4)
       DATA PI /3.141592653589793238462643/
       DATA ICONT /0/
-      
+
       IME=IMEGET(2,MNUM)   ! type of matrix element to be used
 C
       IF (IME.EQ.2) THEN
@@ -1375,14 +1376,14 @@ C HV IS DEFINED FOR TAU-    WITH GAMMA=B+HV*POL
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT= GFERMI**2       
+        AMPLIT= GFERMI**2
 
       ELSEIF (IME.EQ.1) THEN ! flat phase space
 C        FLAT PHASE SPACE ONLY;
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT=GFERMI**2 
+        AMPLIT=GFERMI**2
         RETURN
       ELSE
        write(*,*) 'DAM2PI: wrong IME= ',IME
@@ -1393,13 +1394,13 @@ C        FLAT PHASE SPACE ONLY;
 
 
       SUBROUTINE CURR_PIPI0(PC,PN,HADCUR)
-C standard TAUOLA current for tau to pi pi0 nu decay 
-C now it has universal form eg. it is straighforward to add 
+C standard TAUOLA current for tau to pi pi0 nu decay
+C now it has universal form eg. it is straighforward to add
 C scalar part
 C NOTE:
 C       PC 4-momentum of pi
 C       PN 4-momentum of pi0
-C       06.08.2011  
+C       06.08.2011
       IMPLICIT NONE
       COMPLEX BWIGS,HADCUR(4),FKPIPL,FRHO_PI
       COMPLEX*16              FPIBEL
@@ -1414,7 +1415,7 @@ C
       COMMON /SETINI/ IFBABAR
       INTEGER        IFBABAR
       INTEGER FF2PIRHO
-       
+
       REAL PKSD,QQPKS
       INTEGER IK,K
         DO IK=1,4
@@ -1427,17 +1428,17 @@ C QQ transverse to PKS
         DO 31 IK=1,4
  31      QQ(IK)=QQ(IK)-PKS(IK)*QQPKS/PKSD
 
-      IF (IFBABAR.EQ.2) THEN 
+      IF (IFBABAR.EQ.2) THEN
        CALL GETFF2PIRHO(FF2PIRHO)
 
-       IF (FF2PIRHO.EQ.2) THEN ! Belle, 
+       IF (FF2PIRHO.EQ.2) THEN ! Belle,
 C                                  ! all fit parameters, par(1...11), are free
         if(sqrt(pksd).le.2*ampi) pksd=4*ampi**2 ! phase space edge protection
         DO K=1,4
          HADCUR(K)=QQ(k)* fpibel(sqrt(pksd),0)
         ENDDO
        ELSEIF (FF2PIRHO.EQ.3) THEN ! Belle
-c                             ! all fit parameter free except for 
+c                             ! all fit parameter free except for
 c                             !  par(1)=F_pi(0)=1-fixed
 
         DO K=1,4
@@ -1448,7 +1449,7 @@ c                             !  par(1)=F_pi(0)=1-fixed
         stop
        ENDIF
       ELSEIF (IFBABAR.eq.1.or.IFBABAR.eq.0) THEN ! BaBar/cleo
-        DO K=1,4 
+        DO K=1,4
          HADCUR(K)=QQ(k)* sqrt(FPIRHO(sqrt(pksd)))
         ENDDO
 
@@ -1460,13 +1461,13 @@ c                             !  par(1)=F_pi(0)=1-fixed
 
 
       SUBROUTINE CURR_PIK0(PC,PN,HADCUR)
-C standard TAUOLA current for tau to pi K0 nu decay 
-C now it has universal form eg. it is straighforward to add 
+C standard TAUOLA current for tau to pi K0 nu decay
+C now it has universal form eg. it is straighforward to add
 C scalar part
 C NOTE:
 C       PC 4-momentum of pi
 C       PN 4-momentum of K0
-C       06.08.2011  
+C       06.08.2011
       implicit none
       COMPLEX BWIGS,HADCUR(4),FKPIPL
       REAL  PC(4),PN(4),QQ(4),PKS(4),FKPISC,PKSD,QQPKS
@@ -1478,14 +1479,14 @@ C
      &                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
      &                 ,AMK,AMKZ,AMKST,GAMKST,FACT_K0PI
       COMMON / TAUKLE / BRA1,BRK0,BRK0B,BRKS
-      REAL*4            BRA1,BRK0,BRK0B,BRKS 
+      REAL*4            BRA1,BRK0,BRK0B,BRKS
       Integer           I,K
-      
+
         DO I=1,4
          PKS(I)=PC(I)+ PN(I)
           QQ(I)=PC(I)- PN(I)
         ENDDO
- 
+
 C QQ transverse to PKS
         PKSD =PKS(4)*PKS(4)-PKS(3)*PKS(3)-PKS(2)*PKS(2)-PKS(1)*PKS(1)
         QQPKS=PKS(4)* QQ(4)-PKS(3)* QQ(3)-PKS(2)* QQ(2)-PKS(1)* QQ(1)
@@ -1503,13 +1504,13 @@ c          24.03.2014 OSh: clebsh/normalization vs. PI-PI0
 
 
       SUBROUTINE CURR_KPI0(PC,PN,HADCUR)
-C standard TAUOLA current for tau to pi pi0 nu decay 
-C now it has universal form eg. it is straighforward to add 
+C standard TAUOLA current for tau to pi pi0 nu decay
+C now it has universal form eg. it is straighforward to add
 C scalar part
 C NOTE:
 C       PC 4-momentum of K
 C       PN 4-momentum of pi0
-C       06.08.2011  
+C       06.08.2011
       implicit none
       COMPLEX BWIGS,HADCUR(4),FKPIPL
       REAL  PC(4),PN(4),QQ(4),PKS(4),FKPISC,PKSD,QQPKS
@@ -1538,17 +1539,17 @@ C          24.03.2014 OSh: clebsh/normalization vs. PI-PI0
          HADCUR(K) = HADCUR(K)/2.
         ENDDO
 
-      END   
+      END
 
 
       SUBROUTINE CURR_KK0(PC,PN,HADCUR)
-C standard TAUOLA current for tau to K K0 nu decay 
-C now it has universal form eg. it is straighforward to add 
+C standard TAUOLA current for tau to K K0 nu decay
+C now it has universal form eg. it is straighforward to add
 C scalar part
 C NOTE:
 C       PC 4-momentum of K
 C       PN 4-momentum of K0
-C       06.08.2011  
+C       06.08.2011
       IMPLICIT NONE
       COMPLEX BWIGS,HADCUR(4),FKK0_RCHT
       REAL  PC(4),PN(4),QQ(4),PKS(4),PKSD,QQPKS,FPIRK
@@ -1575,7 +1576,7 @@ C QQ transverse to PKS
 C          24.03.2014 OSh: clebsh/normalization vs. PI-PI0
          HADCUR(K) = HADCUR(K)/sqrt(2.)
         ENDDO
- 
+
       END
 
 
@@ -1679,8 +1680,8 @@ C
        COEFc(5,7)=-SQRT(2.0/3.0)
 
       ENDIF
-         
-      IF (J.GE.11) THEN 
+
+      IF (J.GE.11) THEN
        COEF=COEFc(I,0)   ! these modes are not initialized
       ELSEIF (IFBABAR.EQ.1.or.IFBABAR.eq.0.OR.(.not.(J.EQ.9.OR.J.EQ.0.OR.J.EQ.10))) THEN   ! so far rchl only for 3pi modes
        JJ=J
@@ -1759,11 +1760,11 @@ C
       REAL*8  PV(5,9),PT(4),UE(3),BE(3)
       REAL*8  AMX,AMS1,AMS2,PA,PHS,PHSMAX,PMIN,PMAX
       REAL*8  AMW,AMX2,BRAK,PS,PXN,PXQ,QXN,PHSPAC
-      
+
       REAL*4  RRR(9),RRX(2),RN(1),RR2(1) ! RANMAR generates floats
       REAL*8  GAM,BEP,PHI,PAWT,A,B,C
       REAL*8  AMPIK,PI,XNPI,RR1
-      
+
 C --- Variables below are arguments of this or other routines
       REAL*4  PNX(4),PRX(4),PPIX(4,9),HVX(4)
       REAL*4  AMPLIT,DGAMT,DCDMAS,AMX2R,SIGEE,SIGEE_wrap
@@ -1913,7 +1914,7 @@ CAM  GENERATE ND-2 EFFECTIVE MASSES
       AMX=SQRT(AMX2)
       PV(5,IL+1)=AMX
       PHSPAC=PHSPAC * (AMS2-AMS1)
-C ---  2.02.94 ZW 1 line 
+C ---  2.02.94 ZW 1 line
       PHS=PHS* (AMS2-AMS1)
       PA=PAWT(PV(5,IL),PV(5,IL+1),AMPIK(IL,JNPI))
       PHS   =PHS    *PA/PV(5,IL)
@@ -1935,8 +1936,8 @@ C ---  2.02.94 ZW 1 line
           ENDDO
        WRITE(6,*) 'ROUNDING INSTABILITY IN DPHNPI ?'
        WRITE(6,*) 'AMW=',AMW,'XNPI=',XNPI
-       WRITE(6,*) 'IF =AMW= IS NEARLY EQUAL =XNPI= THAT IS IT' 
-       WRITE(6,*) 'PHS=',PHS,'PHSMAX=',PHSMAX 
+       WRITE(6,*) 'IF =AMW= IS NEARLY EQUAL =XNPI= THAT IS IT'
+       WRITE(6,*) 'PHS=',PHS,'PHSMAX=',PHSMAX
        GOTO 500
       ENDIF
       IF(RN(1)*PHSMAX*WETMAX(JNPI).GT.PHS) GO TO 100
@@ -1990,105 +1991,105 @@ C
 
       RETURN
       END
-      FUNCTION SIGEE(Q2,JNP)                                           
+      FUNCTION SIGEE(Q2,JNP)
 C ----------------------------------------------------------------------
-C  e+e- cross section in the (1.GEV2,AMTAU**2) region                   
-C  normalised to sig0 = 4/3 pi alfa2                                    
-C  used in matrix element for multipion tau decays                      
-C  cf YS.Tsai        Phys.Rev D4 ,2821(1971)                            
-C     F.Gilman et al Phys.Rev D17,1846(1978)                            
-C     C.Kiesling, to be pub. in High Energy e+e- Physics (1988)         
-C  DATSIG(*,1) = e+e- -> pi+pi-2pi0                                     
-C  DATSIG(*,2) = e+e- -> 2pi+2pi-                                       
-C  DATSIG(*,3) = 5-pion contribution (a la TN.Pham et al)               
-C                (Phys Lett 78B,623(1978)                               
-C  DATSIG(*,5) = e+e- -> 6pi                                            
-C                                                                       
-C  4- and 6-pion cross sections from data                               
-C  5-pion contribution related to 4-pion cross section                  
-C                                                                       
-C     Called by DPHNPI                                                  
+C  e+e- cross section in the (1.GEV2,AMTAU**2) region
+C  normalised to sig0 = 4/3 pi alfa2
+C  used in matrix element for multipion tau decays
+C  cf YS.Tsai        Phys.Rev D4 ,2821(1971)
+C     F.Gilman et al Phys.Rev D17,1846(1978)
+C     C.Kiesling, to be pub. in High Energy e+e- Physics (1988)
+C  DATSIG(*,1) = e+e- -> pi+pi-2pi0
+C  DATSIG(*,2) = e+e- -> 2pi+2pi-
+C  DATSIG(*,3) = 5-pion contribution (a la TN.Pham et al)
+C                (Phys Lett 78B,623(1978)
+C  DATSIG(*,5) = e+e- -> 6pi
+C
+C  4- and 6-pion cross sections from data
+C  5-pion contribution related to 4-pion cross section
+C
+C     Called by DPHNPI
 C ----------------------------------------------------------------------
-      COMMON / PARMAS / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-C                                                                       
-      REAL*4            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-        REAL*4 DATSIG(17,6)                                             
-C                                                                       
-      DATA DATSIG/                                                      
-     1  7.40,12.00,16.15,21.25,24.90,29.55,34.15,37.40,37.85,37.40,     
-     2 36.00,33.25,30.50,27.70,24.50,21.25,18.90,                       
-     3  1.24, 2.50, 3.70, 5.40, 7.45,10.75,14.50,18.20,22.30,28.90,     
-     4 29.35,25.60,22.30,18.60,14.05,11.60, 9.10,                       
-     5 17*.0,                                                           
-     6 17*.0,                                                           
-     7 9*.0,.65,1.25,2.20,3.15,5.00,5.75,7.80,8.25,                     
-     8 17*.0/                                                           
-      DATA SIG0 / 86.8 /                                                
-      DATA PI /3.141592653589793238462643/                              
-      DATA INIT / 0 /                                                   
-C                          
-        
+      COMMON / PARMAS / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+C
+      REAL*4            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+        REAL*4 DATSIG(17,6)
+C
+      DATA DATSIG/
+     1  7.40,12.00,16.15,21.25,24.90,29.55,34.15,37.40,37.85,37.40,
+     2 36.00,33.25,30.50,27.70,24.50,21.25,18.90,
+     3  1.24, 2.50, 3.70, 5.40, 7.45,10.75,14.50,18.20,22.30,28.90,
+     4 29.35,25.60,22.30,18.60,14.05,11.60, 9.10,
+     5 17*.0,
+     6 17*.0,
+     7 9*.0,.65,1.25,2.20,3.15,5.00,5.75,7.80,8.25,
+     8 17*.0/
+      DATA SIG0 / 86.8 /
+      DATA PI /3.141592653589793238462643/
+      DATA INIT / 0 /
+C
+
         JNPI=JNP
         IF(JNPI.GT.6) JNPI=6  ! warning we have no input for higher masses but we want
                               ! dummy runs. This is to make it possible and trivial
-        IF(JNP.EQ.4) JNPI=3                                             
+        IF(JNP.EQ.4) JNPI=3
         IF(JNP.EQ.3) JNPI=4
-      IF(INIT.EQ.0) THEN                                                
-        INIT=1                                                          
+      IF(INIT.EQ.0) THEN
+        INIT=1
 
 C AJWMOD: initialize if called from outside QQ:
 !        IF (AMPI.LT.0.139) AMPI = 0.1395675
 
-        AMPI2=AMPI**2                                                   
-        FPI = .943*AMPI                                                 
-        DO 100 I=1,17                                                   
-        DATSIG(I,2) = DATSIG(I,2)/2.                                    
-        DATSIG(I,1) = DATSIG(I,1) + DATSIG(I,2)                         
-        S = 1.025+(I-1)*.05                                             
-        FACT=0.                                                         
-        S2=S**2                                                         
-        DO 200 J=1,17                                                   
-        T= 1.025+(J-1)*.05                                              
-        IF(T . GT. S-AMPI ) GO TO 201                                   
-        T2=T**2                                                         
-        FACT=(T2/S2)**2*SQRT((S2-T2-AMPI2)**2-4.*T2*AMPI2)/S2 *2.*T*.05 
-        FACT = FACT * (DATSIG(J,1)+DATSIG(J+1,1))                       
- 200    DATSIG(I,3) = DATSIG(I,3) + FACT                                
- 201    DATSIG(I,3) = DATSIG(I,3) /(2*PI*FPI)**2                        
-        DATSIG(I,4) = DATSIG(I,3)                                       
-        DATSIG(I,6) = DATSIG(I,5)                                       
- 100    CONTINUE                                                        
-C       WRITE(6,1000) DATSIG                                            
- 1000   FORMAT(///1X,' EE SIGMA USED IN MULTIPI DECAYS'/                
-     %        (17F7.2/))                                                
-      ENDIF                                                             
-      Q=SQRT(Q2)                                                        
-      QMIN=1.                                                           
-      IF(Q.LT.QMIN) THEN                                                
-        SIGEE=DATSIG(1,JNPI)+                                           
-     &       (DATSIG(2,JNPI)-DATSIG(1,JNPI))*(Q-1.)/.05                 
-      ELSEIF(Q.LT.1.8) THEN                                             
-        DO 1 I=1,16                                                     
-        QMAX = QMIN + .05                                               
-        IF(Q.LT.QMAX) GO TO 2                                           
-        QMIN = QMIN + .05                                               
- 1      CONTINUE                                                        
- 2      SIGEE=DATSIG(I,JNPI)+                                           
-     &       (DATSIG(I+1,JNPI)-DATSIG(I,JNPI)) * (Q-QMIN)/.05           
-      ELSEIF(Q.GT.1.8) THEN                                             
-        SIGEE=DATSIG(17,JNPI)+                                          
-     &       (DATSIG(17,JNPI)-DATSIG(16,JNPI)) * (Q-1.8)/.05            
-      ENDIF                                                             
-      IF(SIGEE.LT..0) SIGEE=0.                                          
-C                                                                       
-      SIGEE = SIGEE/(6.*PI**2*SIG0)                                     
-C                                                                       
-      RETURN                                                            
-      END                                                               
+        AMPI2=AMPI**2
+        FPI = .943*AMPI
+        DO 100 I=1,17
+        DATSIG(I,2) = DATSIG(I,2)/2.
+        DATSIG(I,1) = DATSIG(I,1) + DATSIG(I,2)
+        S = 1.025+(I-1)*.05
+        FACT=0.
+        S2=S**2
+        DO 200 J=1,17
+        T= 1.025+(J-1)*.05
+        IF(T . GT. S-AMPI ) GO TO 201
+        T2=T**2
+        FACT=(T2/S2)**2*SQRT((S2-T2-AMPI2)**2-4.*T2*AMPI2)/S2 *2.*T*.05
+        FACT = FACT * (DATSIG(J,1)+DATSIG(J+1,1))
+ 200    DATSIG(I,3) = DATSIG(I,3) + FACT
+ 201    DATSIG(I,3) = DATSIG(I,3) /(2*PI*FPI)**2
+        DATSIG(I,4) = DATSIG(I,3)
+        DATSIG(I,6) = DATSIG(I,5)
+ 100    CONTINUE
+C       WRITE(6,1000) DATSIG
+ 1000   FORMAT(///1X,' EE SIGMA USED IN MULTIPI DECAYS'/
+     %        (17F7.2/))
+      ENDIF
+      Q=SQRT(Q2)
+      QMIN=1.
+      IF(Q.LT.QMIN) THEN
+        SIGEE=DATSIG(1,JNPI)+
+     &       (DATSIG(2,JNPI)-DATSIG(1,JNPI))*(Q-1.)/.05
+      ELSEIF(Q.LT.1.8) THEN
+        DO 1 I=1,16
+        QMAX = QMIN + .05
+        IF(Q.LT.QMAX) GO TO 2
+        QMIN = QMIN + .05
+ 1      CONTINUE
+ 2      SIGEE=DATSIG(I,JNPI)+
+     &       (DATSIG(I+1,JNPI)-DATSIG(I,JNPI)) * (Q-QMIN)/.05
+      ELSEIF(Q.GT.1.8) THEN
+        SIGEE=DATSIG(17,JNPI)+
+     &       (DATSIG(17,JNPI)-DATSIG(16,JNPI)) * (Q-1.8)/.05
+      ENDIF
+      IF(SIGEE.LT..0) SIGEE=0.
+C
+      SIGEE = SIGEE/(6.*PI**2*SIG0)
+C
+      RETURN
+      END
 
       FUNCTION SIGOLD(Q2,JNPI)
 C ----------------------------------------------------------------------
@@ -2215,7 +2216,7 @@ C MATRIX ELEMENT NUMBER:
       SUBROUTINE CHOICE3(MNUM,RR,ICHAN,xPROB1,xPROB2,xPROB3,
      $            xAMRX,xGAMRX,xAMRA,xGAMRA,xAMRB,xGAMRB)
       include 'TAUDCDsize.inc'
-      COMMON /SAMPL3/ PROB1(NM3),PROB2(NM3),AMRX(NM3),GAMRX(NM3),AMRA(NM3),GAMRA(NM3),AMRB(NM3),GAMRB(NM3)
+      COMMON /SAMPL3/ PROB1(NM3),PROB2(NM3),(NM3),GAMRX(NM3),AMRA(NM3),GAMRA(NM3),AMRB(NM3),GAMRB(NM3)
 
        xPROB1=PROB1(MNUM)
        xPROB2=PROB2(MNUM)
@@ -2319,7 +2320,7 @@ C
         AMP2=AMPA
       ENDIF
         AMP3=AMP3R
-      
+
 CAM
         RR1=RRR(1)
         AMS1=(AMP1+AMP2+AMP3)**2
@@ -2338,7 +2339,7 @@ C MASS OF (REAL/VIRTUAL) RHO -
         RR2=RRR(2)
         AMS1=(AMP2+AMP3)**2
         AMS2=(AM3-AMP1)**2
-        
+
       IF (ICHAN.LE.2) THEN
 
 * PHASE SPACE WITH SAMPLING FOR RHO RESONANCE,
@@ -2358,7 +2359,7 @@ C----------------------------------------------------------------------
 
         AM2SQ=AMS1+   RR2*(AMS2-AMS1)
         AM2 =SQRT(AM2SQ)
-C --- this part of jacobian will be recovered later       
+C --- this part of jacobian will be recovered later
         PHF0=(AMS2-AMS1)
       ENDIF
 
@@ -2395,7 +2396,7 @@ C --- this part of jacobian will be recovered later
         PIM2(2)=0.d0
         PIM2(4)=1.d0/(2.d0*AM3)*(AM3**2-AM2**2+AMP1**2)
         PIM2(3)=-PR(3)
-C --- this part of jacobian will be recovered later     
+C --- this part of jacobian will be recovered later
         PHF2=(4*PI)*(2*PR(3)/AM3)
 
 * OLD PIONS BOOSTED FROM RHO REST FRAME TO A1 REST FRAME
@@ -2521,7 +2522,7 @@ C PARTIAL WIDTH CONSISTS OF PHASE SPACE AND AMPLITUDE
 
       DGAMT=1/(2.*AMTAU)*AMPLIT*PHSPAC
       END
- 
+
       FUNCTION GFUN(QKWA)
 C ****************************************************************
 C     G-FUNCTION USED TO INRODUCE ENERGY DEPENDENCE IN A1 WIDTH
@@ -2853,7 +2854,7 @@ C POLARIMETER VECTOR IN TAU REST FRAME
       DO 91 I=1,3
       HV(I)=-HV(I)/BRAK
  91   CONTINUE
- 
+
       END
 
       SUBROUTINE CURR3PI(MNU,PIM1,PIM2,PIM3,HADCUR)
@@ -2886,10 +2887,10 @@ C
 
       ENDIF
       MNUM=MNU
-      IF(MNUM.eq.10) MNUM=0  ! we shift position 10 to 0 (temporarily) 
-                             ! to have the flexibility for FORM1, ... 
+      IF(MNUM.eq.10) MNUM=0  ! we shift position 10 to 0 (temporarily)
+                             ! to have the flexibility for FORM1, ...
                              ! of the past
- 
+
        IF (IFBABAR.EQ.1.or.IFBABAR.eq.0.OR.(.not.(MNUM.EQ.9.OR.MNUM.EQ.0))) THEN ! so far rchl only for 3pi modes
          FPI=FPIc
         ELSEIF (IFBABAR.EQ.2) THEN
@@ -2897,7 +2898,7 @@ C
         ELSE
          write(*,*) 'subroutine CURR3PI: wrong IFBABAR=',IFBABAR
          stop
-       ENDIF 
+       ENDIF
        FNORM(0)=CCABIB/FPI
        FNORM(1)=CCABIB/FPI
        FNORM(2)=CCABIB/FPI
@@ -3070,7 +3071,7 @@ C ALL FOUR INDICES ARE UP SO  PIA(3) AND PIA(4) HAVE SAME SIGN
       DO 20 I=1,4
   20  PIA(I)=PIA(I)*SIGN
       END
- 
+
       SUBROUTINE DEXNEW(MODE,ISGN,POL,PNU,PAA,PNPI,JNPI)
 C ----------------------------------------------------------------------
 * THIS SIMULATES TAU DECAY IN TAU REST FRAME
@@ -3139,7 +3140,7 @@ C
 
      &                ,NAMES
       CHARACTER NAMES(NMODE)*31
- 
+
       REAL*4 PNU(4),PWB(4),PNPI(4,9),HV(4),HHV(4)
       REAL*4 PDUM1(4),PDUM2(4),PDUMI(4,9)
       REAL*4 RRR(3)
@@ -3177,8 +3178,8 @@ C         11.Oct.11: fix for BINP and KARLSRUHE currents added
         DO  I=1,NTRIALS
 
           IF    (JNPI.LE.0) THEN
-            GOTO 903 
-          ELSEIF(JNPI.LE.NM4) THEN 
+            GOTO 903
+          ELSEIF(JNPI.LE.NM4) THEN
             CALL DPH4PI(WT,HV,PDUM1,PDUM2,PDUMI,JNPI)
 !            IF (I.eq.1) write(*,*) '4 pi jnpi=',jnpi
           ELSEIF(JNPI.LE.NM4+NM5) THEN
@@ -3193,7 +3194,7 @@ C         11.Oct.11: fix for BINP and KARLSRUHE currents added
             CALL DPH1PI(WT,HV,PDUM1,PDUM2,PDUMI,JNPI)
           ELSE
            GOTO 903
-          ENDIF   
+          ENDIF
         IF(WT.GT.WTMAX(JNPI)/1.2) WTMAX(JNPI)=WT*1.2
         ENDDO
 
@@ -3210,13 +3211,13 @@ C     =======================
 C
 300     CONTINUE
           IF    (JNPI.LE.0) THEN
-            GOTO 903 
+            GOTO 903
           ELSEIF(JNPI.LE.NM4) THEN
              CALL DPH4PI(WT,HHV,PNU,PWB,PNPI,JNPI)
           ELSEIF(JNPI.LE.NM4+NM5) THEN
              CALL DPH5PI(WT,HHV,PNU,PWB,PNPI,JNPI)
           ELSEIF(JNPI.LE.NM4+NM5+NM6) THEN
-            CALL DPHNPI(WT,HHV,PNU,PWB,PNPI,JNPI) 
+            CALL DPHNPI(WT,HHV,PNU,PWB,PNPI,JNPI)
           ELSEIF(JNPI.LE.NM4+NM5+NM6+NM3) THEN
             CALL DPH3PI(WT,HHV,PNU,PWB,PNPI,JNPI)
           ELSEIF(JNPI.LE.NM4+NM5+NM6+NM3+NM2) THEN
@@ -3225,7 +3226,7 @@ C
             CALL DPH1PI(WT,HHV,PNU,PWB,PNPI,JNPI)
            ELSE
            GOTO 903
-          ENDIF   
+          ENDIF
             DO I=1,4
               HV(I)=-ISGN*HHV(I)
             ENDDO
@@ -3321,15 +3322,15 @@ C
       COMMON / TAUDCD /IDFFIN(9,NMODE),MULPIK(NMODE)
      &                ,NAMES
       CHARACTER NAMES(NMODE)*31
-      
+
       REAL*8  ENU,XKK,EKK,PKK(4),PI
-      
+
 C --- Variables below are arguments of this or other routines
       REAL*4  PNU(4),HV(4),PNPI(4,9),PWB(4),WT
       REAL*4  PKKR(4),GAMM,AMF1,AMF0,DCDMAS
-      
+
       INTEGER  JNPI,IDFFIN,MULPIK,INUM,I
-    
+
       DATA PI /3.141592653589793238462643/
       INUM=JNPI-NM4-NM5-NM6-NM3-NM2
 
@@ -3350,7 +3351,7 @@ C TAU-NEUTRINO MOMENTUM
         ENDDO
         PNU(4)=ENU
 
- 
+
        CALL DAM1PI(INUM,PNU,AMF0,PKKR,AMF1,GAMM,HV)
        WT=GAMM
        DO I=1,4
@@ -3374,7 +3375,7 @@ C
       REAL  PKK(4),PNU(4),HV(4)
       DATA PI /3.141592653589793238462643/
 
-       IME=IMEGET(1,INUM) 
+       IME=IMEGET(1,INUM)
 
        IF (IME.EQ.2.OR.IME.EQ.4) THEN
         EKK=PKK(4)
@@ -3389,14 +3390,14 @@ C
         HV(4)=1
 
 C WARNING: 2-BODY PHASE SPACE FACTOR IS INCLUDED !
-C              1/(2pi)^2 1/8 lambda12(amtau^2,amf1^2,amf0^2)/amtau^2 
+C              1/(2pi)^2 1/8 lambda12(amtau^2,amf1^2,amf0^2)/amtau^2
 C              Flux: 1/(2amtau)
 C              d cos theta d phi --> dx_1dx_2   Jacobian=4pi  ?
 C               matrix element^2 = G_f^2 (v^2+a^2)/2 omega
 C     omega=fpi^2(amtau^4 -amtau^2 amf0^2 -2amtau^2amf1^2 -amf0^0amf1^2 +amf1^4
 
        IF (IME.EQ.2) THEN
-        IF (INUM.EQ.1) THEN  ! pi nu 
+        IF (INUM.EQ.1) THEN  ! pi nu
          FPI=0.1284
          GAMM=(GFERMI*FPI)**2/(16.*PI)*AMTAU**3*
      $        (BRAK/AMTAU**4)*
@@ -3409,8 +3410,8 @@ C     omega=fpi^2(amtau^4 -amtau^2 amf0^2 -2amtau^2amf1^2 -amf0^0amf1^2 +amf1^4
      $        (BRAK/AMTAU**4)*
      $        SQRT((AMTAU**2-AMF1**2-AMF0**2)**2
      $             -4*AMF1**2*AMF0**2           )/AMTAU**2
-        ELSE 
-C optional non-sm ME or dalitz plot enhancements etc. 
+        ELSE
+C optional non-sm ME or dalitz plot enhancements etc.
 C may be  be installed here for some values of MNUM.
 C CALL ALTERN1(INUM,PNU,PKK,GAMM,HV)
 
@@ -3421,13 +3422,13 @@ C CALL ALTERN1(INUM,PNU,PKK,GAMM,HV)
         ENDIF
 
        ELSEIF (IME.EQ.4) THEN
-        FKK=FCONST_wrap(INUM) ! to be filled in by C++ 
+        FKK=FCONST_wrap(INUM) ! to be filled in by C++
          GAMM=(GFERMI*FKK)**2/(16.*PI)*AMTAU**3*
      $        (BRAK/AMTAU**4)*
      $        SQRT((AMTAU**2-AMF1**2-AMF0**2)**2
      $             -4*AMF1**2*AMF0**2           )/AMTAU**2
        ENDIF
-       ELSEIF (IME.EQ.5) THEN       
+       ELSEIF (IME.EQ.5) THEN
          CALL DAM1PI_wrap(INUM,PNU,AMF0,PKK,AMF1,GAMM,HV)
          RETURN
        ELSEIF (IME.EQ.0) THEN    ! not initialized
@@ -3443,7 +3444,7 @@ C CALL ALTERN1(INUM,PNU,PKK,GAMM,HV)
        ENDIF
 
       END
- 
+
 
       SUBROUTINE CHOICE4(MNUM,xPROB1,xPROB2,xAMRX,xGAMRX,xAMRA,xGAMRA)
       include 'TAUDCDsize.inc'
@@ -3493,7 +3494,7 @@ C
       REAL*4 RRR(10) ! RANMAR generates floats
       REAL*8 RR1,RR2,RR3,RR4,RR5,PREZ
       REAL*8 X,Y,Z,XLAM,PI
-      REAL*8 PRC2, AMKUBA, GKUBA  ! locally defined presampling resonance 
+      REAL*8 PRC2, AMKUBA, GKUBA  ! locally defined presampling resonance
       REAL*8 PRFIR,PRSEC ! probabilities of first and second channel in the mass of 3
 
 C --- Variables below are arguments of this or other routines
@@ -3503,14 +3504,14 @@ C --- Variables below are arguments of this or other routines
       REAL*4 AMRX,GAMRX,AMROP,GAMROP,PROB1,PROB2
 
       INTEGER  JNPI,IDFFIN,MULPIK,ICONT,I
-      
+
       DATA PI /3.141592653589793238462643/
       DATA ICONT /0/
       XLAM(X,Y,Z)=SQRT(ABS((X-Y-Z)**2-4.0D0*Y*Z))
       PRC2=0.0d0     ! Probability for two scalars resonance presampler
       AMKUBA=0.001d0 ! Its mass
       GKUBA=0.001d0  ! and width
-      
+
       PRFIR=0.5d0
       PRSEC=0.5d0
 C --- Correction to generation channels for decays of different 1st and 2nd particle
@@ -3531,10 +3532,11 @@ C D**3 P /2E/(2PI)**3 (2PI)**4 DELTA4(SUM P)
       AMP4=DCDMAS(IDFFIN(4,JNPI))    ! mass for  PIZ
 
       IF (AMP3+AMP4.LE.0.002d0) PRC2=0.8d0 ! only for electron pair in final state
- 
+
       CALL CHOICE4(JNPI,PROB1,PROB2,AMROP,GAMROP,AMRX,GAMRX)
 
       PREZ=PROB1+PROB2
+C      PREZ=0.
 C TAU MOMENTUM
       PT(1)=0.
       PT(2)=0.
@@ -3557,7 +3559,7 @@ CAM
       PHSPAC=PHSPAC*
      $       ((AM4SQ-AMROP**2)**2+(AMROP*GAMROP)**2)/(AMROP*GAMROP)
       PHSPAC=PHSPAC*(ALP2-ALP1)
- 
+
 C
       RR1=RRR(1)
       AMS1=(AMP2+AMP3+AMP4)**2
@@ -3582,7 +3584,7 @@ C MASS OF 2
       RR2=RRR(2)
       AMS1=(AMP3+AMP4)**2
       AMS2=(AM3-AMP2)**2
-      
+
       IF (RRR(10).GT.PRC2) THEN
 * FLAT PHASE SPACE;
         AM2SQ=AMS1+   RR2*(AMS2-AMS1)
@@ -3648,7 +3650,7 @@ C --- this part of jacobian will be recovered later
       CALL ROTPOX(THET,PHI,PIPL)
       CALL ROTPOX(THET,PHI,PIM2)
       CALL ROTPOX(THET,PHI,PIZ)
-c      CALL ROTPOX(THET,PHI,PR) 
+c      CALL ROTPOX(THET,PHI,PR)
 
 * 4  REST FRAME, DEFINE PIM1
 *       PR   MOMENTUM
@@ -3659,7 +3661,7 @@ c      CALL ROTPOX(THET,PHI,PR)
       PR(3)= SQRT(ABS(PR(4)**2-AM3**2))
       PPI  =          PR(4)**2-AM3**2
 
-*       PIM1 MOMENTUM 
+*       PIM1 MOMENTUM
 
       PIM1(1)=0.d0
       PIM1(2)=0.d0
@@ -3690,7 +3692,7 @@ C
       PAA(3)= SQRT(ABS(PAA(4)**2-AM4**2))
       PPI    =          PAA(4)**2-AM4**2
       PHSPAC =PHSPAC*(4.d0*PI)*(2.d0*PAA(3)/AMTAU)
-      PHSP   =PHSP*(4.d0*PI)*(2.d0*PAA(3)/AMTAU)    
+      PHSP   =PHSP*(4.d0*PI)*(2.d0*PAA(3)/AMTAU)
 
 * TAU-NEUTRINO MOMENTUM
       PN(1)=0.d0
@@ -3700,7 +3702,7 @@ C
 
 C ZBW 20.12.2002 bug fix
 C JZ  17.07.2019 symmetrization does not apply for particles of different mass
-C JZ  27.08.2019 IF(AMP1.eq.AMP2) THEN  !  early version improved. 
+C JZ  27.08.2019 IF(AMP1.eq.AMP2) THEN  !  early version improved.
       IF(IDFFIN(1,JNPI).eq.IDFFIN(2,JNPI)) THEN
         IF(RRR(9).LE.0.5*PREZ) THEN
           DO 72 I=1,4
@@ -3787,19 +3789,19 @@ C --- SECOND CHANNEL
       GE=GG1*EE*GG3*GG4  ! jacobian for 3 and 2: end of ``SECOND CHANNEL"
 CC
 CC      averaging over channels
-CC        
+CC
 C --- JACOBIAN AVERAGED OVER THE TWO
 C     Old code. removed:   IF ( ( (FF+GG)*UU+FF*GG ).GT.0.0D0) THEN
 
       A1=0.0D0  ! now we have cascades so probablilites
-      A2=0.0D0  ! for channels are products of 1-variable 
+      A2=0.0D0  ! for channels are products of 1-variable
       A3=0.0D0  ! presampl. probablilities
       A4=0.0D0
       A5=0.0D0
       A6=0.0D0
 
 C  --- Probabilities of decay channels divided by jacobians, ready for
-C  --- harmonic average calculation. Eq. 20 from Tauola 2.4 documentation        
+C  --- harmonic average calculation. Eq. 20 from Tauola 2.4 documentation
       IF (FF.NE.0.d0) A1=PRFIR*PREZ* (1.d0-PRC2)/FF
       IF (GG.NE.0.d0) A2=PRSEC*PREZ* (1.d0-PRC2)/GG
       IF (UU.NE.0.d0) A3=(1.d0-PREZ)*(1.d0-PRC2)/UU
@@ -3829,12 +3831,12 @@ C  --- may be prone to numerical instabilities
         A2=0.0d0
         A3=0.0d0
       ENDIF
- 
+
       IF (A1+A2+A3+A4+A5+A6.NE.0.0) THEN
         PHSPAC=PHSPAC/(A1+A2+A3+A4+A5+A6)
 c          IF ( (0.5*PREZ*(FF+GG)*UU+(1.0-PREZ)*FF*GG).GT.0.0D0) THEN
 c           RR=FF*GG*UU/(0.5*PREZ*(FF+GG)*UU+(1.0-PREZ)*FF*GG)
-c           PHSPAC=PHSPAC*RR          
+c           PHSPAC=PHSPAC*RR
 C           print *, JNPI, RR, 1/(A1+A2+A3+A4+A5+A6) !for prc2=0.0 RR=1/(A1+...+A6)
       ELSE
         PHSPAC=0.0d0
@@ -3958,7 +3960,7 @@ C
          CALL CURR(MNUM,PIM1,PIM2,PIM3,PIM4,HADCUR)
         else if (IFBABAR.eq.2) then
           IFKARL=0 ! current choice between Karlsruhe (1), Novosibirsk(0)
-          if(IFKARL.eq.1) then 
+          if(IFKARL.eq.1) then
            CALL CURR_KARLS(MNUM,PIM1,PIM2,PIM3,PIM4,HADCUR)
           else
              if (MNUM.EQ.1) then
@@ -4009,14 +4011,14 @@ C HV IS DEFINED FOR TAU-    WITH GAMMA=B+HV*POL
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT= GFERMI**2       
+        AMPLIT= GFERMI**2
 
       ELSEIF (IME.EQ.1) THEN ! flat phase space
 C        FLAT PHASE SPACE ONLY;
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT=GFERMI**2 
+        AMPLIT=GFERMI**2
         RETURN
       ELSE
        write(*,*) 'DAM4PI: wrong IME= ',IME
@@ -4053,7 +4055,7 @@ C
       DATA PI /3.141592653589793238462643/
       DATA ICONT /0/
 
-      
+
       IME=IMEGET(5,MNUM)   ! type of matrix element to be used
 
 C
@@ -4094,14 +4096,14 @@ C HV IS DEFINED FOR TAU-    WITH GAMMA=B+HV*POL
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT= GFERMI**2       
+        AMPLIT= GFERMI**2
 
       ELSEIF (IME.EQ.1) THEN ! flat phase space
 C        FLAT PHASE SPACE ONLY;
         DO  I=1,3
          HV(I)=0.0
         ENDDO
-        AMPLIT=GFERMI**2 
+        AMPLIT=GFERMI**2
         RETURN
       ELSE
        write(*,*) 'DAM5PI: wrong IME= ',IME
@@ -4126,21 +4128,21 @@ C        FLAT PHASE SPACE ONLY;
 
       END
 
-      SUBROUTINE DPH5PI(DGAMT,HV,PNR,PAAR,PMULT,JNPI)                    
+      SUBROUTINE DPH5PI(DGAMT,HV,PNR,PAAR,PMULT,JNPI)
 C ----------------------------------------------------------------------
-* IT SIMULATES 5pi DECAY IN TAU REST FRAME WITH                         
-* Z-AXIS ALONG 5pi MOMENTUM                                             
+* IT SIMULATES 5pi DECAY IN TAU REST FRAME WITH
+* Z-AXIS ALONG 5pi MOMENTUM
 C ----------------------------------------------------------------------
       IMPLICIT NONE
-      COMMON / PARMASD / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-C                                                                       
-      REAL*8            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-      COMMON / DECPAR / GFERMI,GV,GA,CCABIB,SCABIB,GAMEL                
-      REAL*4            GFERMI,GV,GA,CCABIB,SCABIB,GAMEL                
+      COMMON / PARMASD / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+C
+      REAL*8            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+      COMMON / DECPAR / GFERMI,GV,GA,CCABIB,SCABIB,GAMEL
+      REAL*4            GFERMI,GV,GA,CCABIB,SCABIB,GAMEL
       include 'TAUDCDsize.inc'
 
       COMMON / TAUDCD /IDFFIN(9,NMODE),MULPIK(NMODE)
@@ -4154,281 +4156,281 @@ C
       REAL*8 gg1,gg2,gg3,gg5,ff1,ff2,ff3,ff4,alp,alp1,alp2
       REAL*8 AM2,BRAK,ENQ1,ENQ2,PHSPAC
       REAL*8 EXE,THET,PHI,FOMPP,FNORM,PXN,PXR,QXN,PXQ
-      
+
       REAL*4 RRR(12) ! RANMAR generates floats
       REAL*8 RR1,RR2,RR3,RR4
       REAL*8 XM,AM,GAMMA,PI,FPI
 
 C --- Variables below are arguments of this or other routines
-      REAL*4 HV(4),PNR(4),PAAR(4),PMULT(4,9) 
+      REAL*4 HV(4),PNR(4),PAAR(4),PMULT(4,9)
       REAL*4 PI1R(4),PI2R(4),PI3R(4),PI4R(4),PI5R(4),PTR(4)
       REAL*4 AMPLIT, DGAMT, DCDMAS
       REAL*4 ama2,gama2,PROBa2,PROBOM
       REAL*8 amom,gamom ! declared as REAL*8 in choice5
-      
+
       INTEGER  JNPI,IDFFIN,MULPIK,ICONT,I,K,INUM
-      
-      DATA PI /3.141592653589793238462643/                              
-      DATA ICONT /0/                                                    
-      data fpi /93.3e-3/                                                
-c                                                                       
-      COMPLEX BWIGN                                                     
-C                                                                     
 
-      BWIGN(XM,AM,GAMMA)=XM**2/CMPLX(XM**2-AM**2,GAMMA*AM)            
+      DATA PI /3.141592653589793238462643/
+      DATA ICONT /0/
+      data fpi /93.3e-3/
+c
+      COMPLEX BWIGN
+C
 
- 
+      BWIGN(XM,AM,GAMMA)=XM**2/CMPLX(XM**2-AM**2,GAMMA*AM)
+
+
       INUM=JNPI-NM4
- 
-C get parameters for presampler                                                 
+
+C get parameters for presampler
       call choice5(INUM,PROBa2,PROBOM,ama2,gama2,AMOM,GAMOM)
-c                                                                       
-C 6 BODY PHASE SPACE NORMALISED AS IN BJORKEN-DRELL                     
-C D**3 P /2E/(2PI)**3 (2PI)**4 DELTA4(SUM P)                            
-      PHSPAC=1./2**29/PI**14                                            
-c     PHSPAC=1./2**5/PI**2                                              
-C init 5pi decay mode (JNPI)    
+c
+C 6 BODY PHASE SPACE NORMALISED AS IN BJORKEN-DRELL
+C D**3 P /2E/(2PI)**3 (2PI)**4 DELTA4(SUM P)
+      PHSPAC=1./2**29/PI**14
+c     PHSPAC=1./2**5/PI**2
+C init 5pi decay mode (JNPI)
       AMP1=DCDMAS(IDFFIN(1,JNPI))
       AMP2=DCDMAS(IDFFIN(2,JNPI))
       AMP3=DCDMAS(IDFFIN(3,JNPI))
       AMP4=DCDMAS(IDFFIN(4,JNPI))
       AMP5=DCDMAS(IDFFIN(5,JNPI))
-c                                                                       
-C TAU MOMENTUM                                                          
-      PT(1)=0.                                                          
-      PT(2)=0.                                                          
-      PT(3)=0.                                                          
-      PT(4)=AMTAU                                                                                                                             
-      CALL RANMAR(RRR,12)                                               
-C                                                                       
-c masses of 5, 4, 3 and 2 pi systems                                    
-c 3 pi with sampling for omega resonance                                
-cam                                                                     
-c mass of 5   (12345)                     
-       IF (RRR(11).GT.PROBa2) THEN                              
+c
+C TAU MOMENTUM
+      PT(1)=0.
+      PT(2)=0.
+      PT(3)=0.
+      PT(4)=AMTAU
+      CALL RANMAR(RRR,12)
+C
+c masses of 5, 4, 3 and 2 pi systems
+c 3 pi with sampling for omega resonance
+cam
+c mass of 5   (12345)
+       IF (RRR(11).GT.PROBa2) THEN
 c  flat phase space:
-        rr1=rrr(10)                                                       
-        ams1=(amp1+amp2+amp3+amp4+amp5)**2                                
-        ams2=(amtau-amnuta)**2 
-        alp1=atan((ams1-ama2**2)/ama2/gama2)                              
-        alp2=atan((ams2-ama2**2)/ama2/gama2)                     
-        am5sq=ams1+   rr1*(ams2-ams1)                                     
-        am5 =sqrt(am5sq)                                                  
-C      phspac=phspac*(ams2-ams1)  
-c or peaked phase space  for a1(?) resonance: 
-       ELSE
-        rr1=rrr(10)                                                       
-        ams1=(amp1+amp2+amp3+amp4+amp5)**2                                
-        ams2=(amtau-amnuta)**2    
-        alp1=atan((ams1-ama2**2)/ama2/gama2)                              
-        alp2=atan((ams2-ama2**2)/ama2/gama2)                              
-        alp=alp1+rr1*(alp2-alp1)                                          
-        am5sq =ama2**2+ama2*gama2*tan(alp)                                
+        rr1=rrr(10)
+        ams1=(amp1+amp2+amp3+amp4+amp5)**2
+        ams2=(amtau-amnuta)**2
+        alp1=atan((ams1-ama2**2)/ama2/gama2)
+        alp2=atan((ams2-ama2**2)/ama2/gama2)
+        am5sq=ams1+   rr1*(ams2-ams1)
         am5 =sqrt(am5sq)
-       ENDIF                                                  
-c --- these are two parts of jacobian, plugged here --------------- 
-      gg5=((am5sq-ama2**2)**2+(ama2*gama2)**2)/(ama2*gama2)             
-      gg5=gg5*(alp2-alp1)                          
-      phspac=phspac/(PROBa2/gg5+(1D0-PROBa2)/(ams2-ams1) )               
-c                                                                       
-c mass of 4   (2345)                                                    
-c flat phase space                                                      
-      rr1=rrr(9)                                                        
-      ams1=(amp2+amp3+amp4+amp5)**2                                     
-      ams2=(am5-amp1)**2                                                
-      am4sq=ams1+   rr1*(ams2-ams1)                                     
-      am4 =sqrt(am4sq)                                                  
-      gg1=ams2-ams1                   
-c                                                                       
-c mass of 3   (234)                                                     
-
-       IF (RRR(12).LT.PROBom) THEN                    
-C phase space with sampling for omega resonance     
-        rr1=rrr(1)                                                        
-        ams1=(amp2+amp3+amp4)**2                                          
-        ams2=(am4-amp5)**2                                                
-        alp1=atan((ams1-amom**2)/amom/gamom)                              
-        alp2=atan((ams2-amom**2)/amom/gamom)                              
-        alp=alp1+rr1*(alp2-alp1)                                          
-        am3sq =amom**2+amom*gamom*tan(alp)                                
-        am3 =sqrt(am3sq)                                                  
-       ELSE                             
-c flat phase space; 
-        rr1=rrr(1)                                                        
-        ams1=(amp2+amp3+amp4)**2                                          
-        ams2=(am4-amp5)**2                                                
-        alp1=atan((ams1-amom**2)/amom/gamom)                              
-        alp2=atan((ams2-amom**2)/amom/gamom)                              
-                                                   
-        am3sq=ams1+   rr1*(ams2-ams1)                                     
-        am3 =sqrt(am3sq)                                                  
-c --- this part of jacobian will be recovered later                     
+C      phspac=phspac*(ams2-ams1)
+c or peaked phase space  for a1(?) resonance:
+       ELSE
+        rr1=rrr(10)
+        ams1=(amp1+amp2+amp3+amp4+amp5)**2
+        ams2=(amtau-amnuta)**2
+        alp1=atan((ams1-ama2**2)/ama2/gama2)
+        alp2=atan((ams2-ama2**2)/ama2/gama2)
+        alp=alp1+rr1*(alp2-alp1)
+        am5sq =ama2**2+ama2*gama2*tan(alp)
+        am5 =sqrt(am5sq)
        ENDIF
-c --- this part of the jacobian will be recovered later --------------- 
-       gg2=((am3sq-amom**2)**2+(amom*gamom)**2)/(amom*gamom)             
-       gg2=gg2*(alp2-alp1)   
-       gg2=1D0/(PROBOM/gg2+(1D0-PROBOM)/(ams2-ams1))
-c                                                                       
-C mass of 2  (34)                                                       
-      rr2=rrr(2)                                                        
-      ams1=(amp3+amp4)**2                                               
-      ams2=(am3-amp2)**2                                                
-c flat phase space;                                                     
-      am2sq=ams1+   rr2*(ams2-ams1)                                     
-      am2 =sqrt(am2sq)                                                  
-c --- this part of jacobian will be recovered later                     
-      gg3=ams2-ams1                            
-c                                                                       
-c (34) restframe, define pi3 and pi4                                    
-      enq1=(am2sq+amp3**2-amp4**2)/(2*am2)                              
-      enq2=(am2sq-amp3**2+amp4**2)/(2*am2)                              
-      ppi=          enq1**2-amp3**2                                     
-      pppi=sqrt(abs(enq1**2-amp3**2))                                   
-      ff1=(4*pi)*(2*pppi/am2)                                           
-c pi3   momentum in (34) rest frame                                     
-      call spherd(pppi,pi3)                                             
-      pi3(4)=enq1                                                       
-c pi4   momentum in (34) rest frame                                     
-      do 30 i=1,3                                                       
- 30   pi4(i)=-pi3(i)                                                    
-      pi4(4)=enq2                                                       
-c                                                                       
-c (234) rest frame, define pi2                                          
-c pr   momentum                                                         
-      pr(1)=0.d0                                                        
-      pr(2)=0.d0                                                        
-      pr(4)=1.d0/(2*am3)*(am3**2+am2**2-amp2**2)                        
-      pr(3)= sqrt(abs(pr(4)**2-am2**2))                                 
-      ppi  =          pr(4)**2-am2**2                                   
-c pi2   momentum                                                        
-      pi2(1)=0.d0                                                       
-      pi2(2)=0.d0                                                       
-      pi2(4)=1.d0/(2.d0*am3)*(am3**2-am2**2+amp2**2)                    
-      pi2(3)=-pr(3)                                                     
-c --- this part of jacobian will be recovered later                     
-      ff2=(4.d0*pi)*(2.d0*pr(3)/am3)                                    
-c old pions boosted from 2 rest frame to 3 rest frame                   
-      exe=(pr(4)+pr(3))/am2                                             
-      call bostd3(exe,pi3,pi3)                                          
-      call bostd3(exe,pi4,pi4)                                          
-      rr3=rrr(3)                                                        
-      rr4=rrr(4)                                                        
-      thet =acos(-1.d0+2.d0*rr3)                                        
-      phi = 2.d0*pi*rr4                                                 
-      call rotpox(thet,phi,pi2)                                         
-      call rotpox(thet,phi,pi3)                                         
-      call rotpox(thet,phi,pi4)                                         
-C                                                                       
-C (2345)  rest frame, define pi5                                        
-c pr   momentum                                                         
-      pr(1)=0.d0                                                        
-      pr(2)=0.d0                                                        
-      pr(4)=1.d0/(2.d0*am4)*(am4**2+am3**2-amp5**2)                     
-      pr(3)= sqrt(abs(pr(4)**2-am3**2))                                 
-      ppi  =          pr(4)**2-am3**2                                   
-c pi5  momentum                                                         
-      pi5(1)=0.d0                                                       
-      pi5(2)=0.d0                                                       
-      pi5(4)=1.d0/(2.d0*am4)*(am4**2-am3**2+amp5**2)                    
-      pi5(3)=-pr(3)                                                     
-c --- this part of jacobian will be recovered later                     
-      ff3=(4.d0*pi)*(2.d0*pr(3)/am4)                                    
-c old pions boosted from 3 rest frame to 4 rest frame                   
-      exe=(pr(4)+pr(3))/am3                                             
-      call bostd3(exe,pi2,pi2)                                          
-      call bostd3(exe,pi3,pi3)                                          
-      call bostd3(exe,pi4,pi4)                                          
-      rr3=rrr(5)                                                        
-      rr4=rrr(6)                                                        
-      thet =acos(-1.d0+2.d0*rr3)                                        
-      phi = 2.d0*pi*rr4                                                 
-      call rotpox(thet,phi,pi2)                                         
-      call rotpox(thet,phi,pi3)                                         
-      call rotpox(thet,phi,pi4)                                         
-      call rotpox(thet,phi,pi5)                                         
-C                                                                       
-C (12345)  rest frame, define pi1                                       
-c pr   momentum                                                         
-      pr(1)=0.d0                                                        
-      pr(2)=0.d0                                                        
-      pr(4)=1.d0/(2.d0*am5)*(am5**2+am4**2-amp1**2)                     
-      pr(3)= sqrt(abs(pr(4)**2-am4**2))                                 
-      ppi  =          pr(4)**2-am4**2                                   
-c pi1  momentum                                                         
-      pi1(1)=0.d0                                                       
-      pi1(2)=0.d0                                                       
-      pi1(4)=1.d0/(2.d0*am5)*(am5**2-am4**2+amp1**2)                    
-      pi1(3)=-pr(3)                                                     
-c --- this part of jacobian will be recovered later                     
-      ff4=(4.d0*pi)*(2.d0*pr(3)/am5)                                    
-c old pions boosted from 4 rest frame to 5 rest frame                   
-      exe=(pr(4)+pr(3))/am4                                             
-      call bostd3(exe,pi2,pi2)                                          
-      call bostd3(exe,pi3,pi3)                                          
-      call bostd3(exe,pi4,pi4)                                          
-      call bostd3(exe,pi5,pi5)                                          
-      rr3=rrr(7)                                                        
-      rr4=rrr(8)                                                        
-      thet =acos(-1.d0+2.d0*rr3)                                        
-      phi = 2.d0*pi*rr4                                                 
-      call rotpox(thet,phi,pi1)                                         
-      call rotpox(thet,phi,pi2)                                         
-      call rotpox(thet,phi,pi3)                                         
-      call rotpox(thet,phi,pi4)                                         
-      call rotpox(thet,phi,pi5)                                         
-c                                                                       
-* now to the tau rest frame, define paa and neutrino momenta            
-* paa  momentum                                                         
-      paa(1)=0                                                          
-      paa(2)=0                                                          
-c     paa(4)=1./(2*amtau)*(amtau**2-amnuta**2+am5**2)                   
-c     paa(3)= sqrt(abs(paa(4)**2-am5**2))                               
-c     ppi   =          paa(4)**2-am5**2                                 
-      paa(4)=1.d0/(2.d0*amtau)*(amtau**2-amnuta**2+am5sq)               
-      paa(3)= sqrt(abs(paa(4)**2-am5sq))                                
-      ppi   =          paa(4)**2-am5sq                                  
-      phspac=phspac*(4.d0*pi)*(2*paa(3)/amtau)                          
-* tau-neutrino momentum                                                 
-      pn(1)=0.d0                                                        
-      pn(2)=0.d0                                                        
-      pn(4)=1.d0/(2.d0*amtau)*(amtau**2+amnuta**2-am5**2)               
-      pn(3)=-paa(3)                                                     
-c                                                                       
-      phspac=phspac * gg1*gg2*gg3*ff1*ff2*ff3*ff4                       
-c                                                                       
-C all pions boosted from  5  rest frame to tau rest frame               
-C z-axis antiparallel to neutrino momentum                              
-      exe=(paa(4)+paa(3))/am5                                           
-      call bostd3(exe,pi1,pi1)                                          
-      call bostd3(exe,pi2,pi2)                                          
-      call bostd3(exe,pi3,pi3)                                          
-      call bostd3(exe,pi4,pi4)                                          
-      call bostd3(exe,pi5,pi5)                                          
-c                                                                       
-C partial width consists of phase space and amplitude                   
-C AMPLITUDE  (cf YS.Tsai Phys.Rev.D4,2821(1971)                         
-C    or F.Gilman SH.Rhie Phys.Rev.D31,1066(1985)                        
-C                                                                       
-      PXQ=AMTAU*PAA(4)                                                  
-      PXN=AMTAU*PN(4)                                                   
-      QXN=PAA(4)*PN(4)-PAA(1)*PN(1)-PAA(2)*PN(2)-PAA(3)*PN(3)           
-      BRAK=2.d0*(GV**2+GA**2)*(2.d0*PXQ*QXN+AM5SQ*PXN)                  
-     &    -6.d0*(GV**2-GA**2)*AMTAU*AMNUTA*AM5SQ                        
-      fompp = cabs(bwign(am3,amom,gamom))**2                            
-c normalisation factor (to some numerical undimensioned factor;         
-c cf R.Fischer et al ZPhys C3, 313 (1980))                              
-      fnorm = 1.d0/fpi**6                                               
-c     AMPLIT=CCABIB**2*GFERMI**2/2. * BRAK * AM5SQ*SIGEE(AM5SQ,JNPI)    
-      AMPLIT=CCABIB**2*GFERMI**2/2.d0 * BRAK !* (1D0*(jnpi-12))         
-      amplit = amplit * fompp * fnorm                                   
-c phase space test                                                      
-c     amplit = amplit * fnorm                                           
+c --- these are two parts of jacobian, plugged here ---------------
+      gg5=((am5sq-ama2**2)**2+(ama2*gama2)**2)/(ama2*gama2)
+      gg5=gg5*(alp2-alp1)
+      phspac=phspac/(PROBa2/gg5+(1D0-PROBa2)/(ams2-ams1) )
+c
+c mass of 4   (2345)
+c flat phase space
+      rr1=rrr(9)
+      ams1=(amp2+amp3+amp4+amp5)**2
+      ams2=(am5-amp1)**2
+      am4sq=ams1+   rr1*(ams2-ams1)
+      am4 =sqrt(am4sq)
+      gg1=ams2-ams1
+c
+c mass of 3   (234)
 
-!      write(*,*) '5pi jnpi=',jnpi                                  
-c ignore spin terms                                                     
-      DO 40 I=1,3                                                       
- 40   HV(I)=0.       
-                             
+       IF (RRR(12).LT.PROBom) THEN
+C phase space with sampling for omega resonance
+        rr1=rrr(1)
+        ams1=(amp2+amp3+amp4)**2
+        ams2=(am4-amp5)**2
+        alp1=atan((ams1-amom**2)/amom/gamom)
+        alp2=atan((ams2-amom**2)/amom/gamom)
+        alp=alp1+rr1*(alp2-alp1)
+        am3sq =amom**2+amom*gamom*tan(alp)
+        am3 =sqrt(am3sq)
+       ELSE
+c flat phase space;
+        rr1=rrr(1)
+        ams1=(amp2+amp3+amp4)**2
+        ams2=(am4-amp5)**2
+        alp1=atan((ams1-amom**2)/amom/gamom)
+        alp2=atan((ams2-amom**2)/amom/gamom)
+
+        am3sq=ams1+   rr1*(ams2-ams1)
+        am3 =sqrt(am3sq)
+c --- this part of jacobian will be recovered later
+       ENDIF
+c --- this part of the jacobian will be recovered later ---------------
+       gg2=((am3sq-amom**2)**2+(amom*gamom)**2)/(amom*gamom)
+       gg2=gg2*(alp2-alp1)
+       gg2=1D0/(PROBOM/gg2+(1D0-PROBOM)/(ams2-ams1))
+c
+C mass of 2  (34)
+      rr2=rrr(2)
+      ams1=(amp3+amp4)**2
+      ams2=(am3-amp2)**2
+c flat phase space;
+      am2sq=ams1+   rr2*(ams2-ams1)
+      am2 =sqrt(am2sq)
+c --- this part of jacobian will be recovered later
+      gg3=ams2-ams1
+c
+c (34) restframe, define pi3 and pi4
+      enq1=(am2sq+amp3**2-amp4**2)/(2*am2)
+      enq2=(am2sq-amp3**2+amp4**2)/(2*am2)
+      ppi=          enq1**2-amp3**2
+      pppi=sqrt(abs(enq1**2-amp3**2))
+      ff1=(4*pi)*(2*pppi/am2)
+c pi3   momentum in (34) rest frame
+      call spherd(pppi,pi3)
+      pi3(4)=enq1
+c pi4   momentum in (34) rest frame
+      do 30 i=1,3
+ 30   pi4(i)=-pi3(i)
+      pi4(4)=enq2
+c
+c (234) rest frame, define pi2
+c pr   momentum
+      pr(1)=0.d0
+      pr(2)=0.d0
+      pr(4)=1.d0/(2*am3)*(am3**2+am2**2-amp2**2)
+      pr(3)= sqrt(abs(pr(4)**2-am2**2))
+      ppi  =          pr(4)**2-am2**2
+c pi2   momentum
+      pi2(1)=0.d0
+      pi2(2)=0.d0
+      pi2(4)=1.d0/(2.d0*am3)*(am3**2-am2**2+amp2**2)
+      pi2(3)=-pr(3)
+c --- this part of jacobian will be recovered later
+      ff2=(4.d0*pi)*(2.d0*pr(3)/am3)
+c old pions boosted from 2 rest frame to 3 rest frame
+      exe=(pr(4)+pr(3))/am2
+      call bostd3(exe,pi3,pi3)
+      call bostd3(exe,pi4,pi4)
+      rr3=rrr(3)
+      rr4=rrr(4)
+      thet =acos(-1.d0+2.d0*rr3)
+      phi = 2.d0*pi*rr4
+      call rotpox(thet,phi,pi2)
+      call rotpox(thet,phi,pi3)
+      call rotpox(thet,phi,pi4)
+C
+C (2345)  rest frame, define pi5
+c pr   momentum
+      pr(1)=0.d0
+      pr(2)=0.d0
+      pr(4)=1.d0/(2.d0*am4)*(am4**2+am3**2-amp5**2)
+      pr(3)= sqrt(abs(pr(4)**2-am3**2))
+      ppi  =          pr(4)**2-am3**2
+c pi5  momentum
+      pi5(1)=0.d0
+      pi5(2)=0.d0
+      pi5(4)=1.d0/(2.d0*am4)*(am4**2-am3**2+amp5**2)
+      pi5(3)=-pr(3)
+c --- this part of jacobian will be recovered later
+      ff3=(4.d0*pi)*(2.d0*pr(3)/am4)
+c old pions boosted from 3 rest frame to 4 rest frame
+      exe=(pr(4)+pr(3))/am3
+      call bostd3(exe,pi2,pi2)
+      call bostd3(exe,pi3,pi3)
+      call bostd3(exe,pi4,pi4)
+      rr3=rrr(5)
+      rr4=rrr(6)
+      thet =acos(-1.d0+2.d0*rr3)
+      phi = 2.d0*pi*rr4
+      call rotpox(thet,phi,pi2)
+      call rotpox(thet,phi,pi3)
+      call rotpox(thet,phi,pi4)
+      call rotpox(thet,phi,pi5)
+C
+C (12345)  rest frame, define pi1
+c pr   momentum
+      pr(1)=0.d0
+      pr(2)=0.d0
+      pr(4)=1.d0/(2.d0*am5)*(am5**2+am4**2-amp1**2)
+      pr(3)= sqrt(abs(pr(4)**2-am4**2))
+      ppi  =          pr(4)**2-am4**2
+c pi1  momentum
+      pi1(1)=0.d0
+      pi1(2)=0.d0
+      pi1(4)=1.d0/(2.d0*am5)*(am5**2-am4**2+amp1**2)
+      pi1(3)=-pr(3)
+c --- this part of jacobian will be recovered later
+      ff4=(4.d0*pi)*(2.d0*pr(3)/am5)
+c old pions boosted from 4 rest frame to 5 rest frame
+      exe=(pr(4)+pr(3))/am4
+      call bostd3(exe,pi2,pi2)
+      call bostd3(exe,pi3,pi3)
+      call bostd3(exe,pi4,pi4)
+      call bostd3(exe,pi5,pi5)
+      rr3=rrr(7)
+      rr4=rrr(8)
+      thet =acos(-1.d0+2.d0*rr3)
+      phi = 2.d0*pi*rr4
+      call rotpox(thet,phi,pi1)
+      call rotpox(thet,phi,pi2)
+      call rotpox(thet,phi,pi3)
+      call rotpox(thet,phi,pi4)
+      call rotpox(thet,phi,pi5)
+c
+* now to the tau rest frame, define paa and neutrino momenta
+* paa  momentum
+      paa(1)=0
+      paa(2)=0
+c     paa(4)=1./(2*amtau)*(amtau**2-amnuta**2+am5**2)
+c     paa(3)= sqrt(abs(paa(4)**2-am5**2))
+c     ppi   =          paa(4)**2-am5**2
+      paa(4)=1.d0/(2.d0*amtau)*(amtau**2-amnuta**2+am5sq)
+      paa(3)= sqrt(abs(paa(4)**2-am5sq))
+      ppi   =          paa(4)**2-am5sq
+      phspac=phspac*(4.d0*pi)*(2*paa(3)/amtau)
+* tau-neutrino momentum
+      pn(1)=0.d0
+      pn(2)=0.d0
+      pn(4)=1.d0/(2.d0*amtau)*(amtau**2+amnuta**2-am5**2)
+      pn(3)=-paa(3)
+c
+      phspac=phspac * gg1*gg2*gg3*ff1*ff2*ff3*ff4
+c
+C all pions boosted from  5  rest frame to tau rest frame
+C z-axis antiparallel to neutrino momentum
+      exe=(paa(4)+paa(3))/am5
+      call bostd3(exe,pi1,pi1)
+      call bostd3(exe,pi2,pi2)
+      call bostd3(exe,pi3,pi3)
+      call bostd3(exe,pi4,pi4)
+      call bostd3(exe,pi5,pi5)
+c
+C partial width consists of phase space and amplitude
+C AMPLITUDE  (cf YS.Tsai Phys.Rev.D4,2821(1971)
+C    or F.Gilman SH.Rhie Phys.Rev.D31,1066(1985)
+C
+      PXQ=AMTAU*PAA(4)
+      PXN=AMTAU*PN(4)
+      QXN=PAA(4)*PN(4)-PAA(1)*PN(1)-PAA(2)*PN(2)-PAA(3)*PN(3)
+      BRAK=2.d0*(GV**2+GA**2)*(2.d0*PXQ*QXN+AM5SQ*PXN)
+     &    -6.d0*(GV**2-GA**2)*AMTAU*AMNUTA*AM5SQ
+      fompp = cabs(bwign(am3,amom,gamom))**2
+c normalisation factor (to some numerical undimensioned factor;
+c cf R.Fischer et al ZPhys C3, 313 (1980))
+      fnorm = 1.d0/fpi**6
+c     AMPLIT=CCABIB**2*GFERMI**2/2. * BRAK * AM5SQ*SIGEE(AM5SQ,JNPI)
+      AMPLIT=CCABIB**2*GFERMI**2/2.d0 * BRAK !* (1D0*(jnpi-12))
+      amplit = amplit * fompp * fnorm
+c phase space test
+c     amplit = amplit * fnorm
+
+!      write(*,*) '5pi jnpi=',jnpi
+c ignore spin terms
+      DO 40 I=1,3
+ 40   HV(I)=0.
+
 !      write(*,*) jnpi
 !      stop
 
@@ -4446,23 +4448,23 @@ c ignore spin terms
       if (INUM.gt.1) ! for the time being we want to keep old wrong m.e.
      $ CALL DAM5PI(INUM,PTR,PNR,PI1R,PI2R,PI3R,PI4R,PI5R,AMPLIT,HV)
       DGAMT=1/(2.*AMTAU)*AMPLIT*PHSPAC
-c                                                                       
-      do 77 k=1,4                                                       
-        pmult(k,1)=pi1(k)                                               
-        pmult(k,2)=pi2(k)                                               
-        pmult(k,3)=pi3(k)                                               
-        pmult(k,4)=pi4(k)                                               
-        pmult(k,5)=pi5(k)                                               
- 77   continue                                                          
+c
+      do 77 k=1,4
+        pmult(k,1)=pi1(k)
+        pmult(k,2)=pi2(k)
+        pmult(k,3)=pi3(k)
+        pmult(k,4)=pi4(k)
+        pmult(k,5)=pi5(k)
+ 77   continue
       return
 
-C missing: transposition of identical particles, startistical factors 
+C missing: transposition of identical particles, startistical factors
 C for identical matrices, polarimetric vector. Matrix element rather naive.
 
 C flat phase space in pion system + with breit wigner for omega
-C anyway it is better than nothing, and code is improvable.                                                  
-      end         
-  
+C anyway it is better than nothing, and code is improvable.
+      end
+
 
       SUBROUTINE CHOICE2(INUM,xPROB1,xPROB2,xAM2,xGAM2,xAM3,xGAM3)
       include 'TAUDCDsize.inc'
@@ -4480,39 +4482,39 @@ C anyway it is better than nothing, and code is improvable.
         xPROB2= PROB2(INUM)
 
       END
-                                                    
+
       SUBROUTINE DPH2PI(DGAMT,HV,PNR,PRR,PMULT,JNPI)
 C ----------------------------------------------------------------------
-C IT SIMULATES RHO DECAY IN TAU REST FRAME WITH                         
-C Z-AXIS ALONG RHO MOMENTUM                                             
-C Rho decays to K Kbar       
-C WARNING: DPH2PI routine is missing 2 scalar ME calculation                
+C IT SIMULATES RHO DECAY IN TAU REST FRAME WITH
+C Z-AXIS ALONG RHO MOMENTUM
+C Rho decays to K Kbar
+C WARNING: DPH2PI routine is missing 2 scalar ME calculation
 C ----------------------------------------------------------------------
       IMPLICIT NONE
-      COMMON / PARMASD / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-C                                                                       
-      REAL*8            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-      COMMON / DECPAR / GFERMI,GV,GA,CCABIB,SCABIB,GAMEL                
-      REAL*4            GFERMI,GV,GA,CCABIB,SCABIB,GAMEL 
+      COMMON / PARMASD / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+C
+      REAL*8            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+      COMMON / DECPAR / GFERMI,GV,GA,CCABIB,SCABIB,GAMEL
+      REAL*4            GFERMI,GV,GA,CCABIB,SCABIB,GAMEL
       include 'TAUDCDsize.inc'
 
       COMMON / TAUDCD /IDFFIN(9,NMODE),MULPIK(NMODE)
      &                ,NAMES
       CHARACTER NAMES(NMODE)*31
-    
+
       REAL*8  PKC(4),PKZ(4),PN(4),PR(4),QQ(4),A1,A2,A3
       REAL*8  AMF0,AMF1,AMF2
       REAL*8  ALP,ALP1,ALP1R,ALP2,ALP2R
       REAL*8  AMS1,AMS2,AMX,AMX2,ENQ1,ENQ2,EXE
       REAL*8  PHSPAC,PHSPAC1,PHSPAC2,PHSPAC3,PPPI
-      
+
       REAL*4  RR1(1),RR2(1) ! RANMAR generates floats
       REAL*8  PI
-      
+
 C --- Variables below are arguments of this or other routines
       REAL*4  HV(4),PNR(4),PRR(4),PMULT(4,9)
       REAL*4  PT(4),PKCR(4),PKZR(4)
@@ -4521,38 +4523,38 @@ C --- Variables below are arguments of this or other routines
 
       INTEGER INUM,JNPI,IDFFIN,MULPIK,ICONT,I,K
 
-      DATA PI /3.141592653589793238462643/                              
-      DATA ICONT /0/                                                    
-C       
+      DATA PI /3.141592653589793238462643/
+      DATA ICONT /0/
+C
       INUM=JNPI-NM3-NM4- NM5- NM6
 
       AMF1 = DCDMAS(IDFFIN(1,JNPI))
-      AMF2 = DCDMAS(IDFFIN(2,JNPI))  
+      AMF2 = DCDMAS(IDFFIN(2,JNPI))
       AMF0 = AMNUTA
 !      IF(INUM.GT.4) THEN
 !       write(*,*) inum,':',IDFFIN(1,IADDR),IDFFIN(2,IADDR),IDFFIN(3,IADDR),DCDMAS(IDFFIN(3,IADDR))
 !      ENDIF
       IF(INUM.GT.3.AND.IDFFIN(3,JNPI).NE.0) AMF0= DCDMAS(IDFFIN(3,JNPI))
-                   
-C THREE BODY PHASE SPACE NORMALISED AS IN BJORKEN-DRELL                 
-      PHSPAC=1.d0/2**11/PI**5      
-C TAU MOMENTUM                                                          
-      PT(1)=0.                                                          
-      PT(2)=0.                                                          
-      PT(3)=0.                                                          
-      PT(4)=AMTAU                                                       
-C MASS OF (REAL/VIRTUAL) RHO                                            
-      AMS1=(AMF1+AMF2)**2                                                
-      AMS2=(AMTAU-AMF0)**2                                            
-C FLAT PHASE SPACE                                                      
- 100  CONTINUE                                                          
-      CALL RANMAR(RR1,1)                                                
+
+C THREE BODY PHASE SPACE NORMALISED AS IN BJORKEN-DRELL
+      PHSPAC=1.d0/2**11/PI**5
+C TAU MOMENTUM
+      PT(1)=0.
+      PT(2)=0.
+      PT(3)=0.
+      PT(4)=AMTAU
+C MASS OF (REAL/VIRTUAL) RHO
+      AMS1=(AMF1+AMF2)**2
+      AMS2=(AMTAU-AMF0)**2
+C FLAT PHASE SPACE
+ 100  CONTINUE
+      CALL RANMAR(RR1,1)
       CALL CHOICE2(INUM,PROB1,PROB2,AM2,GAM2,AM3,GAM3)
-      
+
       ALP1 =ATAN((AMS1-AM2**2)/AM2/GAM2)
       ALP2 =ATAN((AMS2-AM2**2)/AM2/GAM2)
-      ALP1R=ATAN((AMS1-AM3**2)/AM3/GAM3)                              
-      ALP2R=ATAN((AMS2-AM3**2)/AM3/GAM3)                              
+      ALP1R=ATAN((AMS1-AM3**2)/AM3/GAM3)
+      ALP2R=ATAN((AMS2-AM3**2)/AM3/GAM3)
 
       CALL RANMAR(RR2,1)
 
@@ -4566,11 +4568,11 @@ C PHASE SPACE WITH SAMPLING FOR K* RESONANCE
         AMX2=AM2**2+AM2*GAM2*TAN(ALP)
         AMX=SQRT(AMX2)
       ELSE
-        ALP=ALP1R+RR1(1)*(ALP2R-ALP1R)                                          
-        AMX2=AM3**2+AM3*GAM3*TAN(ALP)                                  
-        AMX=SQRT(AMX2)  
+        ALP=ALP1R+RR1(1)*(ALP2R-ALP1R)
+        AMX2=AM3**2+AM3*GAM3*TAN(ALP)
+        AMX=SQRT(AMX2)
       ENDIF
-      IF(AMX.LE.(AMF1+AMF2)) GO TO 100 
+      IF(AMX.LE.(AMF1+AMF2)) GO TO 100
       IF(AMX.GE.(AMTAU-AMF0)) GO TO 100
 C merging of the three channels
       PHSPAC1=(AMS2-AMS1)
@@ -4578,8 +4580,8 @@ C merging of the three channels
       PHSPAC2=((AMX2-AM2**2)**2+(AM2*GAM2)**2)/(AM2*GAM2)
       PHSPAC2=PHSPAC2*(ALP2-ALP1)
 
-      PHSPAC3=((AMX2-AM3**2)**2+(AM3*GAM3)**2)/(AM3*GAM3)    
-      PHSPAC3=PHSPAC3*(ALP2R-ALP1R)                                         
+      PHSPAC3=((AMX2-AM3**2)**2+(AM3*GAM3)**2)/(AM3*GAM3)
+      PHSPAC3=PHSPAC3*(ALP2R-ALP1R)
 
       A1=0.d0
       A2=0.d0
@@ -4592,35 +4594,35 @@ C merging of the three channels
       ELSE
         PHSPAC=0.d0
       ENDIF
-                               
-      PN(1)=0.d0                                                           
-      PN(2)=0.d0                                                           
-      PN(4)=1.d0/(2.d0*AMTAU)*(AMTAU**2+AMF0**2-AMX**2)                    
-      PN(3)=-SQRT((PN(4)-AMF0)*(PN(4)+AMF0))                        
-C RHO MOMENTUM                                                          
-      PR(1)=0.d0                                                           
-      PR(2)=0.d0                                                           
-      PR(4)=1.d0/(2.d0*AMTAU)*(AMTAU**2-AMF0**2+AMX**2)                    
-      PR(3)=-PN(3)                                                      
-      PHSPAC=PHSPAC*(4.d0*PI)*(2.d0*PR(3)/AMTAU)                              
-C                                                                       
-CAM                                                                     
-      ENQ1=(AMX2+AMF1**2-AMF2**2)/(2.d0*AMX)                               
-      ENQ2=(AMX2-AMF1**2+AMF2**2)/(2.d0*AMX)                               
-      PPPI=SQRT((ENQ1-AMF1)*(ENQ1+AMF1))                                  
-      PHSPAC=PHSPAC*(4.d0*PI)*(2.d0*PPPI/AMX)                                 
-C CHARGED PI MOMENTUM IN RHO REST FRAME  
-      CALL SPHERD(PPPI,PKC)                                             
 
-      PKC(4)=ENQ1                                                       
-C NEUTRAL PI MOMENTUM IN RHO REST FRAME                                 
-      DO 20 I=1,3                                                       
-20      PKZ(I)=-PKC(I)                                                    
-      PKZ(4)=ENQ2                                                       
-      EXE=(PR(4)+PR(3))/AMX                                             
-C PIONS BOOSTED FROM RHO REST FRAME TO TAU REST FRAME   
-      CALL BOSTD3(EXE,PKC,PKC)                                          
-      CALL BOSTD3(EXE,PKZ,PKZ)                                          
+      PN(1)=0.d0
+      PN(2)=0.d0
+      PN(4)=1.d0/(2.d0*AMTAU)*(AMTAU**2+AMF0**2-AMX**2)
+      PN(3)=-SQRT((PN(4)-AMF0)*(PN(4)+AMF0))
+C RHO MOMENTUM
+      PR(1)=0.d0
+      PR(2)=0.d0
+      PR(4)=1.d0/(2.d0*AMTAU)*(AMTAU**2-AMF0**2+AMX**2)
+      PR(3)=-PN(3)
+      PHSPAC=PHSPAC*(4.d0*PI)*(2.d0*PR(3)/AMTAU)
+C
+CAM
+      ENQ1=(AMX2+AMF1**2-AMF2**2)/(2.d0*AMX)
+      ENQ2=(AMX2-AMF1**2+AMF2**2)/(2.d0*AMX)
+      PPPI=SQRT((ENQ1-AMF1)*(ENQ1+AMF1))
+      PHSPAC=PHSPAC*(4.d0*PI)*(2.d0*PPPI/AMX)
+C CHARGED PI MOMENTUM IN RHO REST FRAME
+      CALL SPHERD(PPPI,PKC)
+
+      PKC(4)=ENQ1
+C NEUTRAL PI MOMENTUM IN RHO REST FRAME
+      DO 20 I=1,3
+20      PKZ(I)=-PKC(I)
+      PKZ(4)=ENQ2
+      EXE=(PR(4)+PR(3))/AMX
+C PIONS BOOSTED FROM RHO REST FRAME TO TAU REST FRAME
+      CALL BOSTD3(EXE,PKC,PKC)
+      CALL BOSTD3(EXE,PKZ,PKZ)
 
       DO I=1,4           ! DAM2PI requires floats
         PNR(I)=PN(I)     ! arearguments of this routine
@@ -4630,56 +4632,56 @@ C PIONS BOOSTED FROM RHO REST FRAME TO TAU REST FRAME
       ENDDO
 !      if (inn.gt.3) inn=3   ! for higher inn channels flat phase space
       CALL DAM2PI(INUM,PT,PNR,PKCR,PKZR,AMPLIT,HV)
-      DGAMT=1/(2.*AMTAU)*AMPLIT*PHSPAC 
-      DO K=1,4                                                       
+      DGAMT=1/(2.*AMTAU)*AMPLIT*PHSPAC
+      DO K=1,4
         PMULT(K,1)=PKCR(K)
         PMULT(K,2)=PKZR(K)
-      ENDDO           
-      RETURN             
-      END                
-      FUNCTION FPIRK(W)  
-C ----------------------------------------------------------            
-c     square of pion form factor                                        
-C ----------------------------------------------------------            
-      COMMON / PARMAS / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-C                                                                       
-      REAL*4            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU             
-     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1                
-     *                 ,AMK,AMKZ,AMKST,GAMKST                           
-c     COMPLEX FPIKMK                                                    
-      COMPLEX FPIKM                                                     
-      FPIRK=CABS(FPIKM(W,AMK,AMKZ))**2                                  
-c     FPIRK=CABS(FPIKMK(W,AMK,AMKZ))**2                                 
-      END                                                               
-      COMPLEX FUNCTION FPIKMK(W,XM1,XM2)                                
-C **********************************************************            
-C     Kaon form factor                                                  
-C **********************************************************            
-      COMPLEX BWIGM                                                     
-      REAL ROM,ROG,ROM1,ROG1,BETA1,PI,PIM,S,W                           
-      EXTERNAL BWIG                                                     
-      DATA  INIT /0/                                                    
-C                                                                       
-C ------------ PARAMETERS --------------------                          
-      IF (INIT.EQ.0 ) THEN                                              
-      INIT=1                                                            
-      PI=3.141592654                                                    
-      PIM=.140                                                          
-      ROM=0.773                                                         
-      ROG=0.145                                                         
-      ROM1=1.570                                                        
-      ROG1=0.510                                                        
-c     BETA1=-0.111                                                      
-      BETA1=-0.221                                                      
-      ENDIF                                                             
-C -----------------------------------------------                       
-      S=W**2                                                            
+      ENDDO
+      RETURN
+      END
+      FUNCTION FPIRK(W)
+C ----------------------------------------------------------
+c     square of pion form factor
+C ----------------------------------------------------------
+      COMMON / PARMAS / AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+C
+      REAL*4            AMTAU,AMNUTA,AMEL,AMNUE,AMMU,AMNUMU
+     *                 ,AMPIZ,AMPI,AMRO,GAMRO,AMA1,GAMA1
+     *                 ,AMK,AMKZ,AMKST,GAMKST
+c     COMPLEX FPIKMK
+      COMPLEX FPIKM
+      FPIRK=CABS(FPIKM(W,AMK,AMKZ))**2
+c     FPIRK=CABS(FPIKMK(W,AMK,AMKZ))**2
+      END
+      COMPLEX FUNCTION FPIKMK(W,XM1,XM2)
+C **********************************************************
+C     Kaon form factor
+C **********************************************************
+      COMPLEX BWIGM
+      REAL ROM,ROG,ROM1,ROG1,BETA1,PI,PIM,S,W
+      EXTERNAL BWIG
+      DATA  INIT /0/
+C
+C ------------ PARAMETERS --------------------
+      IF (INIT.EQ.0 ) THEN
+      INIT=1
+      PI=3.141592654
+      PIM=.140
+      ROM=0.773
+      ROG=0.145
+      ROM1=1.570
+      ROG1=0.510
+c     BETA1=-0.111
+      BETA1=-0.221
+      ENDIF
+C -----------------------------------------------
+      S=W**2
       FPIKMK=(BWIGM(S,ROM,ROG,XM1,XM2)+BETA1*BWIGM(S,ROM1,ROG1,XM1,XM2))
-     & /(1+BETA1)                                                       
-      RETURN                                                            
-      END                                                               
+     & /(1+BETA1)
+      RETURN
+      END
       SUBROUTINE RESLUX
 C     ****************
 C INITIALIZE LUND COMMON
@@ -4740,7 +4742,7 @@ C boost and append photon (gamma is 22)
 C
       RETURN
       END
- 
+
       SUBROUTINE DWLUEL(KTO,ISGN,PNU,PWB,PEL,PNE)
 C ----------------------------------------------------------------------
 C Lorentz transformation to CMsystem and
@@ -4883,7 +4885,7 @@ C W boson (W+ is 24)
       ENDIF
 C
 C multi pi mode JNPI
-C 
+C
 C get multiplicity of mode JNPI
       ND=MULPIK(JNPI)
 
@@ -4902,7 +4904,7 @@ C        IF(KFPI.NE.111)KFPI=KFPI*ISGN
         ELSE
          CALL FILHEP(0,1,KFPI,NPS,NPS,0,0,PPI,AM,.TRUE.)
         ENDIF
-       
+
 
       END DO
 C
@@ -5233,14 +5235,14 @@ CERN      C304      VERSION    29/07/71 DILOG        59                C
       DILOGT=S*T*(A-B)+Z
       RETURN
       END
-C     FUNCTIONS FOR LFV HANDLING  
+C     FUNCTIONS FOR LFV HANDLING
 C     THEY ARE CALLED BY DAM2PI AND DAM1PI
 C      DOUBLE PRECISION ALTERN(MNUM,PN,PIM1,PIM2,AMPLIT,HV)
 C      PRINT *, 'STILL IMPLEMENTING, mchrzasz'
 C      RETURN
 C      END
       FUNCTION IMEGET(IMULT,MNUM)
-      IMPLICIT NONE  
+      IMPLICIT NONE
       include 'TAUDCDsize.inc'
       INTEGER imeget,imult,mnum
       integer KEY0,KEY1,KEY2,KEY3,KEY4,KEY5,KEY6
@@ -5250,12 +5252,12 @@ C this function provides access to the list of decay products to pass info
 C on the type of matrix element.
 
 C INPUT:
-C    IMULT: multiplicity of the channel (e.g. IMULT=2 denotes 2 products plus tau_nu) 
-C    MNUM:  position on the list of decay channels for the given multiplicity   
+C    IMULT: multiplicity of the channel (e.g. IMULT=2 denotes 2 products plus tau_nu)
+C    MNUM:  position on the list of decay channels for the given multiplicity
 C OUTPUT:
 C    IMEGET; 0- channel not initialized,  1- constant ME flat phase space
 C            2- default ME,               3- default ME, but one stable spin>0
-C            4- default ME wrapped curr., 5- wrapped ME  
+C            4- default ME wrapped curr., 5- wrapped ME
        IF(IMULT.LT.0.OR.IMULT.GT.6) THEN
         WRITE(*,*) 'stop in IMEGET IMULT=',IMULT
         STOP
@@ -5296,7 +5298,7 @@ C            4- default ME wrapped curr., 5- wrapped ME
         WRITE(*,*) 'stop in IMEGET IMULT=',IMULT,' but MNUM=',MNUM
         STOP
        ENDIF
-       IMEGET=KEY5(MNUM)   
+       IMEGET=KEY5(MNUM)
       ELSEIF (IMULT.EQ.6) THEN
        IF(MNUM.LE.0.OR.MNUM.GT.NM6) THEN
         WRITE(*,*) 'stop in IMEGET IMULT=',IMULT,' but MNUM=',MNUM

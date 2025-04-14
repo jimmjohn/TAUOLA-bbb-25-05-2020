@@ -1,0 +1,64 @@
+\doxysection{demo3h.\+h}
+\hypertarget{demo3h_8h_source}{}\label{demo3h_8h_source}\index{demo-\/pairs/demo3h.h@{demo-\/pairs/demo3h.h}}
+\mbox{\hyperlink{demo3h_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{using\ }std::complex;}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{demo3h_8h_ae81e19ef24e044e1cceb9c842650ffca}{gfun}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{s}});}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{demo3h_8h_a52a5da1b637694a20beb9afca8017c75}{curr3h}}(\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{hadcur}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{p1}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{p2}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{p3}},\ }
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{f1}},\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{f2}},\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{f3}},\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{f4}},\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{f5}});}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ This\ function\ constructs\ unnormalized\ hadronic\ current\ from\ given\ form\ factors\ and\ momentas}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Form\ factors\ f1-\/f5\ should\ already\ be\ multiplied\ by\ correct\ (Clebsh-\/Gordon)\ coefficients}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{demo3h_8h_add4a262581ba83a9628e469fb0e00e9d}{curr3pi}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{p1}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{p2}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{p3}},\ \mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{complex<float>}}\ *\mbox{\hyperlink{channels__wrappers_8c_afcf619a68ade6623b010a45034cea885}{hadcur}});}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ \ \ \ \ \ FUNCTION\ FORM1(MNUM,QQ,S1,SDWA)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{}}
+\DoxyCodeLine{00016\ \textcolor{comment}{C}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ \ \ IF\ \ \ \ \ (MNUM.EQ.0)\ THEN}}
+\DoxyCodeLine{00018\ \textcolor{comment}{C\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ \ 3\ pi\ hadronic\ state\ (a1)}}
+\DoxyCodeLine{00019\ \textcolor{comment}{C\ \ \ \ \ \ \ FORMRO\ =\ FPIKM(SQRT(S1),AMPI,AMPI)}}
+\DoxyCodeLine{00020\ \textcolor{comment}{C\ \ \ \ \ \ \ FORMRO\ =\ F3PI(1,QQ,S1,SDWA)}}
+\DoxyCodeLine{00021\ \textcolor{comment}{C\ \ \ \ \ \ \ FORMA1\ =\ FA1A1P(QQ)}}
+\DoxyCodeLine{00022\ \textcolor{comment}{C\ \ \ \ \ \ \ FORM1\ =\ FORMA1*FORMRO}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ \ \ IF\ (IVER.EQ.0)\ THEN}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ GAMAX=GAMA1*GFUN(QQ)/GFUN(AMA1**2)}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ FORM1=AMA1**2*WIGNER(QQ,AMA1,GAMAX)*FPIKM(SQRT(S1),AMPI,AMPI)}}
+\DoxyCodeLine{00026\ \textcolor{comment}{c\ \ \ \ \ \ \ \ FORM1\ =\ F3PI(1,QQ,S1,SDWA)}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ \ ELSE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ \ \ \ FORM1\ =\ F3PI\_RCHT(1,QQ,S1,SDWA)}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ \ ENDIF}}
+\DoxyCodeLine{00030\ \textcolor{comment}{}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ \ ELSEIF\ (MNUM.EQ.4)\ THEN}}
+\DoxyCodeLine{00032\ \textcolor{comment}{C\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ pi0\ pi0\ K-\/\ \ (K*-\/pi0)}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ \ XM2\ \ \ =\ 1.402}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ \ GAM2\ \ =\ 0.174}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ \ FORM1\ =\ BWIGM(S1,AMKST,GAMKST,AMK,AMPI)}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ \ FORM1\ =\ WIGFOR(QQ,XM2,GAM2)*FORM1}}
+\DoxyCodeLine{00037\ \textcolor{comment}{c\ \ \ \ \ \ \ FORMKS\ =\ BWIGM(S1,AMKST,GAMKST,AMPI,AMK)}}
+\DoxyCodeLine{00038\ \textcolor{comment}{c\ \ \ \ \ \ \ FORMK1\ =\ FK1AB(QQ,3)}}
+\DoxyCodeLine{00039\ \textcolor{comment}{c\ \ \ \ \ \ \ FORM1\ =\ FORMK1*FORMKS}}
+\DoxyCodeLine{00040\ \textcolor{comment}{}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ \ \ ELSEIF\ (MNUM.EQ.5)\ THEN}}
+\DoxyCodeLine{00042\ \textcolor{comment}{C\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ K-\/\ pi-\/\ pi+\ (rho0\ K-\/)}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ \ \ XM2\ \ \ =\ 1.402}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ \ \ GAM2\ \ =\ 0.174}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ \ \ FORM1\ =\ WIGFOR(QQ,XM2,GAM2)*FPIKM(SQRT(S1),AMPI,AMPI)}}
+\DoxyCodeLine{00046\ \textcolor{comment}{c\ \ \ \ \ \ \ FORMK1\ =\ FK1AB(QQ,4)}}
+\DoxyCodeLine{00047\ \textcolor{comment}{c\ \ \ \ \ \ \ FORMRO\ =\ FPIKM(SQRT(S1),AMPI,AMPI)}}
+\DoxyCodeLine{00048\ \textcolor{comment}{c\ \ \ \ \ \ \ FORM1\ =\ FORMK1*FORMRO}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ \ \ ENDIF}}
+\DoxyCodeLine{00050\ \textcolor{comment}{end}}
+\DoxyCodeLine{00051\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ \ \ \ FUNCTION\ FORM5(MNUM,QQ,S1,S2)}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//C\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ K-\/\ pi-\/\ pi+}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ \ \ \ \ \ \ \ ELPHA=-\/0.2}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ \ \ \ \ \ \ \ FORM5=BWIGM(QQ,AMKST,GAMKST,AMPI,AMK)/(1+ELPHA)}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ \ \$\ \ \ \ \ \ \ *(\ \ \ \ \ \ \ FPIKM(SQRT(S1),AMPI,AMPI)}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ \ \ \ \ \$\ \ \ \ \ \ \ \ \ +ELPHA*BWIGM(S2,AMKST,GAMKST,AMPI,AMK))}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ \ \ \ END}}
+
+\end{DoxyCode}
