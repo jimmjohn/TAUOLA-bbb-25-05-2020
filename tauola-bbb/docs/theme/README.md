@@ -1,6 +1,6 @@
 #  Tauola-bbb 
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/jimmjohn/tauola-bbb?include_prereleases)](https://github.com/jothepro/doxygen-awesome-css/releases/latest)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/jimmjohn/TAUOLA-bbb-25-05-2020?include_prereleases)](https://github.com/jimmjohn/TAUOLA-bbb-25-05-2020)
 [![GitHub](https://img.shields.io/github/license/jothepro/doxygen-awesome-css)![GitHub Repo stars](https://img.shields.io/github/stars/jimmjohn/tauola-bbb)
 
 
@@ -11,7 +11,29 @@ The Tauola-bbb package includes the Fortran version of the Tauola package. The d
 
 ## Installation
 
-For `Tauola` installation, you need the `HepMC2`, `HepMC3`, `PYTHIA8`, `LHAPDF` and `MC-TESTER`.
+Tauola is a standalone package, but for more sophisticated exampes may require the following packages.
+
+To run default examples simply execute:
+
+"make"
+
+"./taumain.exe"
+
+in any of the tauola-bbb/demo-* directories.
+
+
+
+To use tauola-bbb content in other projects follow instructions (README files) from dedicated tauola-bbb/patch-* folders
+
+NOTE: if instructions of patch-babar-validation are followed, changes of files of the installation are introduced.
+
+​      Be sure to backup tauola-bbb folder as well as photos/photos.f file for easy restoration of the original files. 
+
+The compilation configurations are set in the adequate Makefiles.
+
+
+
+For `Tauola` with c++ interface installation, you need the `HepMC2`, `HepMC3`, `PYTHIA8`, `LHAPDF` and `MC-TESTER`.
 
 For `HepMC2` and `HepMC3` package, you download the source code and create a build directory. Then run the following command from the build directory.
 
@@ -43,7 +65,50 @@ For the installation of `Tauola`, you can do
 make
 ```
 
-The examples are given in the folder `demo-babar` ,  `demo-lfv` ,  `demo-redifine`  folders. You can got to the particular directory and execute the make command and run the program. The makefile links the `glibk` library for plotting, `photos` library for the radiative corrections and the `jetset` library for printing the event records in pythia format.
+
+
+## Directory tree
+
+The fortran code of the library is strored in the main directory, some hadronic currents are stored in sub-directories:
+
+   tauola-bbb/new-currents
+
+the C++ code is stored in directory:
+
+   tauola-bbb/tauola-c
+
+If it would not be used truncated version is stored in:
+
+   tauola-bbb/tauola-no-c
+
+See README files of these directories for more details.
+
+\---
+
+Other folders contain supplementary libraries allowing standalone run of prepared examples.
+
+
+
+## Examples
+
+The following examples (sub-directories) are prepared with corresponding README files:
+
+- tauola-bbb/demo-babar
+- tauola-bbb/demo-lfv
+- tauola-bbb/demo-redefine
+- tauola-bbb/demo-pairs
+
+You can got to the particular directory and execute the make command and run the program. The makefile links the `glibk` library for plotting, `photos` library for the radiative corrections and the `jetset` library for printing the event records in pythia format.
+
+
+
+## Patches for other projects
+
+There are some patches for installation the code into other projects. Again, each sub-directory features its own README 
+
+- tauola-bbb/patch-KK-face
+- tauola-bbb/patch-tauolapp
+- tauola-bbb/patch-babar-validation
 
 
 
@@ -59,4 +124,3 @@ Zbigniew Was,
 | -------------------------------: |
 | [taumain](docs/theme/taumain.md) |
 
-</div>

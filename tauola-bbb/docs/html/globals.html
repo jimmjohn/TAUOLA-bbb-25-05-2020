@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -112,7 +115,7 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>AMRA&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a31c06025cfd1a63528535379a872f4cb">TauolaStructs.h</a></li>
 <li>AMRB&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#aceaf569a7e232d1cf64d77cba400b8f4">TauolaStructs.h</a></li>
 <li>AMRX&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#aa2335a8ee9e1a54cb53fa27cf2943b37">TauolaStructs.h</a></li>
-<li>and&#160;:&#160;<a class="el" href="tauola-random_8h.html#a5d659761a5f4474ec0426d209f816bfe">tauola-random.h</a></li>
+<li>and&#160;:&#160;<a class="el" href="demo-pairs_2tauola-random_8h.html#a5d659761a5f4474ec0426d209f816bfe">tauola-random.h</a></li>
 <li>angfi()&#160;:&#160;<a class="el" href="tauola_8f.html#a912673482e883fb06c59d96c010e39c3">tauola.f</a></li>
 <li>angxy()&#160;:&#160;<a class="el" href="tauola_8f.html#ab9a8f8d252bebce7cd2435bbe7a0fa55">tauola.f</a></li>
 <li>anom_bwg()&#160;:&#160;<a class="el" href="curr__karl_8f.html#aad26d2a141017c7ef57e99857396c366">curr_karl.f</a></li>

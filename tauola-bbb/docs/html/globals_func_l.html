@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -103,7 +106,7 @@ $(document).ready(function(){initNavTree('globals_func_l.html',''); initResizabl
 <li>lamb_rcht()&#160;:&#160;<a class="el" href="funct__rpt_8f.html#a78f265b918e06ee365a0eeee0d1bedbb">funct_rpt.f</a></li>
 <li>lata()&#160;:&#160;<a class="el" href="binp_8f.html#af3f86fd41ac3e1486b283e88d3ecbff1">binp.f</a></li>
 <li>levici()&#160;:&#160;<a class="el" href="curr__cleo_8f.html#a59e63905b3db53647dfd505aa9d77640">curr_cleo.f</a></li>
-<li>lfv_dam2pi()&#160;:&#160;<a class="el" href="demo-lfv_2iniofc_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">iniofc.c</a>, <a class="el" href="demo-lfv_2lfv_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">lfv.c</a>, <a class="el" href="demo-redefine_2iniofc_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">iniofc.c</a>, <a class="el" href="demo-redefine_2lfv_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">lfv.c</a></li>
+<li>lfv_dam2pi()&#160;:&#160;<a class="el" href="demo-lfv_2iniofc_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">iniofc.c</a>, <a class="el" href="demo-lfv_2lfv_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">lfv.c</a>, <a class="el" href="demo-pairs_2iniofc_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">iniofc.c</a>, <a class="el" href="demo-redefine_2lfv_8c.html#ad32d2b4cab32ae09f4dcbe0ab25fc089">lfv.c</a></li>
 <li>lunpik()&#160;:&#160;<a class="el" href="Tauface_8f.html#a40430f564bd2ac274b01bd41c88657fa">Tauface.f</a></li>
 </ul>
 </div><!-- contents -->

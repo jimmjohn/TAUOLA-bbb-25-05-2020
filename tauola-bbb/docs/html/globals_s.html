@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -113,7 +116,7 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 <li>sphera()&#160;:&#160;<a class="el" href="tauola_8f.html#af10c821b3dfbd87e63a5394dae0d148b">tauola.f</a></li>
 <li>spherd()&#160;:&#160;<a class="el" href="tauola_8f.html#ab93f988e6847b9c138693748a9672909">tauola.f</a></li>
 <li>sqm2()&#160;:&#160;<a class="el" href="tauola_8f.html#a40b1381731440445b8317ffc17207e4d">tauola.f</a></li>
-<li>state&#160;:&#160;<a class="el" href="tauola-random_8h.html#afd39c04cbf1718efa17fa6be98b96d84">tauola-random.h</a></li>
+<li>state&#160;:&#160;<a class="el" href="demo-pairs_2tauola-random_8h.html#afd39c04cbf1718efa17fa6be98b96d84">tauola-random.h</a></li>
 <li>stepgauss()&#160;:&#160;<a class="el" href="gaus__integr_8f.html#ac257ac261eae9643251b617b9a40d854">gaus_integr.f</a></li>
 <li>stepgauss2()&#160;:&#160;<a class="el" href="gaus__integr_8f.html#a4c94a5c754c76ad2277da51601dbff24">gaus_integr.f</a></li>
 <li>stepgauss3()&#160;:&#160;<a class="el" href="gaus__integr_8f.html#a25f47c7d21f8d5e0f4583c25f8948dbc">gaus_integr.f</a></li>

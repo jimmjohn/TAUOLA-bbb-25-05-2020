@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -102,6 +105,7 @@ $(document).ready(function(){initNavTree('globals_func_m.html',''); initResizabl
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>main()&#160;:&#160;<a class="el" href="demo-redefine_2prod_2txt-tests_2outputcheck_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">outputcheck.c</a></li>
 <li>mass_sq()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#a3579865d8a6b2e28998be9941ee316fe">lfv.c</a></li>
+<li>mumupi()&#160;:&#160;<a class="el" href="demo-pair_8c.html#a5d15424dbd2c09fb20e6342ae0450791">demo-pair.c</a>, <a class="el" href="demo-pair_8h.html#a6e8d2989b1511594602b515af7585a3f">demo-pair.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

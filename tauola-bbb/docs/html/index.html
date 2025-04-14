@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -100,11 +103,20 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Tauola-bbb </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2docs_2theme_2README"></a> <a href="https://github.com/jothepro/doxygen-awesome-css/releases/latest"><img src="https://img.shields.io/github/v/release/jimmjohn/tauola-bbb?include_prereleases" alt="GitHub release (latest by date)" class="inline"/></a> [<img src="https://img.shields.io/github/license/jothepro/doxygen-awesome-css" alt="GitHub" class="inline"/><img src="https://img.shields.io/github/stars/jimmjohn/tauola-bbb" alt="GitHub Repo stars" class="inline"/></p>
+<div class="textblock"><p><a class="anchor" id="md_docs_2theme_2README"></a> <a href="https://github.com/jimmjohn/TAUOLA-bbb-25-05-2020"><img src="https://img.shields.io/github/v/release/jimmjohn/TAUOLA-bbb-25-05-2020?include_prereleases" alt="GitHub release (latest by date)" class="inline"/></a> [<img src="https://img.shields.io/github/license/jothepro/doxygen-awesome-css" alt="GitHub" class="inline"/><img src="https://img.shields.io/github/stars/jimmjohn/tauola-bbb" alt="GitHub Repo stars" class="inline"/></p>
 <p>The Tauola-bbb package includes the Fortran version of the Tauola package. The documentation provides a detailed explanation of the purpose of each subroutine.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Installation</h1>
-<p>For <code>Tauola</code> installation, you need the <code>HepMC2</code>, <code>HepMC3</code>, <code>PYTHIA8</code>, <code>LHAPDF</code> and <code>MC-TESTER</code>.</p>
+<p>Tauola is a standalone package, but for more sophisticated exampes may require the following packages.</p>
+<p>To run default examples simply execute:</p>
+<p>"make"</p>
+<p>"./taumain.exe"</p>
+<p>in any of the tauola-bbb/demo-* directories.</p>
+<p>To use tauola-bbb content in other projects follow instructions (README files) from dedicated tauola-bbb/patch-* folders</p>
+<p>NOTE: if instructions of patch-babar-validation are followed, changes of files of the installation are introduced.</p>
+<p>​ Be sure to backup tauola-bbb folder as well as photos/photos.f file for easy restoration of the original files.</p>
+<p>The compilation configurations are set in the adequate Makefiles.</p>
+<p>For <code>Tauola</code> with c++ interface installation, you need the <code>HepMC2</code>, <code>HepMC3</code>, <code>PYTHIA8</code>, <code>LHAPDF</code> and <code>MC-TESTER</code>.</p>
 <p>For <code>HepMC2</code> and <code>HepMC3</code> package, you download the source code and create a build directory. Then run the following command from the build directory.</p>
 <div class="fragment"><div class="line">cmake -DCMAKE_INSTALL_PREFIX=&lt;path&gt;/HepMC2/HepMC-2.06.11/ &lt;path&gt;/HepMC2/HepMC-2.06.11/ \</div>
 <div class="line">-Dmomentum:STRING=GEV -Dlength:STRING=MM</div>
@@ -122,8 +134,36 @@ Installation</h1>
 <div class="line">--with-hepmc3=&lt;path&gt;/HepMC3/HepMC3-3.3.0 --with-lhapdf=&lt;path&gt;/LHAPDF/LHAPDF-6.5.5 \</div>
 <div class="line">--with-pythia8=&lt;path&gt;/Pythia8/pythia8313 --with-mc-tester=&lt;path&gt;/MC-TESTER/mc-tester</div>
 <div class="line">make</div>
-</div><!-- fragment --><p>The examples are given in the folder <code>demo-babar</code> , <code>demo-lfv</code> , <code>demo-redifine</code> folders. You can got to the particular directory and execute the make command and run the program. The makefile links the <code>glibk</code> library for plotting, <code>photos</code> library for the radiative corrections and the <code>jetset</code> library for printing the event records in pythia format.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+Directory tree</h1>
+<p>The fortran code of the library is strored in the main directory, some hadronic currents are stored in sub-directories:</p>
+<p>tauola-bbb/new-currents</p>
+<p>the C++ code is stored in directory:</p>
+<p>tauola-bbb/tauola-c</p>
+<p>If it would not be used truncated version is stored in:</p>
+<p>tauola-bbb/tauola-no-c</p>
+<p>See README files of these directories for more details.</p>
+<p>---</p>
+<p>Other folders contain supplementary libraries allowing standalone run of prepared examples.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Examples</h1>
+<p>The following examples (sub-directories) are prepared with corresponding README files:</p>
+<ul>
+<li>tauola-bbb/demo-babar</li>
+<li>tauola-bbb/demo-lfv</li>
+<li>tauola-bbb/demo-redefine</li>
+<li>tauola-bbb/demo-pairs</li>
+</ul>
+<p>You can got to the particular directory and execute the make command and run the program. The makefile links the <code>glibk</code> library for plotting, <code>photos</code> library for the radiative corrections and the <code>jetset</code> library for printing the event records in pythia format.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Patches for other projects</h1>
+<p>There are some patches for installation the code into other projects. Again, each sub-directory features its own README</p>
+<ul>
+<li>tauola-bbb/patch-KK-face</li>
+<li>tauola-bbb/patch-tauolapp</li>
+<li>tauola-bbb/patch-babar-validation</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Written by</h1>
 <p>Zbigniew Was,</p>
 <p>**<a href="#" onclick="location.href='mai'+'lto:'+'zbi'+'gn'+'iew'+'.w'+'as@'+'if'+'j.e'+'du'+'.pl'; return false;">zbigniew.was@ifj.edu.pl</a>**</p>
@@ -131,7 +171,7 @@ Written by</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadRight">Read Next    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">taumain   </td></tr>
+<td class="markdownTableBodyRight"><a class="el" href="md_docs_2theme_2taumain.html">taumain</a>   </td></tr>
 </table>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

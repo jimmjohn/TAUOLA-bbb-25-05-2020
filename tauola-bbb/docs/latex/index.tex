@@ -1,11 +1,29 @@
 \chapter{Tauola-\/bbb}
 \hypertarget{index}{}\label{index}\index{Tauola-\/bbb@{Tauola-\/bbb}}
-\label{index_md__2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2docs_2theme_2README}%
-\Hypertarget{index_md__2home_2john_2products_2Tauola_2tauola-bbb_2TAUOLA-FORTRAN_2tauola-bbb_2docs_2theme_2README}%
- \href{https://github.com/jothepro/doxygen-awesome-css/releases/latest}{\texttt{ }} \mbox{[}
+\label{index_md_docs_2theme_2README}%
+\Hypertarget{index_md_docs_2theme_2README}%
+ \href{https://github.com/jimmjohn/TAUOLA-bbb-25-05-2020}{\texttt{ }} \mbox{[}
 
 The Tauola-\/bbb package includes the Fortran version of the Tauola package. The documentation provides a detailed explanation of the purpose of each subroutine.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md1}
-For {\ttfamily Tauola} installation, you need the {\ttfamily Hep\+MC2}, {\ttfamily Hep\+MC3}, {\ttfamily PYTHIA8}, {\ttfamily LHAPDF} and {\ttfamily MC-\/\+TESTER}.
+Tauola is a standalone package, but for more sophisticated exampes may require the following packages.
+
+To run default examples simply execute\+:
+
+"{}make"{}
+
+"{}./taumain.\+exe"{}
+
+in any of the tauola-\/bbb/demo-\/\texorpdfstring{$\ast$}{*} directories.
+
+To use tauola-\/bbb content in other projects follow instructions (README files) from dedicated tauola-\/bbb/patch-\/\texorpdfstring{$\ast$}{*} folders
+
+NOTE\+: if instructions of patch-\/babar-\/validation are followed, changes of files of the installation are introduced.
+
+​ Be sure to backup tauola-\/bbb folder as well as photos/photos.\+f file for easy restoration of the original files.
+
+The compilation configurations are set in the adequate Makefiles.
+
+For {\ttfamily Tauola} with c++ interface installation, you need the {\ttfamily Hep\+MC2}, {\ttfamily Hep\+MC3}, {\ttfamily PYTHIA8}, {\ttfamily LHAPDF} and {\ttfamily MC-\/\+TESTER}.
 
 For {\ttfamily Hep\+MC2} and {\ttfamily Hep\+MC3} package, you download the source code and create a build directory. Then run the following command from the build directory.
 
@@ -44,9 +62,43 @@ For the installation of {\ttfamily Tauola}, you can do
 \DoxyCodeLine{make}
 
 \end{DoxyCode}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Directory tree}{Directory tree}}\label{index_autotoc_md2}
+The fortran code of the library is strored in the main directory, some hadronic currents are stored in sub-\/directories\+:
+
+tauola-\/bbb/new-\/currents
+
+the C++ code is stored in directory\+:
+
+tauola-\/bbb/tauola-\/c
+
+If it would not be used truncated version is stored in\+:
+
+tauola-\/bbb/tauola-\/no-\/c
+
+See README files of these directories for more details.
+
+-\/-\/-\/
+
+Other folders contain supplementary libraries allowing standalone run of prepared examples.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Examples}{Examples}}\label{index_autotoc_md3}
+The following examples (sub-\/directories) are prepared with corresponding README files\+:
 
 
-The examples are given in the folder {\ttfamily demo-\/babar} , {\ttfamily demo-\/lfv} , {\ttfamily demo-\/redifine} folders. You can got to the particular directory and execute the make command and run the program. The makefile links the {\ttfamily glibk} library for plotting, {\ttfamily photos} library for the radiative corrections and the {\ttfamily jetset} library for printing the event records in pythia format.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Written by}{Written by}}\label{index_autotoc_md2}
+\begin{DoxyItemize}
+\item tauola-\/bbb/demo-\/babar
+\item tauola-\/bbb/demo-\/lfv
+\item tauola-\/bbb/demo-\/redefine
+\item tauola-\/bbb/demo-\/pairs
+\end{DoxyItemize}
+
+You can got to the particular directory and execute the make command and run the program. The makefile links the {\ttfamily glibk} library for plotting, {\ttfamily photos} library for the radiative corrections and the {\ttfamily jetset} library for printing the event records in pythia format.\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Patches for other projects}{Patches for other projects}}\label{index_autotoc_md4}
+There are some patches for installation the code into other projects. Again, each sub-\/directory features its own README
+
+
+\begin{DoxyItemize}
+\item tauola-\/bbb/patch-\/\+KK-\/face
+\item tauola-\/bbb/patch-\/tauolapp
+\item tauola-\/bbb/patch-\/babar-\/validation
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Written by}{Written by}}\label{index_autotoc_md5}
 Zbigniew Was,
 
 \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\href{mailto:zbigniew.was@ifj.edu.pl}{\texttt{ zbigniew.\+was@ifj.\+edu.\+pl}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
@@ -61,5 +113,5 @@ Zbigniew Was,
 \hline
 \PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Read Next    }\\\cline{1-1}
 \endhead
-\PBS\raggedleft taumain   \\\cline{1-1}
+\PBS\raggedleft \doxysectlink{md_docs_2theme_2taumain}{taumain}{0}   \\\cline{1-1}
 \end{longtabu}

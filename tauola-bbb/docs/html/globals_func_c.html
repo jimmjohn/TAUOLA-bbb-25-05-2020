@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -109,9 +112,9 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 <li>choice3()&#160;:&#160;<a class="el" href="tauola_8f.html#a5ff2d097bf36d6c01d990bc69b502c20">tauola.f</a></li>
 <li>choice4()&#160;:&#160;<a class="el" href="tauola_8f.html#a32c96581f070e1a81dc611f220bd9f57">tauola.f</a></li>
 <li>choice5()&#160;:&#160;<a class="el" href="tauola_8f.html#a0ca19f89fe0b21f21edad8e471c0d2cb">tauola.f</a></li>
-<li>claxi()&#160;:&#160;<a class="el" href="tauola_8f.html#ac1538b2a4735cee87786ccbc78e9fbba">tauola.f</a>, <a class="el" href="MEutils_8h.html#a8c8757084fcdc4cfbe4f3e18f7e2694e">MEutils.h</a>, <a class="el" href="MEutils_8c.html#a8c8757084fcdc4cfbe4f3e18f7e2694e">MEutils.c</a></li>
-<li>clnut()&#160;:&#160;<a class="el" href="MEutils_8c.html#a9ff14bdee67288c09782035a1204be8a">MEutils.c</a>, <a class="el" href="MEutils_8h.html#a9ff14bdee67288c09782035a1204be8a">MEutils.h</a>, <a class="el" href="tauola_8f.html#aaa3fa842e039dba955e86b605bae9cf9">tauola.f</a></li>
-<li>clvec()&#160;:&#160;<a class="el" href="MEutils_8c.html#a4201a81bace9da73af2acb7f9b3e76fb">MEutils.c</a>, <a class="el" href="MEutils_8h.html#a4201a81bace9da73af2acb7f9b3e76fb">MEutils.h</a>, <a class="el" href="tauola_8f.html#a14b7c84453608528a65ead89f30301c1">tauola.f</a></li>
+<li>claxi()&#160;:&#160;<a class="el" href="tauola_8f.html#ac1538b2a4735cee87786ccbc78e9fbba">tauola.f</a>, <a class="el" href="demo-redefine_2MEutils_8h.html#a8c8757084fcdc4cfbe4f3e18f7e2694e">MEutils.h</a>, <a class="el" href="demo-redefine_2MEutils_8c.html#a8c8757084fcdc4cfbe4f3e18f7e2694e">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a8c8757084fcdc4cfbe4f3e18f7e2694e">MEutils.h</a>, <a class="el" href="demo-pairs_2MEutils_8c.html#a8c8757084fcdc4cfbe4f3e18f7e2694e">MEutils.c</a></li>
+<li>clnut()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a9ff14bdee67288c09782035a1204be8a">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a9ff14bdee67288c09782035a1204be8a">MEutils.h</a>, <a class="el" href="demo-redefine_2MEutils_8c.html#a9ff14bdee67288c09782035a1204be8a">MEutils.c</a>, <a class="el" href="demo-redefine_2MEutils_8h.html#a9ff14bdee67288c09782035a1204be8a">MEutils.h</a>, <a class="el" href="tauola_8f.html#aaa3fa842e039dba955e86b605bae9cf9">tauola.f</a></li>
+<li>clvec()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a4201a81bace9da73af2acb7f9b3e76fb">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a4201a81bace9da73af2acb7f9b3e76fb">MEutils.h</a>, <a class="el" href="demo-redefine_2MEutils_8c.html#a4201a81bace9da73af2acb7f9b3e76fb">MEutils.c</a>, <a class="el" href="demo-redefine_2MEutils_8h.html#a4201a81bace9da73af2acb7f9b3e76fb">MEutils.h</a>, <a class="el" href="tauola_8f.html#a14b7c84453608528a65ead89f30301c1">tauola.f</a></li>
 <li>coefrr()&#160;:&#160;<a class="el" href="value__parameter_8f.html#a08ce28ec9c02a068ea57c0f37a4351bf">value_parameter.f</a></li>
 <li>coul3part()&#160;:&#160;<a class="el" href="funct__rpt_8f.html#ace9797804f9bb45f08b9cf3bbf8b41f6">funct_rpt.f</a></li>
 <li>curinf()&#160;:&#160;<a class="el" href="formf_8f.html#a4aa4b50d61d48f0af9f5a547c2c79203">formf.f</a></li>
@@ -119,7 +122,8 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 <li>curr()&#160;:&#160;<a class="el" href="formf_8f.html#acef537bdab052663ad98100d8ff1381b">formf.f</a></li>
 <li>curr2_wrap()&#160;:&#160;<a class="el" href="noC_8f.html#ac1cc6ebaa54bc7d35bdd3e909450f36e">noC.f</a></li>
 <li>curr2_wrap_()&#160;:&#160;<a class="el" href="channels__wrappers_8c.html#a384676e4a3590b0ffcc83cf843d627e2">channels_wrappers.c</a></li>
-<li>curr3pi()&#160;:&#160;<a class="el" href="tauola_8f.html#a64efdb8aa2ff38713f7999e0018c277d">tauola.f</a></li>
+<li>curr3h()&#160;:&#160;<a class="el" href="demo3h_8c.html#a52a5da1b637694a20beb9afca8017c75">demo3h.c</a>, <a class="el" href="demo3h_8h.html#a52a5da1b637694a20beb9afca8017c75">demo3h.h</a></li>
+<li>curr3pi()&#160;:&#160;<a class="el" href="demo3h_8c.html#add4a262581ba83a9628e469fb0e00e9d">demo3h.c</a>, <a class="el" href="demo3h_8h.html#add4a262581ba83a9628e469fb0e00e9d">demo3h.h</a>, <a class="el" href="tauola_8f.html#a64efdb8aa2ff38713f7999e0018c277d">tauola.f</a></li>
 <li>curr3pi_wrap()&#160;:&#160;<a class="el" href="noC_8f.html#a3661ae8561e19a31bff1482499b2a9c7">noC.f</a></li>
 <li>curr3pi_wrap_()&#160;:&#160;<a class="el" href="channels__wrappers_8c.html#a4247980509eda7254e1bfa95f97b5a16">channels_wrappers.c</a></li>
 <li>curr4_wrap()&#160;:&#160;<a class="el" href="noC_8f.html#a0bd6dc0684441a719d8ba418973dbc04">noC.f</a></li>

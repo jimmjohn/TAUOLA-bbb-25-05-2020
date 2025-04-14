@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -191,7 +194,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for adding new decay channels and modifying existing ones. </p>
 <p>This class ensures that SIMPLE ASPECTS for user channel definition is correct and complete. Pointer to the function provided by the user must match one of the types defined at the top of this header file. This type is checked by the constructors.</p>
-<p>This by no means help to verify if user channel definition is correct and complete. For that task one has to inspect physics sense of each parameter of the <a class="el" href="classTauolapp_1_1ChannelForTauola.html" title="Interface for adding new decay channels and modifying existing ones.">ChannelForTauola</a> method and of relation between function provided by the user, clalculating hadronic current or matrix element calculation. To understand conventions see our <a class="el" href="pipi0_8c.html">pipi0.c</a> example, in case of doubts Fortran code for the routines of names used in pointer type names can be helpful. </p>
+<p>This by no means help to verify if user channel definition is correct and complete. For that task one has to inspect physics sense of each parameter of the <a class="el" href="classTauolapp_1_1ChannelForTauola.html" title="Interface for adding new decay channels and modifying existing ones.">ChannelForTauola</a> method and of relation between function provided by the user, clalculating hadronic current or matrix element calculation. To understand conventions see our pipi0.c example, in case of doubts Fortran code for the routines of names used in pointer type names can be helpful. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a98e2ce1d3ac9f47321f7faec61cc6cb7" name="a98e2ce1d3ac9f47321f7faec61cc6cb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98e2ce1d3ac9f47321f7faec61cc6cb7">&#9670;&#160;</a></span>ChannelForTauola() <span class="overload">[1/12]</span></h2>
@@ -810,18 +813,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get branching ratio. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a8cbafee46d5544235b64fbb8ff7ec2f0_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a8cbafee46d5544235b64fbb8ff7ec2f0_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a8cbafee46d5544235b64fbb8ff7ec2f0_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a8cbafee46d5544235b64fbb8ff7ec2f0_icgraph">
-<area shape="rect" title="Get branching ratio." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -849,22 +840,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get channel position on Tauola channel list. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a27796816ad4e1b91a27ba9038b70d7e0_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a27796816ad4e1b91a27ba9038b70d7e0_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a27796816ad4e1b91a27ba9038b70d7e0_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a27796816ad4e1b91a27ba9038b70d7e0_icgraph">
-<area shape="rect" title="Get channel position on Tauola channel list." alt="" coords="323,23,525,63"/>
-<area shape="rect" href="demo-lfv_2iniofc_8c.html#af88ffe0e75c57ab57e1c0b24c34aa4ff" title=" " alt="" coords="181,5,251,31"/>
-<area shape="poly" title=" " alt="" coords="308,32,251,25,252,20,309,27"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,55,275,80"/>
-<area shape="poly" title=" " alt="" coords="309,59,275,63,275,58,309,54"/>
-<area shape="rect" href="demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,5,109,31"/>
-<area shape="poly" title=" " alt="" coords="167,21,109,21,109,15,167,15"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,55,109,80"/>
-<area shape="poly" title=" " alt="" coords="144,70,109,70,109,65,144,65"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -973,18 +948,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get channel name. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a25d2de244f087d2b426055a5f0b98aa8_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a25d2de244f087d2b426055a5f0b98aa8_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a25d2de244f087d2b426055a5f0b98aa8_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a25d2de244f087d2b426055a5f0b98aa8_icgraph">
-<area shape="rect" title="Get channel name." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1012,18 +975,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get list of decay products. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a15abbb2b33f8b1407ccb0aebff000a6e_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a15abbb2b33f8b1407ccb0aebff000a6e_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a15abbb2b33f8b1407ccb0aebff000a6e_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a15abbb2b33f8b1407ccb0aebff000a6e_icgraph">
-<area shape="rect" title="Get list of decay products." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1078,18 +1029,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Print information about the channel. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a5a7e14f63726adea963ddc6d5e9aaa93_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a5a7e14f63726adea963ddc6d5e9aaa93_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a5a7e14f63726adea963ddc6d5e9aaa93_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a5a7e14f63726adea963ddc6d5e9aaa93_icgraph">
-<area shape="rect" title="Print information about the channel." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1118,18 +1057,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set branching ratio. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_ad5b8e41d8f325174cf6083836d5ab450_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_ad5b8e41d8f325174cf6083836d5ab450_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_ad5b8e41d8f325174cf6083836d5ab450_icgraph" id="aclassTauolapp_1_1ChannelForTauola_ad5b8e41d8f325174cf6083836d5ab450_icgraph">
-<area shape="rect" title="Set branching ratio." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1214,18 +1141,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set ME type. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_aa67b5064afd8ad04d925f90c3477eb34_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_aa67b5064afd8ad04d925f90c3477eb34_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_aa67b5064afd8ad04d925f90c3477eb34_icgraph" id="aclassTauolapp_1_1ChannelForTauola_aa67b5064afd8ad04d925f90c3477eb34_icgraph">
-<area shape="rect" title="Set ME type." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1254,18 +1169,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set multiplicity. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_ac3792d9dc73bce5d7f434957be767bf0_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_ac3792d9dc73bce5d7f434957be767bf0_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_ac3792d9dc73bce5d7f434957be767bf0_icgraph" id="aclassTauolapp_1_1ChannelForTauola_ac3792d9dc73bce5d7f434957be767bf0_icgraph">
-<area shape="rect" title="Set multiplicity." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1294,18 +1197,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set channel name. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a6f281886216aebcaba5fd06fefe5387d_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a6f281886216aebcaba5fd06fefe5387d_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a6f281886216aebcaba5fd06fefe5387d_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a6f281886216aebcaba5fd06fefe5387d_icgraph">
-<area shape="rect" title="Set channel name." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1334,18 +1225,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Set list of decay products. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTauolapp_1_1ChannelForTauola_a2539b0a3681410b323875a866ea4cb36_icgraph.png" border="0" usemap="#aclassTauolapp_1_1ChannelForTauola_a2539b0a3681410b323875a866ea4cb36_icgraph" alt=""/></div>
-<map name="aclassTauolapp_1_1ChannelForTauola_a2539b0a3681410b323875a866ea4cb36_icgraph" id="aclassTauolapp_1_1ChannelForTauola_a2539b0a3681410b323875a866ea4cb36_icgraph">
-<area shape="rect" title="Set list of decay products." alt="" coords="323,5,525,45"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="157,13,275,38"/>
-<area shape="poly" title=" " alt="" coords="309,28,275,28,275,23,309,23"/>
-<area shape="rect" href="demo-redefine_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a" title=" " alt="" coords="5,13,109,38"/>
-<area shape="poly" title=" " alt="" coords="144,28,109,28,109,23,144,23"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1378,7 +1257,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/john/products/Tauola/tauola-bbb/TAUOLA-FORTRAN/tauola-bbb/tauola-c/<a class="el" href="ChannelForTauola_8h_source.html">ChannelForTauola.h</a></li>
+<li>tauola-c/<a class="el" href="ChannelForTauola_8h_source.html">ChannelForTauola.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

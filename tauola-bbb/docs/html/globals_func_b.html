@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -108,10 +111,10 @@ $(document).ready(function(){initNavTree('globals_func_b.html',''); initResizabl
 <li>bwgf0()&#160;:&#160;<a class="el" href="curr__karl_8f.html#a39494d8e57635380b07f3cefe7109357">curr_karl.f</a></li>
 <li>bwgrho()&#160;:&#160;<a class="el" href="curr__karl_8f.html#ad5fb1f1afea7720853e9afae8c61c3fb">curr_karl.f</a></li>
 <li>bwgrho_t()&#160;:&#160;<a class="el" href="curr__karl_8f.html#a012c7321e5e938b7793f9be427d05c3d">curr_karl.f</a></li>
-<li>bwig()&#160;:&#160;<a class="el" href="MEutils_8c.html#a3a1c8bfb4416e87f72c52135c7377504">MEutils.c</a>, <a class="el" href="tauola_8f.html#a4e0cfb2eb0d6ff24946e7b7d7c743abb">tauola.f</a>, <a class="el" href="MEutils_8h.html#a3a1c8bfb4416e87f72c52135c7377504">MEutils.h</a></li>
+<li>bwig()&#160;:&#160;<a class="el" href="demo-redefine_2MEutils_8c.html#a3a1c8bfb4416e87f72c52135c7377504">MEutils.c</a>, <a class="el" href="tauola_8f.html#a4e0cfb2eb0d6ff24946e7b7d7c743abb">tauola.f</a>, <a class="el" href="demo-redefine_2MEutils_8h.html#a3a1c8bfb4416e87f72c52135c7377504">MEutils.h</a>, <a class="el" href="demo-pairs_2MEutils_8c.html#a3a1c8bfb4416e87f72c52135c7377504">MEutils.c</a></li>
 <li>bwiga1()&#160;:&#160;<a class="el" href="formf_8f.html#ae907ee803958a9277a429fee8c15e616">formf.f</a></li>
 <li>bwigeps()&#160;:&#160;<a class="el" href="formf_8f.html#aac0f6b7a42103e1177ae1f18f46998d6">formf.f</a></li>
-<li>bwigm()&#160;:&#160;<a class="el" href="formf_8f.html#a23bfe29a9efc92a2d394a3bcfbc8bc8e">formf.f</a></li>
+<li>bwigm()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a9981b14822cf9e6ade3c4549155942f2">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a9981b14822cf9e6ade3c4549155942f2">MEutils.h</a>, <a class="el" href="formf_8f.html#a23bfe29a9efc92a2d394a3bcfbc8bc8e">formf.f</a></li>
 <li>bwigml()&#160;:&#160;<a class="el" href="f3pi_8f.html#af63f142f087c19bec0f435d7713c07ea">f3pi.f</a></li>
 <li>bwigs()&#160;:&#160;<a class="el" href="tauola_8f.html#acebcec1d8af2d2af807e40011293c513">tauola.f</a></li>
 <li>bwsig()&#160;:&#160;<a class="el" href="funct__rpt_8f.html#a189f13a21fb4491596e5d3d531b3c8c2">funct_rpt.f</a></li>

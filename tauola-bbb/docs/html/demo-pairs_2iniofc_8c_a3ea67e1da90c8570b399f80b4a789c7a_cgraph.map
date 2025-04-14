@@ -1,0 +1,25 @@
+<map id="tauolaredef_" name="tauolaredef_">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,129,109,155"/>
+<area shape="rect" id="Node000002" href="$demo-pairs_2iniofc_8c.html#aecbb91d29a4bfd7a51f568f919eb5f96" title=" " alt="" coords="211,104,328,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,133,197,123,197,128,110,139"/>
+<area shape="rect" id="Node000012" href="$namespaceTauolapp.html#aeedcd42588a8e22f689205f36b6efe23" title="Set tauola channel redefinition function pointer." alt="" coords="157,153,381,179"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="110,145,144,149,144,154,109,150"/>
+<area shape="rect" id="Node000003" href="$demo-pair_8h.html#add130faf6affe61fff08bf6d27f7bedd" title=" " alt="" coords="503,5,550,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="293,101,353,71,428,39,489,22,491,28,430,45,356,76,295,106"/>
+<area shape="rect" id="Node000004" href="$demo-pair_8c.html#a52401ca4acaa1e189a4551851906113c" title=" " alt="" coords="497,55,556,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="328,103,483,73,484,78,329,108"/>
+<area shape="rect" id="Node000007" href="$demo-pair_8c.html#a836177399128e55027da2028ac38a83a" title=" " alt="" coords="501,104,552,129"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="328,114,487,114,487,119,328,119"/>
+<area shape="rect" id="Node000008" href="$demo-pair_8c.html#a5d15424dbd2c09fb20e6342ae0450791" title=" " alt="" coords="489,153,565,179"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="329,125,476,154,475,159,328,130"/>
+<area shape="rect" id="Node000009" href="$namespaceTauolapp.html#a359f3692892cd9c8dc0449ce49040a61" title="Register channel." alt="" coords="429,203,624,228"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="329,121,356,128,383,140,398,152,408,165,416,177,431,189,443,195,441,200,428,194,412,181,403,168,394,156,380,144,354,133,327,126"/>
+<area shape="rect" id="Node000005" href="$demo-pair_8c.html#a9af286310515ff0e73039557575636fa" title=" " alt="" coords="769,55,827,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="556,65,755,65,755,70,556,70"/>
+<area shape="rect" id="Node000006" href="$demo-pairs_2MEutils_8c.html#a2d720977b9d2a9d8e179e48a4b4f62b7" title=" " alt="" coords="972,55,1027,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="827,65,958,65,958,70,827,70"/>
+<area shape="rect" id="Node000010" href="$namespaceTauolapp.html#a644d4222e801d829e9f870f7f6a590e0" title=" " alt="" coords="690,173,906,199"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="624,202,676,196,677,202,625,207"/>
+<area shape="rect" id="Node000011" href="$namespaceTauolapp.html#a2e0df853a2fc6ac150b3b86d091202fa" title=" " alt="" coords="672,223,924,263"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="625,223,658,226,658,232,624,228"/>
+</map>

@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -104,6 +107,7 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 <li>mass_sq()&#160;:&#160;<a class="el" href="demo-lfv_2lfv_8c.html#a3579865d8a6b2e28998be9941ee316fe">lfv.c</a></li>
 <li>metyp_&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a5dc8da2cf27c992c79faf1d6b4346762">TauolaStructs.h</a></li>
 <li>MULPIK&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a5daa31db246aa78c12524e414073c326">TauolaStructs.h</a></li>
+<li>mumupi()&#160;:&#160;<a class="el" href="demo-pair_8c.html#a5d15424dbd2c09fb20e6342ae0450791">demo-pair.c</a>, <a class="el" href="demo-pair_8h.html#a6e8d2989b1511594602b515af7585a3f">demo-pair.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

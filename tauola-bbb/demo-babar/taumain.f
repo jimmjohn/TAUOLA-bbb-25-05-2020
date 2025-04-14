@@ -82,9 +82,9 @@ C      JAK1=5
 C      JAK2=5
 C LUND IDENTIFIER (FOR TAU+) -15
       IF (KTORY.EQ.1) THEN
-        IDFF=-15
+        IDFF=15
       ELSE
-        IDFF= 15
+        IDFF=-15
       ENDIF
 C KTO=1 DENOTES TAU DEFINED BY IDFF (I.E. TAU+)
 C KTO=2 DENOTES THE OPPOSITE        (I.E. TAU-)
@@ -97,7 +97,7 @@ C KTO=2 DENOTES THE OPPOSITE        (I.E. TAU-)
 C TAU POLARIZATION IN ITS RESTFRAME;
       POL(1)=0.
       POL(2)=0.
-      POL(3)=.9
+      POL(3)=0.
 C TAU MOMENTUM IN GEV;
 C      PTAU=CMSENE/2.D0
 C NUMBER OF EVENTS TO BE GENERATED;
@@ -144,7 +144,7 @@ C DECAY....
          CALL DEKAY(KTO+10,HH)
       ENDIF
       CALL LUHEPC(2)
-      IF(IEV.LE.44) THEN
+      IF(IEV.LE.100000) THEN
        WRITE(IOUT,7002) IEV
        IF (KTORY.NE.1) THEN
          WRITE(IOUT,7003) HH
@@ -584,7 +584,7 @@ C            4- default ME wrapped curr., 5- wrapped ME
       DATA KEYstrt6 / 2, 2, 2, 2, 2,   2, 2, 0, 0, 0,
      a                0, 0, 0/
 
-      DATA NOPIK4 / -1,-1, 1, 2, 0, 0,3*0,     2, 2, 2,-1, 0, 0,3*0,
+      DATA NOPIK4 / -1, -1, 1, 2, 0, 0,3*0,     2, 2, 2,-1, 0, 0,3*0,
      a              12,-11,-11,11, 0, 0,3*0,  14,-13,-13,13, 0, 0,3*0,      ! new (may 2004)
      b              12,-11,-13,13, 0, 0,3*0,  14,-13,-11,11, 0, 0,3*0,      ! new (may 2004)
      c              -3, 2, 2, 2, 0, 0,3*0,     2, 2, 9,-3, 0, 0,3*0,     ! new (may 2004)

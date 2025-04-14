@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -101,7 +104,7 @@ $(document).ready(function(){initNavTree('globals_j.html',''); initResizable(); 
 
 <h3><a id="index_j" name="index_j"></a>- j -</h3><ul>
 <li>jaker()&#160;:&#160;<a class="el" href="tauola_8f.html#a9eba36ccab02307e15889c757d47c8af">tauola.f</a></li>
-<li>James&#160;:&#160;<a class="el" href="tauola-random_8h.html#a115cd94aff4901fb0b0382ac5689d547">tauola-random.h</a></li>
+<li>James&#160;:&#160;<a class="el" href="demo-pairs_2tauola-random_8h.html#a115cd94aff4901fb0b0382ac5689d547">tauola-random.h</a></li>
 <li>JLIST&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#abcc804708c34dda340e881dbd4599a03">TauolaStructs.h</a></li>
 </ul>
 </div><!-- contents -->

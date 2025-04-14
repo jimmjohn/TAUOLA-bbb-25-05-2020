@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -100,8 +103,8 @@ $(document).ready(function(){initNavTree('globals_p.html',''); initResizable(); 
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>pipi0_curr()&#160;:&#160;<a class="el" href="pipi0_8c.html#a6bdd948f82fb81ea07f33cf0b001758d">pipi0.c</a>, <a class="el" href="pipi0_8h.html#a6bdd948f82fb81ea07f33cf0b001758d">pipi0.h</a></li>
-<li>pipi0_ME()&#160;:&#160;<a class="el" href="pipi0_8c.html#a0426846101e0aa72b6023bdaa87e1cc4">pipi0.c</a>, <a class="el" href="pipi0_8h.html#a0426846101e0aa72b6023bdaa87e1cc4">pipi0.h</a></li>
+<li>pipi0_curr()&#160;:&#160;<a class="el" href="demo-pairs_2pipi0_8h.html#a6bdd948f82fb81ea07f33cf0b001758d">pipi0.h</a>, <a class="el" href="demo-redefine_2pipi0_8c.html#a6bdd948f82fb81ea07f33cf0b001758d">pipi0.c</a>, <a class="el" href="demo-redefine_2pipi0_8h.html#a6bdd948f82fb81ea07f33cf0b001758d">pipi0.h</a>, <a class="el" href="demo-pairs_2pipi0_8c.html#a6bdd948f82fb81ea07f33cf0b001758d">pipi0.c</a></li>
+<li>pipi0_ME()&#160;:&#160;<a class="el" href="demo-pairs_2pipi0_8c.html#a0426846101e0aa72b6023bdaa87e1cc4">pipi0.c</a>, <a class="el" href="demo-pairs_2pipi0_8h.html#a0426846101e0aa72b6023bdaa87e1cc4">pipi0.h</a>, <a class="el" href="demo-redefine_2pipi0_8c.html#a0426846101e0aa72b6023bdaa87e1cc4">pipi0.c</a>, <a class="el" href="demo-redefine_2pipi0_8h.html#a0426846101e0aa72b6023bdaa87e1cc4">pipi0.h</a></li>
 <li>pkorb()&#160;:&#160;<a class="el" href="pkorb_8f.html#a97a308b602bc1f74646875dbe502ef54">pkorb.f</a></li>
 <li>print_4vector()&#160;:&#160;<a class="el" href="channels__wrappers_8c.html#a0a57a0f058993e1c21b7a2a94142d5bf">channels_wrappers.c</a></li>
 <li>print_4vector_double()&#160;:&#160;<a class="el" href="channels__wrappers_8c.html#add09f3ccc1c93e89a548efeefc163842">channels_wrappers.c</a></li>
@@ -110,7 +113,7 @@ $(document).ready(function(){initNavTree('globals_p.html',''); initResizable(); 
 <li>PROB2&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a8f52760d2f4cf8ef214d1ddba97e5f04">TauolaStructs.h</a></li>
 <li>PROBa2&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#ad853e41c3338854d1aae000e687edae3">TauolaStructs.h</a></li>
 <li>PROBOM&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a1e43fc353c3306829e67baf13419b119">TauolaStructs.h</a></li>
-<li>prod5()&#160;:&#160;<a class="el" href="tauola_8f.html#a31959f84e9f6ad47e86ad59817a73efa">tauola.f</a></li>
+<li>prod5()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#a4864acc0e0e1483e437555779cd0293c">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#a4864acc0e0e1483e437555779cd0293c">MEutils.h</a>, <a class="el" href="tauola_8f.html#a31959f84e9f6ad47e86ad59817a73efa">tauola.f</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

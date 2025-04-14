@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -105,14 +108,17 @@ Directory dependency graph for prod:</div>
 <div class="dyncontent">
 <div class="center"><img src="dir_f6c006ec037a9df1756850134a64f727_dep.png" border="0" usemap="#adir__f6c006ec037a9df1756850134a64f727__dep" alt="demo-babar/prod"/></div>
 <map name="adir__f6c006ec037a9df1756850134a64f727__dep" id="adir__f6c006ec037a9df1756850134a64f727__dep">
+<area shape="rect" href="dir_9a330f99d0e50c86b89852b5ebe9a56c.html" title="symmetry_issue" alt="" coords="139,63,269,88"/>
 <area shape="rect" href="dir_2c8c22ca5f7c7eee5e5ff88655e37600.html" title="txt&#45;tests" alt="" coords="37,63,115,88"/>
-<area shape="rect" href="dir_f6c006ec037a9df1756850134a64f727.html" alt="" coords="27,52,200,99"/>
-<area shape="rect" href="dir_3c1771c2f5b7ce81308184b6a7f4fbbf.html" title="demo&#45;babar" alt="" coords="16,16,211,109"/>
+<area shape="rect" href="dir_f6c006ec037a9df1756850134a64f727.html" alt="" coords="27,52,355,99"/>
+<area shape="rect" href="dir_3c1771c2f5b7ce81308184b6a7f4fbbf.html" title="demo&#45;babar" alt="" coords="16,16,365,109"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="subdirs" name="subdirs"></a>
 Directories</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><span class="iconfclosed"></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_9a330f99d0e50c86b89852b5ebe9a56c.html">symmetry_issue</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><span class="iconfclosed"></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_2c8c22ca5f7c7eee5e5ff88655e37600.html">txt-tests</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

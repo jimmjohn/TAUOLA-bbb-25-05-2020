@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -105,9 +108,9 @@ $(document).ready(function(){initNavTree('globals_t.html',''); initResizable(); 
 <li>t3()&#160;:&#160;<a class="el" href="binp_8f.html#ad4afd00458ab9e6eeb08ca8f408a3461">binp.f</a></li>
 <li>taubra_&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a8657f29475c929772dc8f8c6341bbc59">TauolaStructs.h</a></li>
 <li>taudcd_&#160;:&#160;<a class="el" href="TauolaStructs_8h.html#a195c0cd9d86a6e8c864c5b50986657ed">TauolaStructs.h</a></li>
-<li>tauDecay_ME()&#160;:&#160;<a class="el" href="MEutils_8c.html#ad279b97d8b075b3dfaa5a754fb14487d">MEutils.c</a>, <a class="el" href="MEutils_8h.html#ad279b97d8b075b3dfaa5a754fb14487d">MEutils.h</a></li>
+<li>tauDecay_ME()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8c.html#ad279b97d8b075b3dfaa5a754fb14487d">MEutils.c</a>, <a class="el" href="demo-pairs_2MEutils_8h.html#ad279b97d8b075b3dfaa5a754fb14487d">MEutils.h</a>, <a class="el" href="demo-redefine_2MEutils_8c.html#ad279b97d8b075b3dfaa5a754fb14487d">MEutils.c</a>, <a class="el" href="demo-redefine_2MEutils_8h.html#ad279b97d8b075b3dfaa5a754fb14487d">MEutils.h</a></li>
 <li>taugetsign()&#160;:&#160;<a class="el" href="tauola_8f.html#a51690bf3ea56ecfcfd52a4043936b48e">tauola.f</a></li>
-<li>taugetsign_()&#160;:&#160;<a class="el" href="MEutils_8h.html#abf8682df7c0eba686ed3b2c1e24a8bf3">MEutils.h</a></li>
+<li>taugetsign_()&#160;:&#160;<a class="el" href="demo-pairs_2MEutils_8h.html#abf8682df7c0eba686ed3b2c1e24a8bf3">MEutils.h</a></li>
 <li>tauolaredef_()&#160;:&#160;<a class="el" href="demo-lfv_2iniofc_8c.html#a3ea67e1da90c8570b399f80b4a789c7a">iniofc.c</a></li>
 <li>taurdf()&#160;:&#160;<a class="el" href="Tauface_8f.html#a4ae1f15cd1dedc13e339dcbff3b5257d">Tauface.f</a></li>
 <li>test_const()&#160;:&#160;<a class="el" href="TestCommunication_8c.html#afb1f62fd512e0b62dec46864ed7c3d88">TestCommunication.c</a></li>
