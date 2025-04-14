@@ -2949,6 +2949,9 @@ C Rationalize this code:
 !      if (mnum.eq.9) write(*,*) 'effy=', mnum,'>>',f1,f2,f3,f4,f5
 !      if (mnum.eq.9) write(*,*) 'coef=', mnum,'>>',COEF(1,MNUM),COEF(2,MNUM),COEF(3,MNUM),COEF(4,MNUM),COEF(5,MNUM)
 
+
+      WRITE(*,*) 'F1=',F1,'F2=',F2,'F3=',F3,'F4=',F4,'F5=',F5
+
       DO 45 I=1,4
       HADCUR(I)= CMPLX(FNORM(MNUM)) * (
      $  CMPLX(VEC1(I))*F1+CMPLX(VEC2(I))*F2+CMPLX(VEC3(I))*F3+
