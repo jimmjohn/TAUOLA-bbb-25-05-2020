@@ -2949,13 +2949,15 @@ C Rationalize this code:
 !      if (mnum.eq.9) write(*,*) 'effy=', mnum,'>>',f1,f2,f3,f4,f5
 !      if (mnum.eq.9) write(*,*) 'coef=', mnum,'>>',COEF(1,MNUM),COEF(2,MNUM),COEF(3,MNUM),COEF(4,MNUM),COEF(5,MNUM)
 
-
-      WRITE(*,*) 'F1=',F1,'F2=',F2,'F3=',F3,'F4=',F4,'F5=',F5
+      F5=CMPLX(0.0,0.0)
 
       DO 45 I=1,4
       HADCUR(I)= CMPLX(FNORM(MNUM)) * (
-     $  CMPLX(VEC1(I))*F1+CMPLX(VEC2(I))*F2+CMPLX(VEC3(I))*F3+
+     $  CMPLX(VEC1(I))*F1+CMPLX(VEC1(I))*F2+CMPLX(VEC3(I))*F3+
      $  CMPLX(VEC4(I))*F4+CMPLX(VEC5(I))*F5)
+
+C      WRITE(*,*) 'I=', I, 'V1.F1=',  CMPLX(VEC1(I))*F1, 'V1=',VEC1(I) ,'F1 = ', F1, 'V2.F2=',CMPLX(VEC2(I))*F2, 'V2 = ','F2=',F2
+
  45   CONTINUE
 
       END
