@@ -11,8 +11,8 @@ C     COMMON  /PAWC/ BLAN(10000)
       CHARACTER*7 DNAME
       COMMON / INOUT / INUT,IOUT
       DNAME='KKPI'
-!      CALL GLIMIT(20000)
-!      CALL GOUTPU(16)
+C      CALL GLIMIT(20000)
+C      CALL GOUTPU(16)
       INUT=5
       IOUT=6
       OPEN(IOUT,FILE="./tauola.output")
@@ -20,7 +20,7 @@ C     COMMON  /PAWC/ BLAN(10000)
       KTORY=1
       CALL DECTES(KTORY)
       KTORY=2
-!      CALL DECTES(KTORY)
+C      CALL DECTES(KTORY)
 C      CALL testresu ! fine tune inputs: masses etc.
       END
       SUBROUTINE DECTES(KTORY)
@@ -82,9 +82,9 @@ C      JAK1=5
 C      JAK2=5
 C LUND IDENTIFIER (FOR TAU+) -15
       IF (KTORY.EQ.1) THEN
-        IDFF=15
-      ELSE
         IDFF=-15
+      ELSE
+        IDFF=15
       ENDIF
 C KTO=1 DENOTES TAU DEFINED BY IDFF (I.E. TAU+)
 C KTO=2 DENOTES THE OPPOSITE        (I.E. TAU-)
@@ -1661,6 +1661,7 @@ C positions of taus in the LUND common block
 C it will be used by TAUOLA output routines.
       COMMON /TAUPOS / NPA,NPB
       DIMENSION XPB1(4),XPB2(4),AQF1(4),AQF2(4)
+      REAL*4 RRR(20)
 C
 C --- DEFINING DUMMY EVENTS MOMENTA
       DO 4 K=1,3
@@ -1675,6 +1676,19 @@ C --- TAU MOMENTA
       CALL TRALO4(1,AQF1,AQF1,AM)
       CALL TRALO4(2,AQF2,AQF2,AM)
 C --- BEAMS MOMENTA AND IDENTIFIERS
+
+C        CALL RANMAR(RRR,3)
+C        COSTHE=-1.+2.*RRR(1)
+C        THET=ACOS(COSTHE)
+C        PHI =2*PI*RRR(2)
+C        CALL ROTOR2(THET,AQF1,AQF1)
+C        CALL ROTOR3( PHI,AQF1,AQF1)
+C     Fill AQF2 as opposite of AQF1 (back-to-back)
+C        AQF2(1) = -AQF1(1)
+C        AQF2(2) = -AQF1(2)
+C        AQF2(3) = -AQF1(3)
+C        AQF2(4) =  AQF1(4)
+
         KFB1= 11*IDFF/IABS(IDFF)
         KFB2=-11*IDFF/IABS(IDFF)
         XPB1(4)= AQF1(4)
@@ -1688,6 +1702,7 @@ C --- BEAMS MOMENTA AND IDENTIFIERS
 C --- Position of first and second tau in LUND common
       NPA=3
       NPB=4
+
 C --- FILL TO LUND COMMON
       CALL FILHEP(  1,3, KFB1,0,0,0,0,XPB1, AMEL,.TRUE.)
       CALL FILHEP(  2,3, KFB2,0,0,0,0,XPB2, AMEL,.TRUE.)

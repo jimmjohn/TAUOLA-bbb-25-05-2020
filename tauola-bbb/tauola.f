@@ -2415,6 +2415,9 @@ CAM   THET =PI*RR3
       CALL ROTPOX(THET,PHI,PIM1)
       CALL ROTPOX(THET,PHI,PIM2)
       CALL ROTPOX(THET,PHI,PR)
+
+
+
 C
 * NOW TO THE TAU REST FRAME, DEFINE A1 AND NEUTRINO MOMENTA
 * A1  MOMENTUM
@@ -2710,6 +2713,7 @@ C -- it was affecting sign of A_LR asymmetry in a1 decay.
 C -- note also collision of notation of gamma_va as defined in
 C -- TAUOLA paper and J.H. Kuhn and Santamaria Z. Phys C 48 (1990) 445
 * -----------------------------------
+
       IF     (KTOM.EQ.1.OR.KTOM.EQ.-1) THEN
         SIGN= IDFF/ABS(IDFF)
       ELSEIF (KTOM.EQ.2) THEN
@@ -2949,14 +2953,28 @@ C Rationalize this code:
 !      if (mnum.eq.9) write(*,*) 'effy=', mnum,'>>',f1,f2,f3,f4,f5
 !      if (mnum.eq.9) write(*,*) 'coef=', mnum,'>>',COEF(1,MNUM),COEF(2,MNUM),COEF(3,MNUM),COEF(4,MNUM),COEF(5,MNUM)
 
-      F5=CMPLX(0.0,0.0)
+
+C      F1=CMPLX(REAL(F1),0.0)
+C      F2=CMPLX(REAL(F2),0.0)
+
+C      F1 = CONJG(F1)
+C      F2 = CONJG(F2)
+
+C     JIM
+C      Q1 = (PIM1(4)+PIM2(4))**2-(PIM1(3)+PIM2(3))**2-(PIM1(2)+PIM2(2))**2-(PIM1(1)+PIM2(1))**2
+C      Q2 = (PIM2(4)+PIM3(4))**2-(PIM2(3)+PIM3(3))**2-(PIM2(2)+PIM3(2))**2-(PIM2(1)+PIM3(1))**2
+C      Q3 = (PIM3(4)+PIM1(4))**2-(PIM3(3)+PIM1(3))**2-(PIM3(2)+PIM1(2))**2-(PIM3(1)+PIM1(1))**2
+
+C      izc = CMPLX(0.0,1.0)
+C      phs1 = exp(izc*Q2)
+C      phs2 = exp(izc*Q3)
+C      F1 = F1*phs1
+C      F2 = F2*phs2
 
       DO 45 I=1,4
       HADCUR(I)= CMPLX(FNORM(MNUM)) * (
-     $  CMPLX(VEC1(I))*F1+CMPLX(VEC1(I))*F2+CMPLX(VEC3(I))*F3+
+     $  CMPLX(VEC1(I))*F1+CMPLX(VEC2(I))*F2+CMPLX(VEC3(I))*F3+
      $  CMPLX(VEC4(I))*F4+CMPLX(VEC5(I))*F5)
-
-C      WRITE(*,*) 'I=', I, 'V1.F1=',  CMPLX(VEC1(I))*F1, 'V1=',VEC1(I) ,'F1 = ', F1, 'V2.F2=',CMPLX(VEC2(I))*F2, 'V2 = ','F2=',F2
 
  45   CONTINUE
 
@@ -3148,7 +3166,7 @@ C
 
       REAL*4 PNU(4),PWB(4),PNPI(4,9),HV(4),HHV(4)
       REAL*4 PDUM1(4),PDUM2(4),PDUMI(4,9)
-      REAL*4 RRR(3)
+      REAL*4 RRR(20)
       REAL*4 WTMAX(NMODE)
       REAL*8              SWT(NMODE),SSWT(NMODE)
       INTEGER*8 NEVRAW(NMODE),NEVOVR(NMODE),NEVACC(NMODE)
@@ -3252,6 +3270,16 @@ C ROTATIONS TO BASIC TAU REST FRAME
         COSTHE=-1.+2.*RRR(2)
         THET=ACOS(COSTHE)
         PHI =2*PI*RRR(3)
+        CALL RANMAR(RRR,3)
+        RN=RRR(1)
+        PHI1=2*PI*RN
+        CALL ROTOR2( PHI1,PNU,PNU)
+        CALL ROTOR2( PHI1,PWB,PWB)
+        CALL ROTOR2( PHI1,HV,HV)
+        ND=MULPIK(JNPI)
+        DO  I=1,ND
+       CALL ROTOR2( PHI1,PNPI(1,I),PNPI(1,I))
+        END DO
         CALL ROTOR2(THET,PNU,PNU)
         CALL ROTOR3( PHI,PNU,PNU)
         CALL ROTOR2(THET,PWB,PWB)
@@ -3265,6 +3293,7 @@ C ROTATIONS TO BASIC TAU REST FRAME
 301     CONTINUE
         NEVACC(JNPI)=NEVACC(JNPI)+1
 C
+
       ELSEIF(MODE.EQ. 1) THEN
 C     =======================
         DO 500 JNPI=1,NMOD
@@ -5132,14 +5161,14 @@ C GENERATES UNIFORMLY THREE-VECTOR X ON SPHERE  OF RADIUS R
 C DOUBLE PRECISON VERSION OF SPHERA
 C ----------------------------------------------------------------------
       REAL*8  R,X(4),PI,COSTH,SINTH
-      REAL*4 RRR(2)
+      REAL*4 RRR(50)
       DATA PI /3.141592653589793238462643D0/
 C
-      CALL RANMAR(RRR,2)
-      COSTH=-1+2*RRR(1)
+      CALL RANMAR(RRR,50)
+      COSTH=-1+2*RRR(49)
       SINTH=SQRT(1 -COSTH**2)
-      X(1)=R*SINTH*COS(2*PI*RRR(2))
-      X(2)=R*SINTH*SIN(2*PI*RRR(2))
+      X(1)=R*SINTH*COS(2*PI*RRR(50))
+      X(2)=R*SINTH*SIN(2*PI*RRR(50))
       X(3)=R*COSTH
       RETURN
       END
