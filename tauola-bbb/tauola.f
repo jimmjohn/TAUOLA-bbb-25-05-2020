@@ -2272,6 +2272,12 @@ C
       COMMON / DECPAR / GFERMI,GV,GA,CCABIB,SCABIB,GAMEL
       REAL*4            GFERMI,GV,GA,CCABIB,SCABIB,GAMEL
 
+
+      COMMON / INTERNAL / PX1,PX2, PX3,PY1,PY2,PY3, IFFIST
+      REAL*4           PX1(4),PX2(4), PX3(4),PY1(4),PY2(4),PY3(4)
+      INTEGER IFFIST, KKK
+
+
       REAL*8 PR(4),PT(4),PN(4),PAA(4),PIM1(4),PIM2(4),PIPL(4)
       REAL*8 AMP1,AMP2,AMP3,AMS1,AMS2,AM2,AM3,AM2SQ,AM3SQ,PHSPAC
       REAL*8 FF1,FF2,GG1,GG2,PHF0,PHF1,PHF2,A1,A2,A3
@@ -2417,7 +2423,23 @@ CAM   THET =PI*RR3
       CALL ROTPOX(THET,PHI,PR)
 
 
-
+C     we take out momenta at generation time.
+      IF (IFFIST.EQ.1) THEN
+      DO KKK=1,4
+       PX1(KKK)=PIM1(KKK)
+       PX2(KKK)=PIM2(KKK)
+       PX3(KKK)=PIPL(KKK)
+      ENDDO
+      ELSEIF (IFFIST.EQ.2) THEN
+      DO KKK=1,4
+       PY1(KKK)=PIM1(KKK)
+       PY2(KKK)=PIM2(KKK)
+       PY3(KKK)=PIPL(KKK)
+      ENDDO
+      ELSE
+C        WRITE(*,*) 'PROBLEM iffist= ',iffist
+      ENDIF
+C      WRITE(*,*) 'IFFIST=',IFFIST
 C
 * NOW TO THE TAU REST FRAME, DEFINE A1 AND NEUTRINO MOMENTA
 * A1  MOMENTUM
@@ -2490,6 +2512,8 @@ C
         PIM1(I)=PIM2(I)
  70     PIM2(I)=X
        ENDIF
+
+*
 * ALL PIONS BOOSTED FROM A1  REST FRAME TO TAU REST FRAME
 * Z-AXIS ANTIPARALLEL TO NEUTRINO MOMENTUM
       EXE=(PAA(4)+PAA(3))/AM3
@@ -3111,7 +3135,18 @@ C ----------------------------------------------------------------------
       COMMON / INOUT / INUT,IOUT
       REAL  POL(4),HV(4),PAA(4),PNU(4),PNPI(4,9),RN(1)
       DATA IWARM/0/
+      COMMON / INTERNAL / PX1,PX2, PX3,PY1,PY2,PY3, IFFIST
+      REAL*4           PX1(4),PX2(4), PX3(4),PY1(4),PY2(4),PY3(4)
+      INTEGER IFFIST
 C
+C      WRITE(*,*) 'DEXNEW JIM: MODE=',MODE,' ISGN=',ISGN
+      IF (ISGN.EQ.1) THEN
+        IFFIST=1
+      elseif(ISGN.eq.-1) then
+        IFFIST=2
+      else
+        IFFIST=0
+       endif
       IF(MODE.EQ.-1) THEN
 C     ===================
         IWARM=1
@@ -3278,7 +3313,7 @@ C ROTATIONS TO BASIC TAU REST FRAME
         CALL ROTOR2( PHI1,HV,HV)
         ND=MULPIK(JNPI)
         DO  I=1,ND
-       CALL ROTOR2( PHI1,PNPI(1,I),PNPI(1,I))
+         CALL ROTOR2( PHI1,PNPI(1,I),PNPI(1,I))
         END DO
         CALL ROTOR2(THET,PNU,PNU)
         CALL ROTOR3( PHI,PNU,PNU)
@@ -4880,19 +4915,25 @@ C
       CHARACTER NAMES(NMODE)*31
       REAL  PNU(4),PWB(4),PNPI(4,9)
       REAL  PPI(4)
+      COMMON / INTERNAL / PX1,PX2, PX3,PY1,PY2,PY3, IFFIST
+      REAL*4           PX1(4),PX2(4), PX3(4),PY1(4),PY2(4),PY3(4)
+      INTEGER IFFIST, KKK
 C
       JNPI=MODE-NLT
 C position of decaying particle
       IF(KTO.EQ. 1) THEN
         NPS=NP1
+        NPF=NP2
       ELSE
         NPS=NP2
+        NPF=NP1
       ENDIF
       IS=0
 C
 C tau neutrino (nu_tau is 16)
       CALL TRALO4(KTO,PNU,PNU,AM)
       ND=MULPIK(JNPI)
+      WRITE(*,*) 'JIM ND=',JNPI,' ',ND
       IF(ND.EQ.2.AND.IDFFIN(3,JNPI).NE.0) THEN
         IS=1
         CALL FILHEP(0,1,-IDFFIN(3,JNPI)*ISGN,NPS,NPS,0,0,PNU,AM,.TRUE.)
@@ -4941,6 +4982,18 @@ C        IF(KFPI.NE.111)KFPI=KFPI*ISGN
 
 
       END DO
+C     Jim added to take the internal momenta for comparison
+      IF(IFFIST.EQ.1) THEN
+       CALL FILHEP(0,1,-211*ISGN, NPF, NPF,0,0,PX1,1.,.TRUE.)
+       CALL FILHEP(0,1,-211*ISGN, NPF, NPF,0,0,PX2,2.,.TRUE.)
+       CALL FILHEP(0,1,211*ISGN, NPF, NPF,0,0,PX3,3.,.TRUE.)
+      ELSEIF(IFFIST.EQ.2) THEN
+       CALL FILHEP(0,1,-211*ISGN, NPF, NPF,0,0,PY1,1.,.TRUE.)
+       CALL FILHEP(0,1,-211*ISGN, NPF, NPF,0,0,PY2,2.,.TRUE.)
+       CALL FILHEP(0,1,211*ISGN, NPF, NPF,0,0,PY3,3.,.TRUE.)
+      ENDIF
+
+
 C
       RETURN
       END
