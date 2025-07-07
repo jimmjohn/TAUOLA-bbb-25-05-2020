@@ -106,7 +106,21 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p><a class="anchor" id="md_docs_2theme_2README"></a> <a href="https://github.com/jimmjohn/TAUOLA-bbb-25-05-2020"><img src="https://img.shields.io/github/v/release/jimmjohn/TAUOLA-bbb-25-05-2020?include_prereleases" alt="GitHub release (latest by date)" class="inline"/></a> [<img src="https://img.shields.io/github/license/jothepro/doxygen-awesome-css" alt="GitHub" class="inline"/><img src="https://img.shields.io/github/stars/jimmjohn/tauola-bbb" alt="GitHub Repo stars" class="inline"/></p>
 <p>The Tauola-bbb package includes the Fortran version of the Tauola package. The documentation provides a detailed explanation of the purpose of each subroutine.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Installation</h1>
+Running Stand-Alone Tauola-bbb</h1>
+<p>This is a standalone package.</p>
+<p>To run default examples simply execute:</p>
+<div class="fragment"><div class="line">make</div>
+<div class="line">make run</div>
+</div><!-- fragment --><p>in any tauola-bbb/demo-* folder.</p>
+<p>More sophisticated exampes may require MC-Tester and associated with it other programs.</p>
+<p>User has to provide path in the makefile to his MC-Tester installation at his own discretion.</p>
+<p>To use tauola-bbb content in other projects follow instructions from</p>
+<p>dedicated tauola-bbb/patch-* folders</p>
+<p>Note: following instructions of patch-babar-validation changes files of this installation.</p>
+<p>​ Be sure to make backup of tauola-bbb folder as well as photos/photos.f file</p>
+<p>​ for easy restoration of original files.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Installation of Tauola with C++ interface</h1>
 <p>Tauola is a standalone package, but for more sophisticated exampes may require the following packages.</p>
 <p>To run default examples simply execute:</p>
 <p>"make"</p>
@@ -134,7 +148,7 @@ Installation</h1>
 <div class="line">--with-hepmc3=&lt;path&gt;/HepMC3/HepMC3-3.3.0 --with-lhapdf=&lt;path&gt;/LHAPDF/LHAPDF-6.5.5 \</div>
 <div class="line">--with-pythia8=&lt;path&gt;/Pythia8/pythia8313 --with-mc-tester=&lt;path&gt;/MC-TESTER/mc-tester</div>
 <div class="line">make</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Directory tree</h1>
 <p>The fortran code of the library is strored in the main directory, some hadronic currents are stored in sub-directories:</p>
 <p>tauola-bbb/new-currents</p>
@@ -145,7 +159,7 @@ Directory tree</h1>
 <p>See README files of these directories for more details.</p>
 <p>---</p>
 <p>Other folders contain supplementary libraries allowing standalone run of prepared examples.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Examples</h1>
 <p>The following examples (sub-directories) are prepared with corresponding README files:</p>
 <ul>
@@ -155,7 +169,7 @@ Examples</h1>
 <li>tauola-bbb/demo-pairs</li>
 </ul>
 <p>You can got to the particular directory and execute the make command and run the program. The makefile links the <code>glibk</code> library for plotting, <code>photos</code> library for the radiative corrections and the <code>jetset</code> library for printing the event records in pythia format.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Patches for other projects</h1>
 <p>There are some patches for installation the code into other projects. Again, each sub-directory features its own README</p>
 <ul>
@@ -163,7 +177,53 @@ Patches for other projects</h1>
 <li>tauola-bbb/patch-tauolapp</li>
 <li>tauola-bbb/patch-babar-validation</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Running KORALB</h1>
+<p>Running KORALB is same as running the standalone. The example file has kept in the folder korb/korb22/september</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Running KKMCee</h1>
+<p>To run KKMCee, you need Root, HepMC3, PHOTOS, Libtool. Installation of HEPMC3 is given above.</p>
+<p>The steps to install GNU-Libtool is given below.</p>
+<div class="fragment"><div class="line">wget https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz</div>
+<div class="line">rm -rf libtool-2.4.7</div>
+<div class="line">tar -Jxf libtool-2.4.7.tar.xz</div>
+<div class="line">if [[ ! -d &quot;libtool-2.4.7&quot; ]] ; then return 0 2&gt;/dev/null || exit 0 ; fi</div>
+<div class="line">cd libtool-2.4.7</div>
+<div class="line">rm -rf ${PWD}/../libtool</div>
+<div class="line">nice ./configure --prefix=${PWD}/../libtool |&amp; tee -a configure.out.txt</div>
+<div class="line">nice make |&amp; tee -a make.out.txt</div>
+<div class="line">nice make install |&amp; tee -a make_install.out.txt</div>
+<div class="line">cd ..</div>
+</div><!-- fragment --><p>Export the variables in the ~/.bashrc</p>
+<div class="fragment"><div class="line">export PATH=&quot;${PWD}/libtool/bin${PATH:+:${PATH}}&quot;</div>
+<div class="line">export LD_LIBRARY_PATH=&quot;${PWD}/libtool/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}&quot;</div>
+<div class="line">export ACLOCAL_PATH=&quot;${PWD}/libtool/share/aclocal${ACLOCAL_PATH:+:${ACLOCAL_PATH}}&quot;</div>
+</div><!-- fragment --><p>The steps to install PHOTOS is given below</p>
+<div class="fragment"><div class="line">wget https://photospp.web.cern.ch/resources/PHOTOS.3.64/PHOTOS.3.64.tar.gz</div>
+<div class="line">rm -rf PHOTOS PHOTOS.3.64</div>
+<div class="line">tar -zxf PHOTOS.3.64.tar.gz</div>
+<div class="line">mv PHOTOS PHOTOS.3.64</div>
+<div class="line">if [[ ! -d &quot;PHOTOS.3.64&quot; ]] ; then return 0 2&gt;/dev/null || exit 0 ; fi</div>
+<div class="line">cd PHOTOS.3.64</div>
+<div class="line">nice ./configure --prefix=${PWD}/../PHOTOS --without-hepmc --with-hepmc3=${PWD}/../HepMC3 |&amp; tee -a configure.out.txt</div>
+<div class="line">nice make |&amp; tee -a make.out.txt</div>
+<div class="line">nice make install |&amp; tee -a make_install.out.txt</div>
+<div class="line">cd ..</div>
+</div><!-- fragment --><p>Export the variables in the ~/.bashrc</p>
+<div class="fragment"><div class="line">export LD_LIBRARY_PATH=&quot;${PWD}/PHOTOS/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}&quot;</div>
+</div><!-- fragment --><p>The code of KKMCee is provided in <a href="https://github.com/KrakowHEPSoft/">https://github.com/KrakowHEPSoft/</a>. Run the following commands to compile and run KKMCee</p>
+<div class="fragment"><div class="line">cd KKMCee-dev</div>
+<div class="line">rm -f autoreconf.out.txt configure.out.txt make.out.txt</div>
+<div class="line">ln -f -s dizet-6.45 dizet # or take dizet-6.42 or dizet-6.21</div>
+<div class="line"># warning: on Debian / Ubuntu, one needs to compile and use the standard &quot;GNU Libtool&quot;</div>
+<div class="line">nice autoreconf -f -i |&amp; tee -a autoreconf.out.txt</div>
+<div class="line"># see &quot;./configure --help&quot; for available options</div>
+<div class="line"># note: GCC &lt; 6.1 may need, e.g.: nice ./configure CXXFLAGS=&quot;-std=c++11 -g -O2&quot; ...</div>
+<div class="line">nice ./configure --with-hepmc=${PWD}/../HepMC3 --with-photos=${PWD}/../PHOTOS |&amp; tee -a configure.out.txt</div>
+<div class="line">nice make |&amp; tee -a make.out.txt</div>
+<div class="line">cd ..</div>
+</div><!-- fragment --><p>After that you can go to ProdRun directory and go to any of the subdirectory there and execute "make start" to run any specific example.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Written by</h1>
 <p>Zbigniew Was,</p>
 <p>**<a href="#" onclick="location.href='mai'+'lto:'+'zbi'+'gn'+'iew'+'.w'+'as@'+'if'+'j.e'+'du'+'.pl'; return false;">zbigniew.was@ifj.edu.pl</a>**</p>
