@@ -2277,7 +2277,6 @@ C
       REAL*4           PX1(4),PX2(4), PX3(4),PY1(4),PY2(4),PY3(4)
       INTEGER IFFIST, KKK
 
-
       REAL*8 PR(4),PT(4),PN(4),PAA(4),PIM1(4),PIM2(4),PIPL(4)
       REAL*8 AMP1,AMP2,AMP3,AMS1,AMS2,AM2,AM3,AM2SQ,AM3SQ,PHSPAC
       REAL*8 FF1,FF2,GG1,GG2,PHF0,PHF1,PHF2,A1,A2,A3
@@ -2543,6 +2542,7 @@ C THE STATISTICAL FACTOR FOR IDENTICAL PI-S
 
 C PARTIAL WIDTH CONSISTS OF PHASE SPACE AND AMPLITUDE
        CALL DAM3PI(MNUM,PTR,PNR,PIM1R,PIM2R,PIPLR,AMPLIT,HV)
+
 !        if (mnum.eq.9) write(*,*) 'mnum=',mnum,amplit,phspac
 !        if (amplit.eq.0.0) stop
 !      if (mnum.gt.7) write(*,*) 'mnumy=',mnum
@@ -2978,6 +2978,15 @@ C Rationalize this code:
 !      if (mnum.eq.9) write(*,*) 'coef=', mnum,'>>',COEF(1,MNUM),COEF(2,MNUM),COEF(3,MNUM),COEF(4,MNUM),COEF(5,MNUM)
 
 
+
+C      F1 = F1 * CMPLX(0.0,0.0)
+C      F2 = F2 * CMPLX(0.0,0.0)
+
+C       F5 = F5 * CMPLX(0.0,0.0) ! this is a1 decay into 3pi, so no rho
+
+C      WRITE(*,*) 'CURR3PI: MNUM=',MNUM,' F1=',F1,' F2=',F2,' F3=',F3,' F4=',F4,' F5=',F5
+C      F3 = CMPLX(0.0,0.0) ! this is a1 decay into 3pi, so no rho
+
 C      F1=CMPLX(REAL(F1),0.0)
 C      F2=CMPLX(REAL(F2),0.0)
 
@@ -3142,11 +3151,11 @@ C
 C      WRITE(*,*) 'DEXNEW JIM: MODE=',MODE,' ISGN=',ISGN
       IF (ISGN.EQ.1) THEN
         IFFIST=1
-      elseif(ISGN.eq.-1) then
+      ELSEIF(ISGN.eq.-1) THEN
         IFFIST=2
-      else
+      ELSE
         IFFIST=0
-       endif
+      ENDIF
       IF(MODE.EQ.-1) THEN
 C     ===================
         IWARM=1
@@ -4923,17 +4932,16 @@ C
 C position of decaying particle
       IF(KTO.EQ. 1) THEN
         NPS=NP1
-        NPF=NP2
+        NPF=NP1
       ELSE
         NPS=NP2
-        NPF=NP1
+        NPF=NP2
       ENDIF
       IS=0
 C
 C tau neutrino (nu_tau is 16)
       CALL TRALO4(KTO,PNU,PNU,AM)
       ND=MULPIK(JNPI)
-      WRITE(*,*) 'JIM ND=',JNPI,' ',ND
       IF(ND.EQ.2.AND.IDFFIN(3,JNPI).NE.0) THEN
         IS=1
         CALL FILHEP(0,1,-IDFFIN(3,JNPI)*ISGN,NPS,NPS,0,0,PNU,AM,.TRUE.)

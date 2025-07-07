@@ -82,9 +82,9 @@ C      JAK1=5
 C      JAK2=5
 C LUND IDENTIFIER (FOR TAU+) -15
       IF (KTORY.EQ.1) THEN
-        IDFF=-15
-      ELSE
         IDFF=15
+      ELSE
+        IDFF=-15
       ENDIF
 C KTO=1 DENOTES TAU DEFINED BY IDFF (I.E. TAU+)
 C KTO=2 DENOTES THE OPPOSITE        (I.E. TAU-)
@@ -144,7 +144,7 @@ C DECAY....
          CALL DEKAY(KTO+10,HH)
       ENDIF
       CALL LUHEPC(2)
-      IF(IEV.LE.100000) THEN
+      IF(IEV.LE.1000000) THEN
        WRITE(IOUT,7002) IEV
        IF (KTORY.NE.1) THEN
          WRITE(IOUT,7003) HH
@@ -495,7 +495,7 @@ C =======================================================================
 ! switch on initialization as in BaBar.
       INTEGER IFBABAR
       COMMON /SETINI/ IFBABAR
-      DATA    IFBABAR /1/
+      DATA    IFBABAR /2/
 
 C IFBABAR = 0 CLEO initialization
 C IFBABAR = 1 BaBar initialization

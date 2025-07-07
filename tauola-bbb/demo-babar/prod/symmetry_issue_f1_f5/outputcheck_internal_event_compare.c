@@ -16,24 +16,36 @@ using namespace std;
 
 //int main(int argc, char **argv)
 
+
+double QQ(double s) {
+  double qs;
+  qs=1/(2.0*sqrt(s));
+  double m1=0.13957; // pion mass
+  double m2=0.49367; // kaon mass
+  qs=qs*sqrt((s-pow(m1+m1,2))*(s-pow(m1-m1,2)));
+  return qs;
+ }
+
 void outputcheck()
  {
   fstream in[6];
   fstream out;
 
-  in[0].open("../../tauola_test30_taum.output", ios::in);   //tau -
-  in[1].open("../../tauola_test30_taul.output", ios::in);   //tau +
+  in[0].open("../../tauola_test44_taum.output", ios::in);   //tau -
+  in[1].open("../../tauola_test44_taul.output", ios::in);   //tau +
 
 
 
   TH1D *h1[6];
-  TH1D *resonance[6];
-  TH2D *h1_resonance[6];
+  TH1D *two_resonance[6];
+  TH1D *three_resonance[6];
+  TH1D *LHS = new TH1D("LHS", "LHS", 1000, -1., 1.);
+  TH1D *RHS = new TH1D("RHS", "RHS", 1000, -1., 1.);
   TH1D *piEnergy[6];
   for(int i=0; i<6; i++) {
     h1[i] = new TH1D(Form("h1_%d", i), Form("h1_%d", i), 100, -1., 1. );
-    resonance[i] = new TH1D(Form("resonance_%d", i), Form("resonance_%d", i), 400, 0., 2. );
-    h1_resonance[i] = new TH2D(Form("h1_resonance_%d", i), Form("h1_resonance_%d", i), 400, 0., 2., 100, -1., 1. );
+    two_resonance[i] = new TH1D(Form("two_resonance_%d", i), Form("two_resonance_%d", i), 400, 0., 2. );
+    three_resonance[i] = new TH1D(Form("three_resonance_%d", i), Form("three_resonance_%d", i), 400, 0., 2.);
     piEnergy[i] = new TH1D(Form("piEnergy_%d", i), Form("piEnergy_%d", i), 200, 0., 1. );
   }
 
@@ -158,15 +170,15 @@ for(int ij=0; ij<6; ij++) {
          }
 
 
-        double M2P = sqrt((pow((energy[5]+energy[6]),2)-pow((px[5]+px[6]),2)-pow((py[5]+py[6]),2)-pow((pz[5]+pz[6]),2)));
+        //double M2P = sqrt((pow((energy[5]+energy[6]),2)-pow((px[5]+px[6]),2)-pow((py[5]+py[6]),2)-pow((pz[5]+pz[6]),2)));
 
         // double modP1 = abs(pow(0.77590,2)-(pow(energy[2]+energy[4],2) - pow(px[2]+px[4],2) - pow(py[2]+py[4],2) - pow(pz[2]+pz[4],2)));
         // double modP2 = abs(pow(0.77590,2)-(pow(energy[3]+energy[4],2) - pow(px[3]+px[4],2) - pow(py[3]+py[4],2) - pow(pz[3]+pz[4],2)));
         // double modP3 = abs(pow(0.77590,2)-(pow(energy[2]+energy[3],2) - pow(px[2]+px[3],2) - pow(py[2]+py[3],2) - pow(pz[2]+pz[3],2)));
 
-        double mPiSystemP = sqrt((pow(energy[3],2)-pow(px[3],2)-pow(py[3],2)-pow(pz[3],2)));
+        //double mPiSystemP = sqrt((pow(energy[3],2)-pow(px[3],2)-pow(py[3],2)-pow(pz[3],2)));
 
-        resonance[ij+1]->Fill(mPiSystemP);
+        //resonance[ij+1]->Fill(mPiSystemP);
 
         // Define the boost direction (opposite direction of this vector)
         TVector3 boost_directionP = vnuP.Vect(); // boost direction - opposite of hadronic system
@@ -227,37 +239,59 @@ for(int ij=0; ij<6; ij++) {
         TVector3 pi2PI(v2PI.Px(), v2PI.Py(), v2PI.Pz());
         TVector3 pi3PI(v3PI.Px(), v3PI.Py(), v3PI.Pz());
 
+        double M2P12 = sqrt((pow((v1P.Energy()+v2P.Energy()),2) - pow((v1P.Px()+v2P.Px()),2) - pow((v1P.Py()+v2P.Py()),2) - pow((v1P.Pz()+v2P.Pz()),2)));
+        double M2P23 = sqrt((pow((v2P.Energy()+v3P.Energy()),2) - pow((v2P.Px()+v3P.Px()),2) - pow((v2P.Py()+v3P.Py()),2) - pow((v2P.Pz()+v3P.Pz()),2)));
+        double M2P13 = sqrt((pow((v1P.Energy()+v3P.Energy()),2) - pow((v1P.Px()+v3P.Px()),2) - pow((v1P.Py()+v3P.Py()),2) - pow((v1P.Pz()+v3P.Pz()),2)));
+        double M3P = sqrt((pow((v1P.Energy()+v2P.Energy()+v3P.Energy()),2) - pow((v1P.Px()+v2P.Px()+v3P.Px()),2) - pow((v1P.Py()+v2P.Py()+v3P.Py()),2) - pow((v1P.Pz()+v2P.Pz()+v3P.Pz()),2)));
+
+
         if(ij==0){
           piEnergy[0]->Fill(v1PI.Energy());
           piEnergy[1]->Fill(v2PI.Energy());
           piEnergy[2]->Fill(v3PI.Energy());
+          two_resonance[0]->Fill(M2P12);
+          two_resonance[2]->Fill(M2P23);
+          two_resonance[4]->Fill(M2P13);
+          three_resonance[0]->Fill(M3P);
+          double Gamma= 0.145;
+          double M_Kst= 0.773;
+          double GammaS=0.;
+          if(M2P23*M2P23>pow((0.13957+0.13957),2)){
+            GammaS=Gamma*pow(M_Kst/M2P23,2)*pow(QQ(M2P23*M2P23)/QQ(M_Kst*M_Kst),3);
+          } else {
+            GammaS=0.;
+          }
+          double r_h_s=M2P23*GammaS;
+          LHS->Fill(abs(M_Kst*M_Kst-M2P23*M2P23)-abs(r_h_s));
          }
         if(ij==1){
           piEnergy[3]->Fill(v1PI.Energy());
           piEnergy[4]->Fill(v2PI.Energy());
           piEnergy[5]->Fill(v3PI.Energy());
+          two_resonance[1]->Fill(M2P12);
+          two_resonance[3]->Fill(M2P23);
+          two_resonance[5]->Fill(M2P13);
+          three_resonance[1]->Fill(M3P);
         }
 
-        TVector3 vNeutInt(0,0,1);
+        TVector3 vNeutInt(0,0,-1);
 
 
         double beta_Internal=0.;
         double beta_External=0.;
 
         if(ij<4) {
-         if(modP1P>modP2P) {
+         if(modP1P<modP2P) {
             TVector3 n_perpendicularP;
             n_perpendicularP = pi1P.Cross(pi2P);
             double betaP = n_perpendicularP.Angle(vnuP.Vect());
             h1[ij]->Fill(cos(betaP));
-            h1_resonance[ij+1]->Fill(mPiSystemP, cos(betaP));
             beta_External = betaP;
          } else {
             TVector3 n_perpendicularP;
             n_perpendicularP = pi2P.Cross(pi1P);
             double betaP = n_perpendicularP.Angle(vnuP.Vect());
             h1[ij]->Fill(cos(betaP));
-            h1_resonance[ij+1]->Fill(mPiSystemP, cos(betaP));
             beta_External = betaP;
          }
          if(modPi1P<modPi2P) {
@@ -338,7 +372,7 @@ for(int ij=0; ij<6; ij++) {
   h1[2]->GetXaxis()->CenterTitle();
   h1[2]->GetYaxis()->CenterTitle();
   h1[2]->GetXaxis()->SetRangeUser(-1., 1.);
-  h1[2]->GetYaxis()->SetRangeUser(0., 1500.);
+  h1[2]->GetYaxis()->SetRangeUser(0., 1400.);
   h1[2]->SetStats(0);
   h1[2]->SetLineWidth(2);
   h1[2]->SetMarkerStyle(1);
@@ -355,7 +389,7 @@ for(int ij=0; ij<6; ij++) {
  // latex2->DrawLatex(-0.4, 200, "F1=CONJG(F1) && F2=CONJG(F2)");
   TLegend *legend2 = new TLegend(0.3, 0.35, 0.6, 0.5);  // Adjust position as needed
   legend2->AddEntry(h1[2], "#pi^{-} #pi^{-} #pi^{+}", "l");
-  legend2->AddEntry(h1[3], "#pi^{-} #pi^{-} #pi^{+}", "l");
+  legend2->AddEntry(h1[3], "#pi^{+} #pi^{+} #pi^{-}", "l");
   legend2->Draw();
   beta_dist2->SaveAs("beta_distribution_internal_pi_pi_pi_2.png");
 
@@ -391,61 +425,66 @@ for(int ij=0; ij<6; ij++) {
 
 
  TCanvas *resonance_dist = new TCanvas("resonance_distribution", "resonance_distribution", 800, 600);
-  resonance[0]->SetLineColor(kBlack);
-  resonance[0]->SetTitle("Resonance distribution");
-  resonance[0]->GetXaxis()->SetTitle("M2");
-  resonance[0]->GetXaxis()->CenterTitle();
-  resonance[0]->GetYaxis()->SetTitle("Events");
-  resonance[0]->GetYaxis()->CenterTitle();
-  resonance[0]->GetXaxis()->SetRangeUser(0., 3.);
-  resonance[0]->GetYaxis()->SetRangeUser(0., 5000.);
-  resonance[0]->SetStats(0);
-  resonance[0]->SetLineWidth(2);
-  resonance[0]->SetMarkerStyle(1);
-  resonance[0]->Draw();
-  resonance[1]->SetLineColor(kRed);
-  resonance[1]->SetLineWidth(2);
-  resonance[1]->SetLineStyle(2);
-  resonance[1]->SetMarkerStyle(7);
-  resonance[1]->Draw("same");
-  resonance[2]->SetLineColor(kGreen);
-  resonance[2]->SetLineWidth(2);
-  resonance[2]->SetMarkerStyle(1);
-  resonance[2]->Draw("same");
-  resonance[3]->SetLineColor(kBlue);
-  resonance[3]->SetLineWidth(2);
-  resonance[3]->SetLineStyle(2);
-  resonance[3]->SetMarkerStyle(7);
-  resonance[3]->Draw("same");
-  resonance[4]->SetLineColor(kMagenta);
-  resonance[4]->SetLineWidth(2);
-  resonance[4]->SetMarkerStyle(1);
-  resonance[4]->Draw("same");
-  resonance[5]->SetLineColor(kCyan);
-  resonance[5]->SetLineWidth(2);
-  resonance[5]->SetLineStyle(2);
-  resonance[5]->SetMarkerStyle(7);
-  resonance[5]->Draw("same");
+  two_resonance[0]->SetLineColor(kBlack);
+  two_resonance[0]->SetTitle("Resonance distribution");
+  two_resonance[0]->GetXaxis()->SetTitle("M2");
+  two_resonance[0]->GetXaxis()->CenterTitle();
+  two_resonance[0]->GetYaxis()->SetTitle("Events");
+  two_resonance[0]->GetYaxis()->CenterTitle();
+  two_resonance[0]->GetXaxis()->SetRangeUser(0., 3.);
+  two_resonance[0]->GetYaxis()->SetRangeUser(0., 7000.);
+  two_resonance[0]->SetStats(0);
+  two_resonance[0]->SetLineWidth(2);
+  two_resonance[0]->SetMarkerStyle(1);
+  two_resonance[0]->Draw();
+  two_resonance[1]->SetLineColor(kRed);
+  two_resonance[1]->SetLineWidth(2);
+  two_resonance[1]->SetLineStyle(2);
+  two_resonance[1]->SetMarkerStyle(7);
+  two_resonance[1]->Draw("same");
+  two_resonance[2]->SetLineColor(kGreen);
+  two_resonance[2]->SetLineWidth(2);
+  two_resonance[2]->SetMarkerStyle(1);
+  two_resonance[2]->Draw("same");
+  two_resonance[3]->SetLineColor(kOrange);
+  two_resonance[3]->SetLineWidth(2);
+  two_resonance[3]->SetMarkerStyle(1);
+  two_resonance[3]->Draw("same");
+  two_resonance[4]->SetLineColor(kCyan);
+  two_resonance[4]->SetLineWidth(2);
+  two_resonance[4]->SetMarkerStyle(1);
+  two_resonance[4]->Draw("same");
+  two_resonance[5]->SetLineColor(kCyan+2);
+  two_resonance[5]->SetLineWidth(2);
+  two_resonance[5]->SetMarkerStyle(1);
+  two_resonance[5]->Draw("same");
+  three_resonance[0]->SetLineColor(kBlue);
+  three_resonance[0]->SetLineWidth(2);
+  three_resonance[0]->SetLineStyle(2);
+  three_resonance[0]->SetMarkerStyle(7);
+  three_resonance[0]->Draw("same");
+  three_resonance[1]->SetLineColor(kMagenta);
+  three_resonance[1]->SetLineWidth(2);
+  three_resonance[1]->SetMarkerStyle(1);
+  three_resonance[1]->Draw("same");
 
-  TCanvas *h1_reso1 = new TCanvas("y", "y", 800, 600);
-  h1_reso1->cd();
-  h1_resonance[0]->Draw("COLZ");
-
-  TCanvas *h1_reso2 = new TCanvas("x", "x", 800, 600);
-  h1_reso2->cd();
-  h1_resonance[1]->Draw("COLZ");
 
 
-  TLegend *legendR = new TLegend(0.15, 0.5, 0.45, 0.8);  // Adjust position as needed
-  legendR->AddEntry(resonance[0], "#pi^{-} #pi^{-} #pi^{+}", "l");  // "l" for line, "p" for point, etc.
-  legendR->AddEntry(resonance[1], "#pi^{+} #pi^{+} #pi^{-}", "l");
-  legendR->AddEntry(resonance[2], "#pi^{0} #pi^{0} #pi^{-}", "l");
-  legendR->AddEntry(resonance[3], "#pi^{0} #pi^{0} #pi^{+}", "l");
-  legendR->AddEntry(resonance[4], "K^{-} #pi^{-} #pi^{+}", "l");
-  legendR->AddEntry(resonance[5], "K^{+} #pi^{+} #pi^{-}", "l");
+
+
+  TLegend *legendR = new TLegend(0.12, 0.5, 0.4, 0.8);  // Adjust position as needed
+  legendR->AddEntry(two_resonance[0], "#tau^{-} - two res 1,2", "l");  // "l" for line, "p" for point, etc.
+  legendR->AddEntry(two_resonance[2], "#tau^{-} - two res 2,3", "l");
+  legendR->AddEntry(two_resonance[4], "#tau^{-} - two res 1,3", "l");
+  legendR->AddEntry(two_resonance[1], "#tau^{+} - two res 1,2", "l");
+  legendR->AddEntry(two_resonance[3], "#tau^{+} - two res 2,3", "l");
+  legendR->AddEntry(two_resonance[5], "#tau^{+} - two res 1,3", "l");
+  legendR->AddEntry(three_resonance[0], "#tau^{-} - three res", "l");
+  legendR->AddEntry(three_resonance[1], "#tau^{+} - three res", "l");
   legendR->Draw();
 
   resonance_dist->SaveAs("resonance_distribution.png");
+
 
   TCanvas *piEnergy_dist = new TCanvas("piEnergy_distribution", "piEnergy_distribution", 800, 600);
   piEnergy_dist->Divide(3, 2);
@@ -462,7 +501,14 @@ for(int ij=0; ij<6; ij++) {
   piEnergy_dist->cd(6);
   piEnergy[5]->Draw();
 
-
+  TCanvas *LHS_RHS = new TCanvas("LHS_RHS", "LHS_RHS", 800, 600);
+  LHS_RHS->cd();
+  LHS->SetLineColor(kBlack);
+  LHS->SetTitle("LHS vs RHS");
+  LHS->GetXaxis()->SetTitle("XX");
+  LHS->GetXaxis()->CenterTitle();
+  LHS->GetXaxis()->SetRangeUser(-0.5, 0.5);
+  LHS->Draw();
 
 
 
